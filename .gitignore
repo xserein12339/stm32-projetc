@@ -1,0 +1,103 @@
+#========== 编译产物 ==========
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+*.out
+*.exe
+*.a
+*.so
+*.lib
+
+#========== 构建目录 ==========
+build/
+Build/
+Debug/
+Release/
+obj/
+output/
+bin/
+generated/
+
+#========== IDE 配置文件 ==========
+#vscode
+.vscode/
+.code-workspace
+*.code-workspace
+
+#STM32CubeIDE
+.cproject
+.project
+.settings/
+.metadata/
+*.launch
+
+#Keil
+*.uvguix.*
+*.uvoptx
+*.scvd
+RTE/
+*.uvprojx
+*.uvopt
+*.uvguix
+
+#IAR
+*.ewd
+*.ewp
+*.eww
+*.dep
+Debug/
+Release/
+
+#CLion
+.idea/
+cmake-build-*/
+
+#========== 个人配置文件 ==========
+*.user
+*.user.pre
+*.user.release
+*.user.debug
+*.workspace
+*.local
+*.orig
+*.bak
+
+#========== 临时文件 ==========
+*.tmp
+*.temp
+*.log
+*.cache
+*.pid
+*.seed
+*.pid.lock
+*~
+~$*
+.DS_Store
+Thumbs.db
+
+#========== 工具生成 ==========
+#STM32CubeMX生成的一些临时文件
+*.ioc.bak
+MX_Device.xml
+
+#Doxygen生成
+docs/html
+docs/latex/
+
+#========== 测试相关 ==========
+coverage/
+*.gcno
+*.gcda
+*.gcov
+
+#========== python 虚拟环境 ==========
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+
+#========== 自己添加的忽略 =========
