@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libstm32f1_system_init.a CMakeFiles/stm32f1_system_init.dir/__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libstm32f1_system_init.a

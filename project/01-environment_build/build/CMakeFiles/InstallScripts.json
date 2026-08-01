@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/xiamu/git/stm32_project/project/01-environment_build/build/cmake_install.cmake",
+		"/home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/cmake_install.cmake",
+		"/home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/cmake_install.cmake",
+		"/home/xiamu/git/stm32_project/project/01-environment_build/build/app/cmake_install.cmake",
+		"/home/xiamu/git/stm32_project/project/01-environment_build/build/app/app_test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

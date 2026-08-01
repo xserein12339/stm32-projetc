@@ -1,0 +1,16 @@
+/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles/edit_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles/rebuild_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/CMakeFiles/stm32f1_hal.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/CMakeFiles/edit_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/CMakeFiles/rebuild_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/stm32f1_system_init.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/bsp.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/edit_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/rebuild_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/CMakeFiles/stm32f103_test.elf.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/CMakeFiles/flash.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/CMakeFiles/edit_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/CMakeFiles/rebuild_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/app_test/CMakeFiles/app_test.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/app_test/CMakeFiles/edit_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/app/app_test/CMakeFiles/rebuild_cache.dir

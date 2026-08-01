@@ -1,0 +1,1451 @@
+Archive member included to satisfy reference by file (symbol)
+
+../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+                              (Reset_Handler)
+../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+                              ../bsp/libbsp.a(startup_stm32f103xb.s.obj) (SystemInit)
+../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                              CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj (HAL_Init)
+../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                              ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj) (HAL_NVIC_SetPriorityGrouping)
+../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                              CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj (HAL_RCC_OscConfig)
+../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                              CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj (HAL_GPIO_Init)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (atexit)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (exit)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o) (__stdio_exit_handler)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o) (_fwalk_sglue)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o) (__sread)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (memset)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o) (_close_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o) (errno)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o) (_impure_ptr)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o) (_lseek_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o) (_read_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o) (_write_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (__libc_init_array)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (__libc_fini_array)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o) (__register_exitproc)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o) (__call_exitprocs)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o) (_free_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o) (_malloc_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o) (__malloc_lock)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o) (_fflush_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o) (_sbrk_r)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o) (_close)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o) (_lseek)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o) (_read)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o) (_sbrk)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o) (_write)
+/opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+                              /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o) (_exit)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .rodata.all_implied_fbits
+                0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .init_array    0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .data.__dso_handle
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.__do_global_dtors_aux
+                0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.frame_dummy
+                0x00000000       0x1c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .bss.completed.1
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .bss.object.0  0x00000000       0x18 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text          0x00000000       0x70 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.extab     0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.exidx     0x00000000       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.attributes
+                0x00000000       0x1b /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .group         0x00000000        0xc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .text          0x00000000        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .data          0x00000000        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .text.delay    0x00000000       0x12 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .text          0x00000000       0x14 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .data          0x00000000        0x0 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .bss           0x00000000        0x0 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .text          0x00000000        0x0 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .data          0x00000000        0x0 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .bss           0x00000000        0x0 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .text.SystemCoreClockUpdate
+                0x00000000       0x94 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .rodata.APBPrescTable
+                0x00000000        0x8 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0xacc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x2e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x22 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x22 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x8e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x51 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x103 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x6a ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x1df ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x1c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x22 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0xbd ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0xd23 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000     0xe09e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x6d ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0xd6 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000     0x34a2 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x190 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x5c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x5bc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x289 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x1cb ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x114 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x1b2 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x27 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x136 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x1bc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x34 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x3c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x57 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x87 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x240 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x140 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x28e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x217 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x287 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x46a ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x1b5 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x8ed ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0x1ef ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0xeb ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000       0x83 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .data          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .bss           0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_MspDeInit
+                0x00000000        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DeInit
+                0x00000000       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetTickPrio
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_SetTickFreq
+                0x00000000       0x2c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetTickFreq
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_SuspendTick
+                0x00000000        0xe ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_ResumeTick
+                0x00000000        0xe ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetHalVersion
+                0x00000000        0x8 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetREVID
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetDEVID
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetUIDw0
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetUIDw1
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_GetUIDw2
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DBGMCU_EnableDBGSleepMode
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DBGMCU_DisableDBGSleepMode
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DBGMCU_EnableDBGStopMode
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DBGMCU_DisableDBGStopMode
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DBGMCU_EnableDBGStandbyMode
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .text.HAL_DBGMCU_DisableDBGStandbyMode
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x8e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x51 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x103 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x6a ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x1df ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0xbd ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0xd23 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000     0xe09e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x6d ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000     0x34a2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x190 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x5c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x5bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x289 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x1cb ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x114 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x1b2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x27 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x136 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x1bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x34 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x3c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x57 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x217 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x46a ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000       0x83 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .data          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .bss           0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.__NVIC_DisableIRQ
+                0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.__NVIC_GetPriority
+                0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.NVIC_DecodePriority
+                0x00000000       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.__NVIC_SystemReset
+                0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_EnableIRQ
+                0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_DisableIRQ
+                0x00000000        0x8 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_SystemReset
+                0x00000000        0x6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_GetPriorityGrouping
+                0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_GetPriority
+                0x00000000       0x18 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_SetPendingIRQ
+                0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_GetPendingIRQ
+                0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_ClearPendingIRQ
+                0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_NVIC_GetActive
+                0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_SYSTICK_CLKSourceConfig
+                0x00000000       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_SYSTICK_Callback
+                0x00000000        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.HAL_SYSTICK_IRQHandler
+                0x00000000        0x8 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x8e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x51 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x103 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x6a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x1df ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0xbd ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0xd23 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000     0xe09e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x6d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000     0x34a2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x190 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x5c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x5bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x289 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x1cb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x114 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x1b2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x27 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x136 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x1bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x34 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x3c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x57 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x217 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x46a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000       0x83 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .data          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .bss           0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_DeInit
+                0x00000000       0xf4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_MCOConfig
+                0x00000000       0x50 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_EnableCSS
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_DisableCSS
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_GetHCLKFreq
+                0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_GetPCLK1Freq
+                0x00000000       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_GetPCLK2Freq
+                0x00000000       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_GetOscConfig
+                0x00000000       0xb4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_GetClockConfig
+                0x00000000       0x3c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_CSSCallback
+                0x00000000        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_NMI_IRQHandler
+                0x00000000       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x8e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x51 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x103 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x6a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x1df ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0xbd ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0xd23 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000     0xe09e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x6d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000     0x34a2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x190 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x5c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x5bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x289 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x1cb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x114 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x1b2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x27 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x136 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x1bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x34 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x3c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x57 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x217 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x46a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000       0x83 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .data          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .bss           0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text.HAL_GPIO_DeInit
+                0x00000000       0xfc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text.HAL_GPIO_ReadPin
+                0x00000000        0xe ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text.HAL_GPIO_LockPin
+                0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text.HAL_GPIO_EXTI_Callback
+                0x00000000        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text.HAL_GPIO_EXTI_IRQHandler
+                0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x8e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x51 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x103 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x6a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x1df ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0xbd ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0xd23 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000     0xe09e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x6d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000     0x34a2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x190 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x5c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x5bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x289 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x1cb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x114 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x1b2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x27 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x136 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x1bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x34 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x3c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x57 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x217 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x46a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000       0x83 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+ .text.atexit   0x00000000        0xc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+ .text.exit     0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.std      0x00000000       0x6c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.stdio_exit_handler
+                0x00000000       0x18 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.cleanup_stdio
+                0x00000000       0x40 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__fp_lock
+                0x00000000       0x18 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__fp_unlock
+                0x00000000       0x18 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.global_stdio_init.part.0
+                0x00000000       0x40 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__sfp_lock_acquire
+                0x00000000        0xc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__sfp_lock_release
+                0x00000000        0xc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__sfp    0x00000000       0xa4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__sinit  0x00000000       0x30 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__fp_lock_all
+                0x00000000       0x1c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text.__fp_unlock_all
+                0x00000000       0x1c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .data.__sglue  0x00000000        0xc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .bss.__sf      0x00000000      0x138 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .bss.__stdio_exit_handler
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-findfp.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+ .text._fwalk_sglue
+                0x00000000       0x3c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fwalk.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .text.__sread  0x00000000       0x22 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .text.__seofread
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .text.__swrite
+                0x00000000       0x38 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .text.__sseek  0x00000000       0x26 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .text.__sclose
+                0x00000000        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+ .text._close_r
+                0x00000000       0x20 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-closer.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .text._reclaim_reent
+                0x00000000       0xbc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .bss.errno     0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-reent.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .data._impure_data
+                0x00000000       0x4c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-impure.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+ .text._lseek_r
+                0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lseekr.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+ .text._read_r  0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-readr.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+ .text._write_r
+                0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-writer.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+ .text.__libc_fini_array
+                0x00000000       0x28 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fini.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_init
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_init_recursive
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_close
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_close_recursive
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_acquire
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_acquire_recursive
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_try_acquire
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_try_acquire_recursive
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_release
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text.__retarget_lock_release_recursive
+                0x00000000        0x2 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___arc4random_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___dd_hash_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___tz_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___env_recursive_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___malloc_recursive_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___at_quick_exit_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___atexit_recursive_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .bss.__lock___sfp_recursive_mutex
+                0x00000000        0x1 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-lock.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .text.__register_exitproc
+                0x00000000       0xb8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .bss.__atexit0
+                0x00000000       0x8c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .data.__atexit_dummy
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__atexit.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x00000000       0xbc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .bss.__atexit  0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .data.__atexit_recursive_mutex
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-__call_atexit.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+ .text._free_r  0x00000000       0x90 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-freer.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .text.sbrk_aligned
+                0x00000000       0x44 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .text._malloc_r
+                0x00000000      0x100 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .bss.__malloc_sbrk_start
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .bss.__malloc_free_list
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mallocr.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .text.__malloc_lock
+                0x00000000        0xc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .text.__malloc_unlock
+                0x00000000        0xc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-mlock.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .text.__sflush_r
+                0x00000000       0xfc /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .text._fflush_r
+                0x00000000       0x50 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .text.fflush   0x00000000       0x28 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-fflush.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+ .text._sbrk_r  0x00000000       0x20 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-sbrkr.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .text._close   0x00000000       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .gnu.warning._close
+                0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(close.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .text._lseek   0x00000000       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .gnu.warning._lseek
+                0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(lseek.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .text._read    0x00000000       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .gnu.warning._read
+                0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(read.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .text._sbrk    0x00000000       0x1c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .bss.heap_end.0
+                0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .text._write   0x00000000       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .gnu.warning._write
+                0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(write.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+ .text._exit    0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(_exit.o)
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .rodata.all_implied_fbits
+                0x00000000       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .eh_frame      0x00000000        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .comment       0x00000000       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .ARM.attributes
+                0x00000000       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+ .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+ .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+ .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x20000000         0x00005000         xrw
+FLASH            0x08000000         0x00010000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+LOAD CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+LOAD app_test/libapp_test.a
+LOAD ../bsp/libbsp.a
+LOAD ../bsp/libstm32f1_system_init.a
+LOAD ../third_party/libstm32f1_hal.a
+START GROUP
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+END GROUP
+START GROUP
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+END GROUP
+START GROUP
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a
+END GROUP
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtend.o
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+                0x20005000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+                0x00000200                        _Min_Heap_Size = 0x200
+                0x00000400                        _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000      0x10c
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x10c ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+                0x08000000                g_pfnVectors
+                0x0800010c                        . = ALIGN (0x4)
+
+.text           0x0800010c      0xb6c
+                0x0800010c                        . = ALIGN (0x4)
+ *(.text)
+ *(.text*)
+ .text.SysTick_Handler
+                0x0800010c        0x8 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+                0x0800010c                SysTick_Handler
+ .text.Error_Handler
+                0x08000114       0x1c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+                0x08000114                Error_Handler
+ .text.SystemClock_Config
+                0x08000130       0x5c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .text.main     0x0800018c       0x6c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+                0x0800018c                main
+ .text.Reset_Handler
+                0x080001f8       0x48 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+                0x080001f8                Reset_Handler
+ .text.Default_Handler
+                0x08000240        0x2 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+                0x08000240                RTC_Alarm_IRQHandler
+                0x08000240                EXTI2_IRQHandler
+                0x08000240                DebugMon_Handler
+                0x08000240                TIM1_CC_IRQHandler
+                0x08000240                HardFault_Handler
+                0x08000240                PVD_IRQHandler
+                0x08000240                PendSV_Handler
+                0x08000240                NMI_Handler
+                0x08000240                EXTI3_IRQHandler
+                0x08000240                EXTI0_IRQHandler
+                0x08000240                I2C2_EV_IRQHandler
+                0x08000240                UsageFault_Handler
+                0x08000240                ADC1_2_IRQHandler
+                0x08000240                SPI1_IRQHandler
+                0x08000240                TAMPER_IRQHandler
+                0x08000240                DMA1_Channel4_IRQHandler
+                0x08000240                USART3_IRQHandler
+                0x08000240                RTC_IRQHandler
+                0x08000240                DMA1_Channel7_IRQHandler
+                0x08000240                CAN1_RX1_IRQHandler
+                0x08000240                TIM4_IRQHandler
+                0x08000240                I2C1_EV_IRQHandler
+                0x08000240                DMA1_Channel6_IRQHandler
+                0x08000240                TIM3_IRQHandler
+                0x08000240                RCC_IRQHandler
+                0x08000240                TIM1_TRG_COM_IRQHandler
+                0x08000240                DMA1_Channel1_IRQHandler
+                0x08000240                Default_Handler
+                0x08000240                EXTI15_10_IRQHandler
+                0x08000240                EXTI9_5_IRQHandler
+                0x08000240                SPI2_IRQHandler
+                0x08000240                MemManage_Handler
+                0x08000240                SVC_Handler
+                0x08000240                DMA1_Channel5_IRQHandler
+                0x08000240                EXTI4_IRQHandler
+                0x08000240                USB_LP_CAN1_RX0_IRQHandler
+                0x08000240                USB_HP_CAN1_TX_IRQHandler
+                0x08000240                DMA1_Channel3_IRQHandler
+                0x08000240                TIM1_UP_IRQHandler
+                0x08000240                WWDG_IRQHandler
+                0x08000240                TIM2_IRQHandler
+                0x08000240                TIM1_BRK_IRQHandler
+                0x08000240                EXTI1_IRQHandler
+                0x08000240                USART2_IRQHandler
+                0x08000240                I2C2_ER_IRQHandler
+                0x08000240                DMA1_Channel2_IRQHandler
+                0x08000240                CAN1_SCE_IRQHandler
+                0x08000240                FLASH_IRQHandler
+                0x08000240                BusFault_Handler
+                0x08000240                USART1_IRQHandler
+                0x08000240                I2C1_ER_IRQHandler
+                0x08000240                USBWakeUp_IRQHandler
+ .text.SystemInit
+                0x08000242        0x2 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+                0x08000242                SystemInit
+ .text.HAL_MspInit
+                0x08000244        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08000244                HAL_MspInit
+ *fill*         0x08000246        0x2 
+ .text.HAL_InitTick
+                0x08000248       0x4c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08000248                HAL_InitTick
+ .text.HAL_Init
+                0x08000294       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08000294                HAL_Init
+ .text.HAL_IncTick
+                0x080002b8       0x18 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x080002b8                HAL_IncTick
+ .text.HAL_GetTick
+                0x080002d0        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x080002d0                HAL_GetTick
+ .text.HAL_Delay
+                0x080002dc       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x080002dc                HAL_Delay
+ .text.__NVIC_SetPriority
+                0x08000304       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .text.NVIC_EncodePriority
+                0x0800032c       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ *fill*         0x0800036a        0x2 
+ .text.HAL_NVIC_SetPriorityGrouping
+                0x0800036c       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x0800036c                HAL_NVIC_SetPriorityGrouping
+ .text.HAL_NVIC_SetPriority
+                0x08000390       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08000390                HAL_NVIC_SetPriority
+ .text.HAL_SYSTICK_Config
+                0x080003b0       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x080003b0                HAL_SYSTICK_Config
+ .text.RCC_Delay
+                0x080003d8       0x2c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .text.HAL_RCC_OscConfig
+                0x08000404      0x410 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08000404                HAL_RCC_OscConfig
+ .text.HAL_RCC_GetSysClockFreq
+                0x08000814       0x54 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08000814                HAL_RCC_GetSysClockFreq
+ .text.HAL_RCC_ClockConfig
+                0x08000868      0x16c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08000868                HAL_RCC_ClockConfig
+ .text.HAL_GPIO_Init
+                0x080009d4      0x214 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x080009d4                HAL_GPIO_Init
+ .text.HAL_GPIO_WritePin
+                0x08000be8        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x08000be8                HAL_GPIO_WritePin
+ .text.HAL_GPIO_TogglePin
+                0x08000bf4       0x12 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x08000bf4                HAL_GPIO_TogglePin
+ .text.memset   0x08000c06       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+                0x08000c06                memset
+ *fill*         0x08000c16        0x2 
+ .text.__libc_init_array
+                0x08000c18       0x48 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+                0x08000c18                __libc_init_array
+ *(.glue_7t)
+ .glue_7t       0x08000c60        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x08000c60        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ .init          0x08000c60        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+                0x08000c60                _init
+ .init          0x08000c64        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+ *(.fini)
+ .fini          0x08000c6c        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+                0x08000c6c                _fini
+ .fini          0x08000c70        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+                0x08000c78                        . = ALIGN (0x4)
+                0x08000c78                        _etext = .
+
+.vfp11_veneer   0x08000c78        0x0
+ .vfp11_veneer  0x08000c78        0x0 linker stubs
+
+.v4_bx          0x08000c78        0x0
+ .v4_bx         0x08000c78        0x0 linker stubs
+
+.iplt           0x08000c78        0x0
+ .iplt          0x08000c78        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+
+.rodata         0x08000c78       0x24
+                0x08000c78                        . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+ .rodata.AHBPrescTable
+                0x08000c78       0x10 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+                0x08000c78                AHBPrescTable
+ .rodata.aPredivFactorTable.0
+                0x08000c88        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ *fill*         0x08000c8a        0x2 
+ .rodata.aPLLMULFactorTable.1
+                0x08000c8c       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08000c9c                        . = ALIGN (0x4)
+
+.rel.dyn        0x08000c9c        0x0
+ .rel.iplt      0x08000c9c        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x08000c9c        0x0
+                0x08000c9c                        __exidx_start = .
+ *(.ARM.exidx*)
+                0x08000c9c                        __exidx_end = .
+                0x08000c9c                        _sidata = LOADADDR (.data)
+
+.data           0x20000000        0xc load address 0x08000c9c
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ *(.data*)
+ .data.SystemCoreClock
+                0x20000000        0x4 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+                0x20000000                SystemCoreClock
+ .data.uwTickFreq
+                0x20000004        0x1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x20000004                uwTickFreq
+ *fill*         0x20000005        0x3 
+ .data.uwTickPrio
+                0x20000008        0x4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x20000008                uwTickPrio
+                0x2000000c                        . = ALIGN (0x4)
+                0x2000000c                        _edata = .
+
+.igot.plt       0x2000000c        0x0 load address 0x08000ca8
+ .igot.plt      0x2000000c        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+
+.bss            0x2000000c        0x4 load address 0x08000ca8
+                0x2000000c                        . = ALIGN (0x4)
+                0x2000000c                        _sbss = .
+                0x2000000c                        __bss_start__ = _sbss
+ *(.bss)
+ *(.bss*)
+ .bss.uwTick    0x2000000c        0x4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x2000000c                uwTick
+ *(COMMON)
+                0x20000010                        . = ALIGN (0x4)
+                0x20000010                        _ebss = .
+                0x20000010                        __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000010      0x600 load address 0x08000ca8
+                0x20000010                        . = ALIGN (0x8)
+                0x20000010                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x20000210                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000010      0x200 
+                0x20000610                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000210      0x400 
+                0x20000610                        . = ALIGN (0x8)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+ .ARM.attributes
+                0x0000001d       0x2d CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .ARM.attributes
+                0x0000004a       0x21 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .ARM.attributes
+                0x0000006b       0x2d ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .ARM.attributes
+                0x00000098       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .ARM.attributes
+                0x000000c5       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .ARM.attributes
+                0x000000f2       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .ARM.attributes
+                0x0000011f       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .ARM.attributes
+                0x0000014c       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+ .ARM.attributes
+                0x00000179       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+ .ARM.attributes
+                0x000001a6       0x1d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+OUTPUT(stm32f103_test.elf elf32-littlearm)
+LOAD linker stubs
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a
+LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+
+.debug_info     0x00000000     0x3255
+ .debug_info    0x00000000      0x6e7 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_info    0x000006e7       0x30 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_info    0x00000717      0x272 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_info    0x00000989      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_info    0x0000120d      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_info    0x00002050      0xb2a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_info    0x00002b7a      0x6db ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_abbrev   0x00000000      0xe8c
+ .debug_abbrev  0x00000000      0x24c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_abbrev  0x0000024c       0x1d ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_abbrev  0x00000269      0x143 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_abbrev  0x000003ac      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_abbrev  0x000005e1      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_abbrev  0x0000098e      0x2d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_abbrev  0x00000c67      0x225 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_loc      0x00000000     0x19cb
+ .debug_loc     0x00000000       0xde CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_loc     0x000000de      0x11b ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_loc     0x000001f9      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_loc     0x000003f2      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_loc     0x00000ca6      0x7c6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_loc     0x0000146c      0x55f ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_aranges  0x00000000      0x318
+ .debug_aranges
+                0x00000000       0x40 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_aranges
+                0x00000040       0x28 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_aranges
+                0x00000068       0x28 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_aranges
+                0x00000090       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_aranges
+                0x00000170       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_aranges
+                0x00000230       0x90 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_aranges
+                0x000002c0       0x58 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_ranges   0x00000000      0x2d0
+ .debug_ranges  0x00000000       0x30 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_ranges  0x00000030       0x20 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_ranges  0x00000050       0x18 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_ranges  0x00000068       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_ranges  0x00000138       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_ranges  0x000001e8       0xa0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_ranges  0x00000288       0x48 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_macro    0x00000000    0x16fcf
+ .debug_macro   0x00000000      0x1d1 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000001d1      0xacc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000c9d       0xd6 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000d73       0x2e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000da1       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000dc3       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000de5       0x8e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000e73       0x51 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000ec4      0x103 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000fc7       0x6a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001031      0x1df CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001210       0x1c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0000122c       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0000124e       0xbd CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0000130b      0xd23 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0000202e     0xe09e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000100cc       0x6d CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00010139     0x34a2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000135db      0x190 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001376b       0x5c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000137c7      0x5bc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00013d83      0x289 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001400c      0x1cb CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000141d7      0x114 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000142eb      0x1b2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001449d       0x27 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000144c4      0x136 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000145fa      0x1bc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000147b6       0x34 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000147ea       0x3c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014826       0x57 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001487d       0x87 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014904      0x240 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014b44      0x140 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014c84      0x28e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014f12      0x217 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00015129      0x287 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000153b0      0x46a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001581a      0x1b5 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000159cf      0x8ed CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000162bc      0x1ef CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000164ab       0xeb CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00016596       0x83 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00016619      0x1d1 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x000167ea      0x1f5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x000169df      0x1d1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00016bb0      0x1e3 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00016d93      0x23c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_line     0x00000000     0x40d9
+ .debug_line    0x00000000      0x7b2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_line    0x000007b2       0xb8 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_line    0x0000086a      0x76c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_line    0x00000fd6      0x9b1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_line    0x00001987      0xb96 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_line    0x0000251d     0x1121 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_line    0x0000363e      0xa9b ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.debug_str      0x00000000    0x8d39a
+ .debug_str     0x00000000    0x8d39a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+                              0x8c57d (size before relaxing)
+ .debug_str     0x0008d39a       0xbe ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_str     0x0008d39a    0x8c3bd ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_str     0x0008d39a    0x8cace ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_str     0x0008d39a    0x8ca1a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_str     0x0008d39a    0x8c7ca ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_str     0x0008d39a    0x8c721 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+
+.comment        0x00000000       0x39
+ .comment       0x00000000       0x39 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+                                 0x3a (size before relaxing)
+ .comment       0x00000039       0x3a ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .comment       0x00000039       0x3a ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .comment       0x00000039       0x3a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .comment       0x00000039       0x3a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .comment       0x00000039       0x3a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .comment       0x00000039       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+ .comment       0x00000039       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+
+.debug_frame    0x00000000      0x690
+ .debug_frame   0x00000000       0x90 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_frame   0x00000090       0x30 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_frame   0x000000c0      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_frame   0x0000028c      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_frame   0x00000428      0x184 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_frame   0x000005ac       0xe4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)

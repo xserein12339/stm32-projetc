@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libapp_test.a CMakeFiles/app_test.dir/src/app_test.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libapp_test.a
