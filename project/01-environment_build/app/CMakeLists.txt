@@ -15,6 +15,7 @@ add_executable(${PROJECT_NAME}.elf
 # 链接应用模块与 BSP
 target_link_libraries(${PROJECT_NAME}.elf PRIVATE
     app_test
+    stm32f103c8tx_target
     bsp                     # 提供 HAL、SystemInit、启动文件、链接脚本
 )
 

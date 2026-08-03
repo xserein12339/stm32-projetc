@@ -146,37 +146,9 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
  .data          0x00000000        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .text.delay    0x00000000       0x12 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
  .text          0x00000000       0x14 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
  .data          0x00000000        0x0 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
  .bss           0x00000000        0x0 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .group         0x00000000        0xc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
@@ -199,7 +171,7 @@ Discarded input sections
                 0x00000000       0x94 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .rodata.APBPrescTable
                 0x00000000        0x8 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0xacc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00000000      0xac6 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_macro   0x00000000       0x2e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_macro   0x00000000       0x22 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_macro   0x00000000       0x22 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
@@ -214,33 +186,6 @@ Discarded input sections
  .debug_macro   0x00000000      0xd23 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_macro   0x00000000     0xe09e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_macro   0x00000000       0x6d ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0xd6 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000     0x34a2 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x190 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x5c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x5bc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x289 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x1cb ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x114 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x1b2 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x27 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x136 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x1bc ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x34 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x3c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x57 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x87 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x240 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x140 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x28e ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x217 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x287 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x46a ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x1b5 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x8ed ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000      0x1ef ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0xeb ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00000000       0x83 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
@@ -324,7 +269,6 @@ Discarded input sections
                 0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .text.HAL_DBGMCU_DisableDBGStandbyMode
                 0x00000000       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x00000000      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
@@ -1311,121 +1255,122 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eab
 LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a
 LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
 
-.debug_info     0x00000000     0x3255
- .debug_info    0x00000000      0x6e7 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_info    0x000006e7       0x30 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
- .debug_info    0x00000717      0x272 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_info    0x00000989      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_info    0x0000120d      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_info    0x00002050      0xb2a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_info    0x00002b7a      0x6db ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_info     0x00000000     0x3226
+ .debug_info    0x00000000      0x6bf CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_info    0x000006bf       0x30 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_info    0x000006ef      0x26b ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_info    0x0000095a      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_info    0x000011de      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_info    0x00002021      0xb2a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_info    0x00002b4b      0x6db ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_abbrev   0x00000000      0xe8c
- .debug_abbrev  0x00000000      0x24c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_abbrev  0x0000024c       0x1d ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
- .debug_abbrev  0x00000269      0x143 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_abbrev  0x000003ac      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_abbrev  0x000005e1      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_abbrev  0x0000098e      0x2d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_abbrev  0x00000c67      0x225 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_abbrev   0x00000000      0xe7b
+ .debug_abbrev  0x00000000      0x23b CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_abbrev  0x0000023b       0x1d ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_abbrev  0x00000258      0x143 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_abbrev  0x0000039b      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_abbrev  0x000005d0      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_abbrev  0x0000097d      0x2d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_abbrev  0x00000c56      0x225 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_loc      0x00000000     0x19cb
- .debug_loc     0x00000000       0xde CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_loc     0x000000de      0x11b ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_loc     0x000001f9      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_loc     0x000003f2      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_loc     0x00000ca6      0x7c6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_loc     0x0000146c      0x55f ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_loc      0x00000000     0x199f
+ .debug_loc     0x00000000       0xb2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_loc     0x000000b2      0x11b ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_loc     0x000001cd      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_loc     0x000003c6      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_loc     0x00000c7a      0x7c6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_loc     0x00001440      0x55f ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_aranges  0x00000000      0x318
+.debug_aranges  0x00000000      0x310
  .debug_aranges
-                0x00000000       0x40 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+                0x00000000       0x38 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
  .debug_aranges
-                0x00000040       0x28 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+                0x00000038       0x28 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
  .debug_aranges
-                0x00000068       0x28 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+                0x00000060       0x28 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_aranges
-                0x00000090       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x00000088       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_aranges
-                0x00000170       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x00000168       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_aranges
-                0x00000230       0x90 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x00000228       0x90 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_aranges
-                0x000002c0       0x58 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x000002b8       0x58 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_ranges   0x00000000      0x2d0
- .debug_ranges  0x00000000       0x30 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_ranges  0x00000030       0x20 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
- .debug_ranges  0x00000050       0x18 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_ranges  0x00000068       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_ranges  0x00000138       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_ranges  0x000001e8       0xa0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_ranges  0x00000288       0x48 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_ranges   0x00000000      0x2c8
+ .debug_ranges  0x00000000       0x28 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_ranges  0x00000028       0x20 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_ranges  0x00000048       0x18 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_ranges  0x00000060       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_ranges  0x00000130       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_ranges  0x000001e0       0xa0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_ranges  0x00000280       0x48 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_macro    0x00000000    0x16fcf
- .debug_macro   0x00000000      0x1d1 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000001d1      0xacc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000c9d       0xd6 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000d73       0x2e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000da1       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000dc3       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000de5       0x8e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000e73       0x51 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000ec4      0x103 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00000fc7       0x6a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00001031      0x1df CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00001210       0x1c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0000122c       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0000124e       0xbd CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0000130b      0xd23 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0000202e     0xe09e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000100cc       0x6d CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00010139     0x34a2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000135db      0x190 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0001376b       0x5c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000137c7      0x5bc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00013d83      0x289 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0001400c      0x1cb CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000141d7      0x114 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000142eb      0x1b2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0001449d       0x27 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000144c4      0x136 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000145fa      0x1bc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000147b6       0x34 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000147ea       0x3c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00014826       0x57 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0001487d       0x87 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00014904      0x240 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00014b44      0x140 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00014c84      0x28e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00014f12      0x217 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00015129      0x287 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000153b0      0x46a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x0001581a      0x1b5 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000159cf      0x8ed CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000162bc      0x1ef CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x000164ab       0xeb CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00016596       0x83 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_macro   0x00016619      0x1d1 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_macro   0x000167ea      0x1f5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x000169df      0x1d1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_macro   0x00016bb0      0x1e3 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_macro   0x00016d93      0x23c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_macro    0x00000000    0x17987
+ .debug_macro   0x00000000      0x1cc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000001cc      0xac6 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000c92       0xd6 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000d68       0x2e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000d96       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000db8       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000dda       0x8e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000e68       0x51 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000eb9      0x103 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00000fbc       0x6a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001026      0x1df CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001205       0x1c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001221       0x22 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001243       0xbd CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00001300      0xd23 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00002023     0xe09e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000100c1       0x6d CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001012e     0x34a2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000135d0      0x190 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00013760       0x5c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000137bc      0x5bc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00013d78      0x289 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014001      0x1cb CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000141cc      0x114 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000142e0      0x1b2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014492       0x27 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000144b9      0x136 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000145ef      0x1bc CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000147ab       0x34 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000147df       0x3c CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001481b       0x57 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014872       0x87 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000148f9      0x240 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014b39      0x140 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014c79      0x28e CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x00014f07      0x217 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001511e      0x287 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000153a5      0x46a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001580f      0x1b5 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000159c4      0x8ed CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000162b1      0x1ef CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x000164a0       0xeb CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001658b       0x83 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_macro   0x0001660e       0xc8 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x000166d6      0x1f5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x000168cb      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00017397      0x1d1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00017568      0x1e3 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x0001774b      0x23c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_line     0x00000000     0x40d9
- .debug_line    0x00000000      0x7b2 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_line    0x000007b2       0xb8 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
- .debug_line    0x0000086a      0x76c ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_line    0x00000fd6      0x9b1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_line    0x00001987      0xb96 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_line    0x0000251d     0x1121 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_line    0x0000363e      0xa9b ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_line     0x00000000     0x3d2f
+ .debug_line    0x00000000      0x782 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_line    0x00000782       0xb8 ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
+ .debug_line    0x0000083a      0x3f2 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_line    0x00000c2c      0x9b1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_line    0x000015dd      0xb96 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_line    0x00002173     0x1121 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_line    0x00003294      0xa9b ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
 .debug_str      0x00000000    0x8d39a
  .debug_str     0x00000000    0x8d39a CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
-                              0x8c57d (size before relaxing)
+                              0x8c566 (size before relaxing)
  .debug_str     0x0008d39a       0xbe ../bsp/libbsp.a(startup_stm32f103xb.s.obj)
- .debug_str     0x0008d39a    0x8c3bd ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_str     0x0008d39a    0x547c8 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
  .debug_str     0x0008d39a    0x8cace ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_str     0x0008d39a    0x8ca1a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_str     0x0008d39a    0x8c7ca ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
@@ -1442,10 +1387,10 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
  .comment       0x00000039       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
  .comment       0x00000039       0x3a /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
 
-.debug_frame    0x00000000      0x690
- .debug_frame   0x00000000       0x90 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
- .debug_frame   0x00000090       0x30 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
- .debug_frame   0x000000c0      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_frame   0x0000028c      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_frame   0x00000428      0x184 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_frame   0x000005ac       0xe4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_frame    0x00000000      0x678
+ .debug_frame   0x00000000       0x78 CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+ .debug_frame   0x00000078       0x30 ../bsp/libstm32f1_system_init.a(system_stm32f1xx.c.obj)
+ .debug_frame   0x000000a8      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_frame   0x00000274      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_frame   0x00000410      0x184 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_frame   0x00000594       0xe4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)

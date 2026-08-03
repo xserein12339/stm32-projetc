@@ -16,7 +16,6 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS_ASM
   "DEBUG"
   "STM32F103xB"
-  "USE_HAL_DRIVER"
   )
 
 # The include file search paths:

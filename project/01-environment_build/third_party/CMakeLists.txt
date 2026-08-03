@@ -7,7 +7,7 @@ set(CMSIS_DEVICE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/STM32F1xx_HAL/CMSIS/Device/ST/S
 # CMSIS Core (纯头文件接口库)
 add_library(cmsis_core INTERFACE)
 target_include_directories(cmsis_core INTERFACE
-    ${CMSIS_CORE_DIR}/Include            # ✅ core_cm3.h, cmsis_gcc.h 等
+    ${CMSIS_CORE_DIR}/Include            # core_cm3.h, cmsis_gcc.h 等
 )
 
 # CMSIS Device (芯片头文件 + 型号宏)
@@ -16,10 +16,6 @@ target_include_directories(stm32f1_cmsis_device INTERFACE
     ${CMSIS_DEVICE_DIR}/Include
 )
 target_link_libraries(stm32f1_cmsis_device INTERFACE cmsis_core)
-target_compile_definitions(stm32f1_cmsis_device INTERFACE
-    STM32F103xB                       
-)
-
 
 # STM32F1xx HAL Driver
 add_library(stm32f1_hal STATIC
@@ -51,10 +47,11 @@ target_link_libraries(stm32f1_hal PUBLIC
     stm32f1_cmsis_device                 # 自动传递 CMSIS 路径 + STM32F103xB 宏
 )
 
-target_compile_definitions(stm32f1_hal PUBLIC
+target_compile_definitions(stm32f1_hal PRIVATE
     USE_HAL_DRIVER                       # HAL 驱动总开关
 )
 
+# 编译设置
 target_compile_options(stm32f1_hal PRIVATE
     -Wall
     -Wno-unused-parameter

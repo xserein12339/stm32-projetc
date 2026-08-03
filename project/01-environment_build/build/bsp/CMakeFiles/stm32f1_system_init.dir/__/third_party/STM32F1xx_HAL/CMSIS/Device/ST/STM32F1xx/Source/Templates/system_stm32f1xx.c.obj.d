@@ -13,29 +13,4 @@ bsp/CMakeFiles/stm32f1_system_init.dir/__/third_party/STM32F1xx_HAL/CMSIS/Device
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_version.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_compiler.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_gcc.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/stm32f1xx_hal_conf.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
- /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h

@@ -41,7 +41,7 @@ add_subdirectory(bsp)           # 板级支持包 (依赖 third_party)
 # add_subdirectory(dal)           # 数据访问层 (依赖 bsp)
 # add_subdirectory(middleware)    # 中间件 (依赖 dal/bsp)
 # add_subdirectory(svc)           # 服务层 (依赖 middleware/dal)
-add_subdirectory(app)           # ⭐ 应用入口 (定义最终 ELF + hex/bin)
+add_subdirectory(app)           # 应用入口 (定义最终 ELF + hex/bin)
 
 # =============================================================================
 # 注意: 不要在此处再定义 add_executable!

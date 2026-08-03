@@ -1,4 +1,4 @@
-#========== 编译产物 ==========
+# ========== 编译产物 ==========
 *.o
 *.d
 *.elf
@@ -7,11 +7,22 @@
 *.map
 *.out
 *.exe
-*.a
 *.so
-*.lib
 
-#========== 构建目录 ==========
+# 仅忽略构建输出目录中的 .a/.lib，保留源码树中的预编译库
+build/**/*.a
+build/**/*.lib
+Build/**/*.a
+Build/**/*.lib
+Debug/**/*.a
+Release/**/*.a
+obj/**/*.a
+output/**/*.a
+bin/**/*.a
+cmake-build-*/**/*.a
+cmake-build-*/**/*.lib
+
+# ========== 构建目录 ==========
 build/
 Build/
 Debug/
@@ -21,20 +32,30 @@ output/
 bin/
 generated/
 
-#========== IDE 配置文件 ==========
-#vscode
+# ========== CMake 配置 ==========
+# 用户级预设与设置（个人覆盖，不应提交）
+CMakeUserPresets.json
+CMakeSettings.json
+.cache/
+
+# 编译数据库（可选：若团队约定共享则删除此行）
+compile_commands.json
+
+# ========== IDE 配置文件 ==========
+# VS Code
 .vscode/
 .code-workspace
 *.code-workspace
 
-#STM32CubeIDE
+# STM32CubeIDE / Eclipse
 .cproject
 .project
 .settings/
 .metadata/
 *.launch
+.cubeide/
 
-#Keil
+# Keil MDK
 *.uvguix.*
 *.uvoptx
 *.scvd
@@ -43,19 +64,48 @@ RTE/
 *.uvopt
 *.uvguix
 
-#IAR
+# IAR EWARM
 *.ewd
 *.ewp
 *.eww
 *.dep
-Debug/
-Release/
 
-#CLion
+# CLion / JetBrains
 .idea/
 cmake-build-*/
 
-#========== 个人配置文件 ==========
+# ========== 调试器运行时产物 ==========
+*.gdb_history
+.gdbinit.local
+openocd.log
+jlink.log
+*.svd.bak
+*.trace
+*.rtt
+
+# ========== STM32CubeMX ==========
+*.ioc.bak
+MX_Device.xml
+.stm32cubemx
+
+# ========== Doxygen 文档生成 ==========
+docs/html/
+docs/latex/
+
+# ========== 测试相关 ==========
+coverage/
+*.gcno
+*.gcda
+*.gcov
+
+# ========== Python 虚拟环境 ==========
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+
+# ========== 个人配置与临时文件 ==========
 *.user
 *.user.pre
 *.user.release
@@ -64,8 +114,6 @@ cmake-build-*/
 *.local
 *.orig
 *.bak
-
-#========== 临时文件 ==========
 *.tmp
 *.temp
 *.log
@@ -78,26 +126,8 @@ cmake-build-*/
 .DS_Store
 Thumbs.db
 
-#========== 工具生成 ==========
-#STM32CubeMX生成的一些临时文件
-*.ioc.bak
-MX_Device.xml
+# ========== 项目特定忽略 ==========
 
-#Doxygen生成
-docs/html
-docs/latex/
 
-#========== 测试相关 ==========
-coverage/
-*.gcno
-*.gcda
-*.gcov
+# ========== 自己添加的忽略 ==========
 
-#========== python 虚拟环境 ==========
-venv/
-env/
-.env
-__pycache__/
-*.pyc
-
-#========== 自己添加的忽略 =========

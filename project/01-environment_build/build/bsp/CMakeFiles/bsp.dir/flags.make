@@ -3,13 +3,13 @@
 
 # compile ASM with /opt/xpack-gcc/bin/arm-none-eabi-gcc
 # compile C with /opt/xpack-gcc/bin/arm-none-eabi-gcc
-ASM_DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
+ASM_DEFINES = -DDEBUG -DSTM32F103xB
 
 ASM_INCLUDES = -I/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include
 
 ASM_FLAGS = -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -x assembler-with-cpp -g -ffunction-sections -fdata-sections -fno-common -Wall -Og -g3 -gdwarf-2
 
-C_DEFINES = -DDEBUG -DSTM32F103xB -DUSE_HAL_DRIVER
+C_DEFINES = -DDEBUG -DSTM32F103xB
 
 C_INCLUDES = -I/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include -I/home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include
 
