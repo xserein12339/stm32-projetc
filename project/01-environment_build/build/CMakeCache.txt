@@ -14,9 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//STM32F103C8Tx Linker Script
-BSP_LINKER_SCRIPT:FILEPATH=/home/xiamu/git/stm32_project/project/01-environment_build/bsp/linker/STM32F103C8Tx_FLASH.ld
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/opt/xpack-gcc/bin/arm-none-eabi-addr2line
 
@@ -221,6 +218,9 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/xiamu/git/stm32_project/project/01-environme
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Linker script for STM32F103C8Tx
+LINKER_SCRIPT:FILEPATH=/home/xiamu/git/stm32_project/project/01-environment_build/target/stm32_f103c8t6/STM32F103C8Tx_FLASH.ld
+
 //Value Computed by CMake
 stm32f103_test_BINARY_DIR:STATIC=/home/xiamu/git/stm32_project/project/01-environment_build/build
 
@@ -345,7 +345,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

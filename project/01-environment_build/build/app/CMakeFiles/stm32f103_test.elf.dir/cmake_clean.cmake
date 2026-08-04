@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj"
-  "CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj.d"
+  "CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj"
+  "CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj.d"
+  "CMakeFiles/stm32f103_test.elf.dir/main.c.obj"
+  "CMakeFiles/stm32f103_test.elf.dir/main.c.obj.d"
   "stm32f103_test.elf"
   "stm32f103_test.elf.pdb"
 )

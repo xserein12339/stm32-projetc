@@ -17,10 +17,8 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Build type" FORCE)
 endif()
 
-# ⭐ 全局编译选项 (所有子模块自动继承)
+# 全局编译选项 (所有子模块自动继承)
 add_compile_options(
-    -ffunction-sections
-    -fdata-sections
     -fno-common
     -Wall
 )
@@ -34,17 +32,34 @@ else()
 endif()
 
 # =============================================================================
-# 模块添加 (严格按依赖顺序，自底向上)
+# 第三方路径变量 (target，third_party依赖)
 # =============================================================================
-add_subdirectory(third_party)   # CMSIS + HAL (无外部依赖)
-add_subdirectory(bsp)           # 板级支持包 (依赖 third_party)
-# add_subdirectory(dal)           # 数据访问层 (依赖 bsp)
-# add_subdirectory(middleware)    # 中间件 (依赖 dal/bsp)
-# add_subdirectory(svc)           # 服务层 (依赖 middleware/dal)
-add_subdirectory(app)           # 应用入口 (定义最终 ELF + hex/bin)
+set(THIRD_PARTY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
+set(HAL_DRIVER_DIR  ${THIRD_PARTY_DIR}/STM32F1xx_HAL/STM32F1xx_HAL_Driver)
+set(CMSIS_CORE_DIR  ${THIRD_PARTY_DIR}/STM32F1xx_HAL/CMSIS/Core)
+set(CMSIS_DEVICE_DIR ${THIRD_PARTY_DIR}/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx)
 
 # =============================================================================
-# 注意: 不要在此处再定义 add_executable!
-# 最终固件目标 ${PROJECT_NAME}.elf 已在 app/CMakeLists.txt 中完整定义
-# 包括: main.c、链接脚本、nano.specs、hex/bin 生成
+# CMSIS 纯头文件接口库 (零编译，被 target/ 和 third_party/ 共同依赖)
 # =============================================================================
+add_library(cmsis_core INTERFACE)
+target_include_directories(cmsis_core INTERFACE
+    ${CMSIS_CORE_DIR}/Include            # core_cm3.h, cmsis_gcc.h 等
+)
+
+add_library(stm32f1_cmsis_device INTERFACE)
+target_include_directories(stm32f1_cmsis_device INTERFACE
+    ${CMSIS_DEVICE_DIR}/Include          # stm32f1xx.h, system_stm32f1xx.h 等
+)
+target_link_libraries(stm32f1_cmsis_device INTERFACE cmsis_core)
+
+# =============================================================================
+# 模块添加 (严格按依赖顺序，自底向上)
+# =============================================================================
+add_subdirectory(target/stm32_f103c8t6) # 目标库 (启动文件、链接脚本)
+add_subdirectory(third_party)           # HAL 驱动 + FreeRTOS
+add_subdirectory(bsp)           # 板级支持包 (依赖 third_party)
+add_subdirectory(dal)           # 设备抽象层
+add_subdirectory(middleware)    # 中间件
+add_subdirectory(svc)           # 服务层 (依赖 middleware/dal)
+add_subdirectory(app)           # 应用入口 (定义最终 ELF + hex/bin)

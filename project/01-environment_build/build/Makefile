@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named chip_runtime
+
+# Build rule for target.
+chip_runtime: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chip_runtime
+.PHONY : chip_runtime
+
+# fast build rule for target.
+chip_runtime/fast:
+	$(MAKE) $(MAKESILENT) -f target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/build.make target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/build
+.PHONY : chip_runtime/fast
+
+#=============================================================================
+# Target rules for targets named freertos_kernel
+
+# Build rule for target.
+freertos_kernel: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 freertos_kernel
+.PHONY : freertos_kernel
+
+# fast build rule for target.
+freertos_kernel/fast:
+	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/build
+.PHONY : freertos_kernel/fast
+
+#=============================================================================
 # Target rules for targets named stm32f1_hal
 
 # Build rule for target.
@@ -130,19 +156,6 @@ stm32f1_hal/fast:
 .PHONY : stm32f1_hal/fast
 
 #=============================================================================
-# Target rules for targets named stm32f1_system_init
-
-# Build rule for target.
-stm32f1_system_init: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stm32f1_system_init
-.PHONY : stm32f1_system_init
-
-# fast build rule for target.
-stm32f1_system_init/fast:
-	$(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/stm32f1_system_init.dir/build.make bsp/CMakeFiles/stm32f1_system_init.dir/build
-.PHONY : stm32f1_system_init/fast
-
-#=============================================================================
 # Target rules for targets named bsp
 
 # Build rule for target.
@@ -154,6 +167,71 @@ bsp: cmake_check_build_system
 bsp/fast:
 	$(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/build
 .PHONY : bsp/fast
+
+#=============================================================================
+# Target rules for targets named dal_display
+
+# Build rule for target.
+dal_display: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal_display
+.PHONY : dal_display
+
+# fast build rule for target.
+dal_display/fast:
+	$(MAKE) $(MAKESILENT) -f dal/dal_display/CMakeFiles/dal_display.dir/build.make dal/dal_display/CMakeFiles/dal_display.dir/build
+.PHONY : dal_display/fast
+
+#=============================================================================
+# Target rules for targets named dal_motor
+
+# Build rule for target.
+dal_motor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal_motor
+.PHONY : dal_motor
+
+# fast build rule for target.
+dal_motor/fast:
+	$(MAKE) $(MAKESILENT) -f dal/dal_motor/CMakeFiles/dal_motor.dir/build.make dal/dal_motor/CMakeFiles/dal_motor.dir/build
+.PHONY : dal_motor/fast
+
+#=============================================================================
+# Target rules for targets named mw_pid
+
+# Build rule for target.
+mw_pid: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mw_pid
+.PHONY : mw_pid
+
+# fast build rule for target.
+mw_pid/fast:
+	$(MAKE) $(MAKESILENT) -f middleware/mw_pid/CMakeFiles/mw_pid.dir/build.make middleware/mw_pid/CMakeFiles/mw_pid.dir/build
+.PHONY : mw_pid/fast
+
+#=============================================================================
+# Target rules for targets named svc_mot_ctrl
+
+# Build rule for target.
+svc_mot_ctrl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 svc_mot_ctrl
+.PHONY : svc_mot_ctrl
+
+# fast build rule for target.
+svc_mot_ctrl/fast:
+	$(MAKE) $(MAKESILENT) -f svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/build.make svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/build
+.PHONY : svc_mot_ctrl/fast
+
+#=============================================================================
+# Target rules for targets named svc_att_algo
+
+# Build rule for target.
+svc_att_algo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 svc_att_algo
+.PHONY : svc_att_algo
+
+# fast build rule for target.
+svc_att_algo/fast:
+	$(MAKE) $(MAKESILENT) -f svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/build.make svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/build
+.PHONY : svc_att_algo/fast
 
 #=============================================================================
 # Target rules for targets named stm32f103_test.elf
@@ -182,17 +260,17 @@ flash/fast:
 .PHONY : flash/fast
 
 #=============================================================================
-# Target rules for targets named app_test
+# Target rules for targets named app_hmi
 
 # Build rule for target.
-app_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_test
-.PHONY : app_test
+app_hmi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app_hmi
+.PHONY : app_hmi
 
 # fast build rule for target.
-app_test/fast:
-	$(MAKE) $(MAKESILENT) -f app/app_test/CMakeFiles/app_test.dir/build.make app/app_test/CMakeFiles/app_test.dir/build
-.PHONY : app_test/fast
+app_hmi/fast:
+	$(MAKE) $(MAKESILENT) -f app/app_hmi/CMakeFiles/app_hmi.dir/build.make app/app_hmi/CMakeFiles/app_hmi.dir/build
+.PHONY : app_hmi/fast
 
 # Help Target
 help:
@@ -203,11 +281,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... flash"
-	@echo "... app_test"
+	@echo "... app_hmi"
 	@echo "... bsp"
+	@echo "... chip_runtime"
+	@echo "... dal_display"
+	@echo "... dal_motor"
+	@echo "... freertos_kernel"
+	@echo "... mw_pid"
 	@echo "... stm32f103_test.elf"
 	@echo "... stm32f1_hal"
-	@echo "... stm32f1_system_init"
+	@echo "... svc_att_algo"
+	@echo "... svc_mot_ctrl"
 .PHONY : help
 
 

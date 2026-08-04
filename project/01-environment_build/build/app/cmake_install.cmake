@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/xiamu/git/stm32_project/project/01-environment_build/build/app/app_test/cmake_install.cmake")
+  include("/home/xiamu/git/stm32_project/project/01-environment_build/build/app/app_hmi/cmake_install.cmake")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT

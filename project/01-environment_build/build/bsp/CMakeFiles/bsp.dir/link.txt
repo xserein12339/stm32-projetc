@@ -1,2 +1,2 @@
-/opt/xpack-gcc/bin/arm-none-eabi-ar qc libbsp.a CMakeFiles/bsp.dir/src/bsp_uart.c.obj CMakeFiles/bsp.dir/startup/startup_stm32f103xb.s.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libbsp.a CMakeFiles/bsp.dir/src/board_v1.c.obj CMakeFiles/bsp.dir/src/bsp_gpio.c.obj
 /opt/xpack-gcc/bin/arm-none-eabi-ranlib libbsp.a

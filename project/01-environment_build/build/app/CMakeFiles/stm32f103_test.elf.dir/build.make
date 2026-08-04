@@ -72,35 +72,53 @@ include app/CMakeFiles/stm32f103_test.elf.dir/flags.make
 app/CMakeFiles/stm32f103_test.elf.dir/codegen:
 .PHONY : app/CMakeFiles/stm32f103_test.elf.dir/codegen
 
-app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj: app/CMakeFiles/stm32f103_test.elf.dir/flags.make
-app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/app/src/main.c
-app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj: app/CMakeFiles/stm32f103_test.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj"
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj -MF CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj.d -o CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj -c /home/xiamu/git/stm32_project/project/01-environment_build/app/src/main.c
+app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: app/CMakeFiles/stm32f103_test.elf.dir/flags.make
+app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/app/main.c
+app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: app/CMakeFiles/stm32f103_test.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj -MF CMakeFiles/stm32f103_test.elf.dir/main.c.obj.d -o CMakeFiles/stm32f103_test.elf.dir/main.c.obj -c /home/xiamu/git/stm32_project/project/01-environment_build/app/main.c
 
-app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/stm32f103_test.elf.dir/src/main.c.i"
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiamu/git/stm32_project/project/01-environment_build/app/src/main.c > CMakeFiles/stm32f103_test.elf.dir/src/main.c.i
+app/CMakeFiles/stm32f103_test.elf.dir/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/stm32f103_test.elf.dir/main.c.i"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiamu/git/stm32_project/project/01-environment_build/app/main.c > CMakeFiles/stm32f103_test.elf.dir/main.c.i
 
-app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/stm32f103_test.elf.dir/src/main.c.s"
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/app/src/main.c -o CMakeFiles/stm32f103_test.elf.dir/src/main.c.s
+app/CMakeFiles/stm32f103_test.elf.dir/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/stm32f103_test.elf.dir/main.c.s"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/app/main.c -o CMakeFiles/stm32f103_test.elf.dir/main.c.s
+
+app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj: app/CMakeFiles/stm32f103_test.elf.dir/flags.make
+app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/app/freertos_hooks.c
+app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj: app/CMakeFiles/stm32f103_test.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj -MF CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj.d -o CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj -c /home/xiamu/git/stm32_project/project/01-environment_build/app/freertos_hooks.c
+
+app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.i"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiamu/git/stm32_project/project/01-environment_build/app/freertos_hooks.c > CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.i
+
+app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.s"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/app/freertos_hooks.c -o CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.s
 
 # Object files for target stm32f103_test.elf
 stm32f103_test_elf_OBJECTS = \
-"CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj"
+"CMakeFiles/stm32f103_test.elf.dir/main.c.obj" \
+"CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj"
 
 # External object files for target stm32f103_test.elf
 stm32f103_test_elf_EXTERNAL_OBJECTS =
 
-app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
+app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
 app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/build.make
-app/stm32f103_test.elf: app/app_test/libapp_test.a
+app/stm32f103_test.elf: app/app_hmi/libapp_hmi.a
 app/stm32f103_test.elf: bsp/libbsp.a
-app/stm32f103_test.elf: bsp/libstm32f1_system_init.a
+app/stm32f103_test.elf: dal/dal_display/libdal_display.a
+app/stm32f103_test.elf: target/stm32_f103c8t6/libchip_runtime.a
+app/stm32f103_test.elf: third_party/libfreertos_kernel.a
 app/stm32f103_test.elf: third_party/libstm32f1_hal.a
 app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable stm32f103_test.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable stm32f103_test.elf"
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stm32f103_test.elf.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Generating firmware and printing size..."
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/app && /opt/xpack-gcc/bin/arm-none-eabi-objcopy -O ihex /home/xiamu/git/stm32_project/project/01-environment_build/build/app/stm32f103_test.elf stm32f103_test.hex

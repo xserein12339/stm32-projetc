@@ -117,20 +117,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-bsp/CMakeFiles/stm32f1_system_init.dir/rule:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bsp/CMakeFiles/stm32f1_system_init.dir/rule
-.PHONY : bsp/CMakeFiles/stm32f1_system_init.dir/rule
-
-# Convenience name for target.
-stm32f1_system_init: bsp/CMakeFiles/stm32f1_system_init.dir/rule
-.PHONY : stm32f1_system_init
-
-# fast build rule for target.
-stm32f1_system_init/fast:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/stm32f1_system_init.dir/build.make bsp/CMakeFiles/stm32f1_system_init.dir/build
-.PHONY : stm32f1_system_init/fast
-
-# Convenience name for target.
 bsp/CMakeFiles/bsp.dir/rule:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bsp/CMakeFiles/bsp.dir/rule
 .PHONY : bsp/CMakeFiles/bsp.dir/rule
@@ -144,61 +130,53 @@ bsp/fast:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/build
 .PHONY : bsp/fast
 
-__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.obj: __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.obj
-.PHONY : __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.obj
+src/board_v1.obj: src/board_v1.c.obj
+.PHONY : src/board_v1.obj
 
 # target to build an object file
-__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.obj:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/stm32f1_system_init.dir/build.make bsp/CMakeFiles/stm32f1_system_init.dir/__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.obj
-.PHONY : __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.obj
+src/board_v1.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/board_v1.c.obj
+.PHONY : src/board_v1.c.obj
 
-__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.i: __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.i
-.PHONY : __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.i
+src/board_v1.i: src/board_v1.c.i
+.PHONY : src/board_v1.i
 
 # target to preprocess a source file
-__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.i:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/stm32f1_system_init.dir/build.make bsp/CMakeFiles/stm32f1_system_init.dir/__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.i
-.PHONY : __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.i
+src/board_v1.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/board_v1.c.i
+.PHONY : src/board_v1.c.i
 
-__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.s: __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.s
-.PHONY : __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.s
+src/board_v1.s: src/board_v1.c.s
+.PHONY : src/board_v1.s
 
 # target to generate assembly for a file
-__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.s:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/stm32f1_system_init.dir/build.make bsp/CMakeFiles/stm32f1_system_init.dir/__/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.s
-.PHONY : __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.c.s
+src/board_v1.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/board_v1.c.s
+.PHONY : src/board_v1.c.s
 
-src/bsp_uart.obj: src/bsp_uart.c.obj
-.PHONY : src/bsp_uart.obj
+src/bsp_gpio.obj: src/bsp_gpio.c.obj
+.PHONY : src/bsp_gpio.obj
 
 # target to build an object file
-src/bsp_uart.c.obj:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj
-.PHONY : src/bsp_uart.c.obj
+src/bsp_gpio.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_gpio.c.obj
+.PHONY : src/bsp_gpio.c.obj
 
-src/bsp_uart.i: src/bsp_uart.c.i
-.PHONY : src/bsp_uart.i
+src/bsp_gpio.i: src/bsp_gpio.c.i
+.PHONY : src/bsp_gpio.i
 
 # target to preprocess a source file
-src/bsp_uart.c.i:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.i
-.PHONY : src/bsp_uart.c.i
+src/bsp_gpio.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_gpio.c.i
+.PHONY : src/bsp_gpio.c.i
 
-src/bsp_uart.s: src/bsp_uart.c.s
-.PHONY : src/bsp_uart.s
+src/bsp_gpio.s: src/bsp_gpio.c.s
+.PHONY : src/bsp_gpio.s
 
 # target to generate assembly for a file
-src/bsp_uart.c.s:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.s
-.PHONY : src/bsp_uart.c.s
-
-startup/startup_stm32f103xb.obj: startup/startup_stm32f103xb.s.obj
-.PHONY : startup/startup_stm32f103xb.obj
-
-# target to build an object file
-startup/startup_stm32f103xb.s.obj:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/startup/startup_stm32f103xb.s.obj
-.PHONY : startup/startup_stm32f103xb.s.obj
+src/bsp_gpio.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_gpio.c.s
+.PHONY : src/bsp_gpio.c.s
 
 # Help Target
 help:
@@ -209,14 +187,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bsp"
-	@echo "... stm32f1_system_init"
-	@echo "... __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.obj"
-	@echo "... __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.i"
-	@echo "... __/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Source/Templates/system_stm32f1xx.s"
-	@echo "... src/bsp_uart.obj"
-	@echo "... src/bsp_uart.i"
-	@echo "... src/bsp_uart.s"
-	@echo "... startup/startup_stm32f103xb.obj"
+	@echo "... src/board_v1.obj"
+	@echo "... src/board_v1.i"
+	@echo "... src/board_v1.s"
+	@echo "... src/bsp_gpio.obj"
+	@echo "... src/bsp_gpio.i"
+	@echo "... src/bsp_gpio.s"
 .PHONY : help
 
 

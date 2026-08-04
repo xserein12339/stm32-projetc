@@ -1,40 +1,27 @@
-# =============================================================================
-# bsp/CMakeLists.txt - Board Support Package
-# =============================================================================
 
-# System Init (system_stm32f1xx.c)
-get_target_property(CMSIS_DEVICE_INC stm32f1_cmsis_device INTERFACE_INCLUDE_DIRECTORIES)
-
-add_library(stm32f1_system_init STATIC
-    ${CMSIS_DEVICE_INC}/../Source/Templates/system_stm32f1xx.c
-)
-
-# 链接 stm32f1_hal
-target_link_libraries(stm32f1_system_init PUBLIC
-    stm32f1_hal
-)
-
-# BSP 静态库
+# BSP静态库
 add_library(bsp STATIC
-    
-    src/bsp_uart.c
+    src/board_v1.c
+    src/bsp_gpio.c
 
-    # 启动文件
-    ${CMAKE_CURRENT_SOURCE_DIR}/startup/startup_stm32f103xb.s
 )
 
 target_include_directories(bsp PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/inc
 )
 
-# 3. 导出链接脚本
-set(BSP_LINKER_SCRIPT
-    "${CMAKE_CURRENT_SOURCE_DIR}/linker/STM32F103C8Tx_FLASH.ld"
-    CACHE FILEPATH "STM32F103C8Tx Linker Script"
+target_compile_options(bsp PRIVATE
+    -Wall
+    -Wextra
+    -Wno-unused-parameter
 )
 
-# 4. BSP 依赖关系
-target_link_libraries(bsp PUBLIC
-    stm32f1_hal
-    stm32f1_system_init
+# 添加BSP依赖
+target_link_libraries(bsp
+    PUBLIC
+        chip_runtime
+        dal_display
+        freertos_kernel
+    PRIVATE
+        stm32f1_hal
 )

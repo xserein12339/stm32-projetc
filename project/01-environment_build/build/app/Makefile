@@ -144,29 +144,53 @@ flash/fast:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/flash.dir/build.make app/CMakeFiles/flash.dir/build
 .PHONY : flash/fast
 
-src/main.obj: src/main.c.obj
-.PHONY : src/main.obj
+freertos_hooks.obj: freertos_hooks.c.obj
+.PHONY : freertos_hooks.obj
 
 # target to build an object file
-src/main.c.obj:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.obj
-.PHONY : src/main.c.obj
+freertos_hooks.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+.PHONY : freertos_hooks.c.obj
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+freertos_hooks.i: freertos_hooks.c.i
+.PHONY : freertos_hooks.i
 
 # target to preprocess a source file
-src/main.c.i:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.i
-.PHONY : src/main.c.i
+freertos_hooks.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.i
+.PHONY : freertos_hooks.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+freertos_hooks.s: freertos_hooks.c.s
+.PHONY : freertos_hooks.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/src/main.c.s
-.PHONY : src/main.c.s
+freertos_hooks.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.s
+.PHONY : freertos_hooks.c.s
+
+main.obj: main.c.obj
+.PHONY : main.obj
+
+# target to build an object file
+main.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+.PHONY : main.c.obj
+
+main.i: main.c.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -178,9 +202,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... flash"
 	@echo "... stm32f103_test.elf"
-	@echo "... src/main.obj"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... freertos_hooks.obj"
+	@echo "... freertos_hooks.i"
+	@echo "... freertos_hooks.s"
+	@echo "... main.obj"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

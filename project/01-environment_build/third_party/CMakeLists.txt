@@ -1,23 +1,32 @@
+# ==================== FreeRTOS 内核库 ====================
+set(FREERTOS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/FreeRTOS)
 
-# 设置目录
-set(HAL_DRIVER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/STM32F1xx_HAL/STM32F1xx_HAL_Driver)
-set(CMSIS_CORE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/STM32F1xx_HAL/CMSIS/Core)
-set(CMSIS_DEVICE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx)
-
-# CMSIS Core (纯头文件接口库)
-add_library(cmsis_core INTERFACE)
-target_include_directories(cmsis_core INTERFACE
-    ${CMSIS_CORE_DIR}/Include            # core_cm3.h, cmsis_gcc.h 等
+add_library(freertos_kernel STATIC
+    ${FREERTOS_DIR}/tasks.c
+    ${FREERTOS_DIR}/queue.c
+    ${FREERTOS_DIR}/list.c
+    ${FREERTOS_DIR}/timers.c
+    ${FREERTOS_DIR}/event_groups.c
+    ${FREERTOS_DIR}/stream_buffer.c
+    ${FREERTOS_DIR}/portable/GCC/ARM_CM3/port.c
+    ${FREERTOS_DIR}/portable/MemMang/heap_4.c
 )
 
-# CMSIS Device (芯片头文件 + 型号宏)
-add_library(stm32f1_cmsis_device INTERFACE)
-target_include_directories(stm32f1_cmsis_device INTERFACE
-    ${CMSIS_DEVICE_DIR}/Include
+target_include_directories(freertos_kernel PUBLIC
+    ${FREERTOS_DIR}/include
+    ${FREERTOS_DIR}/portable/GCC/ARM_CM3
+    ${FREERTOS_DIR}/Config
 )
-target_link_libraries(stm32f1_cmsis_device INTERFACE cmsis_core)
 
-# STM32F1xx HAL Driver
+# 获取芯片型号宏
+target_link_libraries(freertos_kernel PUBLIC stm32f103c8tx_target)
+
+# FreeRTOS 全局编译开关
+target_compile_definitions(freertos_kernel PUBLIC
+    USE_FREERTOS
+)
+
+# ==================== STM32F1xx HAL 驱动 ====================
 add_library(stm32f1_hal STATIC
     # --- 基础核心模块 ---
     ${HAL_DRIVER_DIR}/Src/stm32f1xx_hal.c
@@ -38,16 +47,21 @@ add_library(stm32f1_hal STATIC
     ${HAL_DRIVER_DIR}/Src/stm32f1xx_hal_rtc.c
 )
 
+# 添加芯片依赖宏
+target_link_libraries(stm32f1_hal PUBLIC
+    stm32f103c8tx_target    
+)
+
 target_include_directories(stm32f1_hal PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}          # stm32f1xx_hal_conf.h 所在目录
     ${HAL_DRIVER_DIR}/Inc                # HAL 驱动头文件
 )
 
 target_link_libraries(stm32f1_hal PUBLIC
-    stm32f1_cmsis_device                 # 自动传递 CMSIS 路径 + STM32F103xB 宏
+    stm32f1_cmsis_device                 # 自动传递 CMSIS 路径
 )
 
-target_compile_definitions(stm32f1_hal PRIVATE
+target_compile_definitions(stm32f1_hal PUBLIC
     USE_HAL_DRIVER                       # HAL 驱动总开关
 )
 
@@ -56,3 +70,5 @@ target_compile_options(stm32f1_hal PRIVATE
     -Wall
     -Wno-unused-parameter
 )
+
+

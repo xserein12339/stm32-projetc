@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+third_party/CMakeFiles/freertos_kernel.dir/rule:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/CMakeFiles/freertos_kernel.dir/rule
+.PHONY : third_party/CMakeFiles/freertos_kernel.dir/rule
+
+# Convenience name for target.
+freertos_kernel: third_party/CMakeFiles/freertos_kernel.dir/rule
+.PHONY : freertos_kernel
+
+# fast build rule for target.
+freertos_kernel/fast:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/build
+.PHONY : freertos_kernel/fast
+
+# Convenience name for target.
 third_party/CMakeFiles/stm32f1_hal.dir/rule:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 third_party/CMakeFiles/stm32f1_hal.dir/rule
 .PHONY : third_party/CMakeFiles/stm32f1_hal.dir/rule
@@ -129,6 +143,198 @@ stm32f1_hal: third_party/CMakeFiles/stm32f1_hal.dir/rule
 stm32f1_hal/fast:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/stm32f1_hal.dir/build.make third_party/CMakeFiles/stm32f1_hal.dir/build
 .PHONY : stm32f1_hal/fast
+
+FreeRTOS/event_groups.obj: FreeRTOS/event_groups.c.obj
+.PHONY : FreeRTOS/event_groups.obj
+
+# target to build an object file
+FreeRTOS/event_groups.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/event_groups.c.obj
+.PHONY : FreeRTOS/event_groups.c.obj
+
+FreeRTOS/event_groups.i: FreeRTOS/event_groups.c.i
+.PHONY : FreeRTOS/event_groups.i
+
+# target to preprocess a source file
+FreeRTOS/event_groups.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/event_groups.c.i
+.PHONY : FreeRTOS/event_groups.c.i
+
+FreeRTOS/event_groups.s: FreeRTOS/event_groups.c.s
+.PHONY : FreeRTOS/event_groups.s
+
+# target to generate assembly for a file
+FreeRTOS/event_groups.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/event_groups.c.s
+.PHONY : FreeRTOS/event_groups.c.s
+
+FreeRTOS/list.obj: FreeRTOS/list.c.obj
+.PHONY : FreeRTOS/list.obj
+
+# target to build an object file
+FreeRTOS/list.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/list.c.obj
+.PHONY : FreeRTOS/list.c.obj
+
+FreeRTOS/list.i: FreeRTOS/list.c.i
+.PHONY : FreeRTOS/list.i
+
+# target to preprocess a source file
+FreeRTOS/list.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/list.c.i
+.PHONY : FreeRTOS/list.c.i
+
+FreeRTOS/list.s: FreeRTOS/list.c.s
+.PHONY : FreeRTOS/list.s
+
+# target to generate assembly for a file
+FreeRTOS/list.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/list.c.s
+.PHONY : FreeRTOS/list.c.s
+
+FreeRTOS/portable/GCC/ARM_CM3/port.obj: FreeRTOS/portable/GCC/ARM_CM3/port.c.obj
+.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.obj
+
+# target to build an object file
+FreeRTOS/portable/GCC/ARM_CM3/port.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.obj
+.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.c.obj
+
+FreeRTOS/portable/GCC/ARM_CM3/port.i: FreeRTOS/portable/GCC/ARM_CM3/port.c.i
+.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.i
+
+# target to preprocess a source file
+FreeRTOS/portable/GCC/ARM_CM3/port.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.i
+.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.c.i
+
+FreeRTOS/portable/GCC/ARM_CM3/port.s: FreeRTOS/portable/GCC/ARM_CM3/port.c.s
+.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.s
+
+# target to generate assembly for a file
+FreeRTOS/portable/GCC/ARM_CM3/port.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.s
+.PHONY : FreeRTOS/portable/GCC/ARM_CM3/port.c.s
+
+FreeRTOS/portable/MemMang/heap_4.obj: FreeRTOS/portable/MemMang/heap_4.c.obj
+.PHONY : FreeRTOS/portable/MemMang/heap_4.obj
+
+# target to build an object file
+FreeRTOS/portable/MemMang/heap_4.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/MemMang/heap_4.c.obj
+.PHONY : FreeRTOS/portable/MemMang/heap_4.c.obj
+
+FreeRTOS/portable/MemMang/heap_4.i: FreeRTOS/portable/MemMang/heap_4.c.i
+.PHONY : FreeRTOS/portable/MemMang/heap_4.i
+
+# target to preprocess a source file
+FreeRTOS/portable/MemMang/heap_4.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/MemMang/heap_4.c.i
+.PHONY : FreeRTOS/portable/MemMang/heap_4.c.i
+
+FreeRTOS/portable/MemMang/heap_4.s: FreeRTOS/portable/MemMang/heap_4.c.s
+.PHONY : FreeRTOS/portable/MemMang/heap_4.s
+
+# target to generate assembly for a file
+FreeRTOS/portable/MemMang/heap_4.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/MemMang/heap_4.c.s
+.PHONY : FreeRTOS/portable/MemMang/heap_4.c.s
+
+FreeRTOS/queue.obj: FreeRTOS/queue.c.obj
+.PHONY : FreeRTOS/queue.obj
+
+# target to build an object file
+FreeRTOS/queue.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/queue.c.obj
+.PHONY : FreeRTOS/queue.c.obj
+
+FreeRTOS/queue.i: FreeRTOS/queue.c.i
+.PHONY : FreeRTOS/queue.i
+
+# target to preprocess a source file
+FreeRTOS/queue.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/queue.c.i
+.PHONY : FreeRTOS/queue.c.i
+
+FreeRTOS/queue.s: FreeRTOS/queue.c.s
+.PHONY : FreeRTOS/queue.s
+
+# target to generate assembly for a file
+FreeRTOS/queue.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/queue.c.s
+.PHONY : FreeRTOS/queue.c.s
+
+FreeRTOS/stream_buffer.obj: FreeRTOS/stream_buffer.c.obj
+.PHONY : FreeRTOS/stream_buffer.obj
+
+# target to build an object file
+FreeRTOS/stream_buffer.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/stream_buffer.c.obj
+.PHONY : FreeRTOS/stream_buffer.c.obj
+
+FreeRTOS/stream_buffer.i: FreeRTOS/stream_buffer.c.i
+.PHONY : FreeRTOS/stream_buffer.i
+
+# target to preprocess a source file
+FreeRTOS/stream_buffer.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/stream_buffer.c.i
+.PHONY : FreeRTOS/stream_buffer.c.i
+
+FreeRTOS/stream_buffer.s: FreeRTOS/stream_buffer.c.s
+.PHONY : FreeRTOS/stream_buffer.s
+
+# target to generate assembly for a file
+FreeRTOS/stream_buffer.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/stream_buffer.c.s
+.PHONY : FreeRTOS/stream_buffer.c.s
+
+FreeRTOS/tasks.obj: FreeRTOS/tasks.c.obj
+.PHONY : FreeRTOS/tasks.obj
+
+# target to build an object file
+FreeRTOS/tasks.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/tasks.c.obj
+.PHONY : FreeRTOS/tasks.c.obj
+
+FreeRTOS/tasks.i: FreeRTOS/tasks.c.i
+.PHONY : FreeRTOS/tasks.i
+
+# target to preprocess a source file
+FreeRTOS/tasks.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/tasks.c.i
+.PHONY : FreeRTOS/tasks.c.i
+
+FreeRTOS/tasks.s: FreeRTOS/tasks.c.s
+.PHONY : FreeRTOS/tasks.s
+
+# target to generate assembly for a file
+FreeRTOS/tasks.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/tasks.c.s
+.PHONY : FreeRTOS/tasks.c.s
+
+FreeRTOS/timers.obj: FreeRTOS/timers.c.obj
+.PHONY : FreeRTOS/timers.obj
+
+# target to build an object file
+FreeRTOS/timers.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/timers.c.obj
+.PHONY : FreeRTOS/timers.c.obj
+
+FreeRTOS/timers.i: FreeRTOS/timers.c.i
+.PHONY : FreeRTOS/timers.i
+
+# target to preprocess a source file
+FreeRTOS/timers.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/timers.c.i
+.PHONY : FreeRTOS/timers.c.i
+
+FreeRTOS/timers.s: FreeRTOS/timers.c.s
+.PHONY : FreeRTOS/timers.s
+
+# target to generate assembly for a file
+FreeRTOS/timers.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/timers.c.s
+.PHONY : FreeRTOS/timers.c.s
 
 STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.obj: STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
 .PHONY : STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.obj
@@ -474,7 +680,32 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... freertos_kernel"
 	@echo "... stm32f1_hal"
+	@echo "... FreeRTOS/event_groups.obj"
+	@echo "... FreeRTOS/event_groups.i"
+	@echo "... FreeRTOS/event_groups.s"
+	@echo "... FreeRTOS/list.obj"
+	@echo "... FreeRTOS/list.i"
+	@echo "... FreeRTOS/list.s"
+	@echo "... FreeRTOS/portable/GCC/ARM_CM3/port.obj"
+	@echo "... FreeRTOS/portable/GCC/ARM_CM3/port.i"
+	@echo "... FreeRTOS/portable/GCC/ARM_CM3/port.s"
+	@echo "... FreeRTOS/portable/MemMang/heap_4.obj"
+	@echo "... FreeRTOS/portable/MemMang/heap_4.i"
+	@echo "... FreeRTOS/portable/MemMang/heap_4.s"
+	@echo "... FreeRTOS/queue.obj"
+	@echo "... FreeRTOS/queue.i"
+	@echo "... FreeRTOS/queue.s"
+	@echo "... FreeRTOS/stream_buffer.obj"
+	@echo "... FreeRTOS/stream_buffer.i"
+	@echo "... FreeRTOS/stream_buffer.s"
+	@echo "... FreeRTOS/tasks.obj"
+	@echo "... FreeRTOS/tasks.i"
+	@echo "... FreeRTOS/tasks.s"
+	@echo "... FreeRTOS/timers.obj"
+	@echo "... FreeRTOS/timers.i"
+	@echo "... FreeRTOS/timers.s"
 	@echo "... STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.obj"
 	@echo "... STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.i"
 	@echo "... STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.s"

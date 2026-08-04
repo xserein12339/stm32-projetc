@@ -7,15 +7,14 @@ extern "C" {
 
 /* ======================== 模块使能（按需开启）======================== */
 #define HAL_MODULE_ENABLED
-#define HAL_CORTEX_MODULE_ENABLED      /* NVIC/SysTick */
-#define HAL_RCC_MODULE_ENABLED         /* 时钟树 */
-#define HAL_GPIO_MODULE_ENABLED        /* GPIO */
-#define HAL_DMA_MODULE_ENABLED         /* 多数外设依赖 */
-#define HAL_FLASH_MODULE_ENABLED       /* Flash 读写 */
-#define HAL_PWR_MODULE_ENABLED         /* 低功耗/备份域 */
-#define HAL_EXTI_MODULE_ENABLED        /* 外部中断 */
+#define HAL_CORTEX_MODULE_ENABLED
+#define HAL_RCC_MODULE_ENABLED
+#define HAL_GPIO_MODULE_ENABLED
+#define HAL_DMA_MODULE_ENABLED
+#define HAL_FLASH_MODULE_ENABLED
+#define HAL_PWR_MODULE_ENABLED
+#define HAL_EXTI_MODULE_ENABLED
 
-/* ↓↓↓ 用到哪个取消注释哪个 ↓↓↓ */
 #define HAL_UART_MODULE_ENABLED
 #define HAL_SPI_MODULE_ENABLED
 #define HAL_I2C_MODULE_ENABLED
@@ -25,11 +24,11 @@ extern "C" {
 // #define HAL_WWDG_MODULE_ENABLED
 // #define HAL_IWDG_MODULE_ENABLED
 // #define HAL_CAN_MODULE_ENABLED
-// #define HAL_USB_MODULE_ENABLED         /* F103C8T6 有 USB，需要时开启 */
+// #define HAL_USB_MODULE_ENABLED
 
 /* ======================== 振荡器配置 ======================== */
 #if !defined(HSE_VALUE)
-  #define HSE_VALUE    8000000U 
+  #define HSE_VALUE    8000000U
 #endif
 #if !defined(HSI_VALUE)
   #define HSI_VALUE    8000000U
@@ -45,12 +44,19 @@ extern "C" {
 #define LSE_STARTUP_TIMEOUT    5000U
 
 /* ======================== 系统配置 ======================== */
-#define VDD_VALUE              3300U   /* VDD = 3.3V */
-#define TICK_INT_PRIORITY      0x0FU   /* SysTick 优先级(最低) */
-#define USE_RTOS               0U      /* 裸机设为0; 用FreeRTOS等改为1 */
-#define PREFETCH_ENABLE        1U      /* Flash 预取缓冲 */
+#define VDD_VALUE              3300U
 
-/* 回调函数开关（全部关闭以节省Flash）*/
+#ifdef USE_FREERTOS
+    #define USE_RTOS               0U     
+    #define TICK_INT_PRIORITY      15U
+#else
+    #define USE_RTOS               0U
+    #define TICK_INT_PRIORITY      0x0FU   
+#endif 
+
+#define PREFETCH_ENABLE        1U
+
+/* 回调函数开关（全部关闭以节省 Flash）*/
 #define USE_HAL_ADC_REGISTER_CALLBACKS         0U
 #define USE_HAL_CAN_REGISTER_CALLBACKS         0U
 #define USE_HAL_DAC_REGISTER_CALLBACKS         0U
@@ -65,7 +71,7 @@ extern "C" {
 // #define USE_FULL_ASSERT    1U
 
 /* ======================== SPI CRC ======================== */
-#define USE_SPI_CRC            0U  
+#define USE_SPI_CRC            0U
 
 /* ======================== 头文件包含 ======================== */
 #ifdef HAL_RCC_MODULE_ENABLED
@@ -115,6 +121,7 @@ extern "C" {
 #else
   #define assert_param(expr) ((void)0U)
 #endif
+
 
 #ifdef __cplusplus
 }
