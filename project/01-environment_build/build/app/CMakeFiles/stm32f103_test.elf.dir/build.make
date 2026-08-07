@@ -113,9 +113,10 @@ app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.o
 app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/build.make
 app/stm32f103_test.elf: app/app_hmi/libapp_hmi.a
 app/stm32f103_test.elf: bsp/libbsp.a
-app/stm32f103_test.elf: dal/dal_display/libdal_display.a
+app/stm32f103_test.elf: dal/libdal.a
 app/stm32f103_test.elf: target/stm32_f103c8t6/libchip_runtime.a
 app/stm32f103_test.elf: third_party/libfreertos_kernel.a
+app/stm32f103_test.elf: drv/libdrv.a
 app/stm32f103_test.elf: third_party/libstm32f1_hal.a
 app/stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable stm32f103_test.elf"

@@ -10,5 +10,5 @@ target_include_directories(app_hmi PUBLIC
 
 
 target_link_libraries(app_hmi PRIVATE
-    dal_display
+    dal
 )

@@ -65,6 +65,8 @@ CMAKE_BINARY_DIR = /home/xiamu/git/stm32_project/project/01-environment_build/bu
 # The main recursive "all" target.
 all: target/stm32_f103c8t6/all
 all: third_party/all
+all: hal/all
+all: drv/all
 all: bsp/all
 all: dal/all
 all: middleware/all
@@ -75,6 +77,8 @@ all: app/all
 # The main recursive "codegen" target.
 codegen: target/stm32_f103c8t6/codegen
 codegen: third_party/codegen
+codegen: hal/codegen
+codegen: drv/codegen
 codegen: bsp/codegen
 codegen: dal/codegen
 codegen: middleware/codegen
@@ -85,6 +89,8 @@ codegen: app/codegen
 # The main recursive "preinstall" target.
 preinstall: target/stm32_f103c8t6/preinstall
 preinstall: third_party/preinstall
+preinstall: hal/preinstall
+preinstall: drv/preinstall
 preinstall: bsp/preinstall
 preinstall: dal/preinstall
 preinstall: middleware/preinstall
@@ -95,6 +101,8 @@ preinstall: app/preinstall
 # The main recursive "clean" target.
 clean: target/stm32_f103c8t6/clean
 clean: third_party/clean
+clean: hal/clean
+clean: drv/clean
 clean: bsp/clean
 clean: dal/clean
 clean: middleware/clean
@@ -167,62 +175,58 @@ bsp/clean: bsp/CMakeFiles/bsp.dir/clean
 # Directory level rules for directory dal
 
 # Recursive "all" directory target.
-dal/all: dal/dal_display/all
-dal/all: dal/dal_motor/all
+dal/all: dal/CMakeFiles/dal.dir/all
 .PHONY : dal/all
 
 # Recursive "codegen" directory target.
-dal/codegen: dal/dal_display/codegen
-dal/codegen: dal/dal_motor/codegen
+dal/codegen: dal/CMakeFiles/dal.dir/codegen
 .PHONY : dal/codegen
 
 # Recursive "preinstall" directory target.
-dal/preinstall: dal/dal_display/preinstall
-dal/preinstall: dal/dal_motor/preinstall
+dal/preinstall:
 .PHONY : dal/preinstall
 
 # Recursive "clean" directory target.
-dal/clean: dal/dal_display/clean
-dal/clean: dal/dal_motor/clean
+dal/clean: dal/CMakeFiles/dal.dir/clean
 .PHONY : dal/clean
 
 #=============================================================================
-# Directory level rules for directory dal/dal_display
+# Directory level rules for directory drv
 
 # Recursive "all" directory target.
-dal/dal_display/all: dal/dal_display/CMakeFiles/dal_display.dir/all
-.PHONY : dal/dal_display/all
+drv/all: drv/CMakeFiles/drv.dir/all
+.PHONY : drv/all
 
 # Recursive "codegen" directory target.
-dal/dal_display/codegen: dal/dal_display/CMakeFiles/dal_display.dir/codegen
-.PHONY : dal/dal_display/codegen
+drv/codegen: drv/CMakeFiles/drv.dir/codegen
+.PHONY : drv/codegen
 
 # Recursive "preinstall" directory target.
-dal/dal_display/preinstall:
-.PHONY : dal/dal_display/preinstall
+drv/preinstall:
+.PHONY : drv/preinstall
 
 # Recursive "clean" directory target.
-dal/dal_display/clean: dal/dal_display/CMakeFiles/dal_display.dir/clean
-.PHONY : dal/dal_display/clean
+drv/clean: drv/CMakeFiles/drv.dir/clean
+.PHONY : drv/clean
 
 #=============================================================================
-# Directory level rules for directory dal/dal_motor
+# Directory level rules for directory hal
 
 # Recursive "all" directory target.
-dal/dal_motor/all: dal/dal_motor/CMakeFiles/dal_motor.dir/all
-.PHONY : dal/dal_motor/all
+hal/all:
+.PHONY : hal/all
 
 # Recursive "codegen" directory target.
-dal/dal_motor/codegen: dal/dal_motor/CMakeFiles/dal_motor.dir/codegen
-.PHONY : dal/dal_motor/codegen
+hal/codegen:
+.PHONY : hal/codegen
 
 # Recursive "preinstall" directory target.
-dal/dal_motor/preinstall:
-.PHONY : dal/dal_motor/preinstall
+hal/preinstall:
+.PHONY : hal/preinstall
 
 # Recursive "clean" directory target.
-dal/dal_motor/clean: dal/dal_motor/CMakeFiles/dal_motor.dir/clean
-.PHONY : dal/dal_motor/clean
+hal/clean:
+.PHONY : hal/clean
 
 #=============================================================================
 # Directory level rules for directory middleware
@@ -371,7 +375,7 @@ third_party/clean: third_party/CMakeFiles/stm32f1_hal.dir/clean
 target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/all:
 	$(MAKE) $(MAKESILENT) -f target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/build.make target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/depend
 	$(MAKE) $(MAKESILENT) -f target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/build.make target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=6,7,8,9 "Built target chip_runtime"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=15,16,17,18 "Built target chip_runtime"
 .PHONY : target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/all
 
 # Build rule for subdir invocation for target.
@@ -388,7 +392,7 @@ chip_runtime: target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/rule
 # codegen rule for target.
 target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/build.make target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=6,7,8,9 "Finished codegen for target chip_runtime"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=15,16,17,18 "Finished codegen for target chip_runtime"
 .PHONY : target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/codegen
 
 # clean rule for target.
@@ -403,7 +407,7 @@ target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/clean:
 third_party/CMakeFiles/freertos_kernel.dir/all:
 	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/depend
 	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=15,16,17,18,19,20,21,22,23 "Built target freertos_kernel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=29,30,31,32,33,34,35,36,37 "Built target freertos_kernel"
 .PHONY : third_party/CMakeFiles/freertos_kernel.dir/all
 
 # Build rule for subdir invocation for target.
@@ -420,7 +424,7 @@ freertos_kernel: third_party/CMakeFiles/freertos_kernel.dir/rule
 # codegen rule for target.
 third_party/CMakeFiles/freertos_kernel.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/freertos_kernel.dir/build.make third_party/CMakeFiles/freertos_kernel.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=15,16,17,18,19,20,21,22,23 "Finished codegen for target freertos_kernel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=29,30,31,32,33,34,35,36,37 "Finished codegen for target freertos_kernel"
 .PHONY : third_party/CMakeFiles/freertos_kernel.dir/codegen
 
 # clean rule for target.
@@ -435,7 +439,7 @@ third_party/CMakeFiles/freertos_kernel.dir/clean:
 third_party/CMakeFiles/stm32f1_hal.dir/all:
 	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/stm32f1_hal.dir/build.make third_party/CMakeFiles/stm32f1_hal.dir/depend
 	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/stm32f1_hal.dir/build.make third_party/CMakeFiles/stm32f1_hal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 "Built target stm32f1_hal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53,54,55,56,57 "Built target stm32f1_hal"
 .PHONY : third_party/CMakeFiles/stm32f1_hal.dir/all
 
 # Build rule for subdir invocation for target.
@@ -452,7 +456,7 @@ stm32f1_hal: third_party/CMakeFiles/stm32f1_hal.dir/rule
 # codegen rule for target.
 third_party/CMakeFiles/stm32f1_hal.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f third_party/CMakeFiles/stm32f1_hal.dir/build.make third_party/CMakeFiles/stm32f1_hal.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 "Finished codegen for target stm32f1_hal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53,54,55,56,57 "Finished codegen for target stm32f1_hal"
 .PHONY : third_party/CMakeFiles/stm32f1_hal.dir/codegen
 
 # clean rule for target.
@@ -461,21 +465,54 @@ third_party/CMakeFiles/stm32f1_hal.dir/clean:
 .PHONY : third_party/CMakeFiles/stm32f1_hal.dir/clean
 
 #=============================================================================
+# Target rules for target drv/CMakeFiles/drv.dir
+
+# All Build rule for target.
+drv/CMakeFiles/drv.dir/all:
+	$(MAKE) $(MAKESILENT) -f drv/CMakeFiles/drv.dir/build.make drv/CMakeFiles/drv.dir/depend
+	$(MAKE) $(MAKESILENT) -f drv/CMakeFiles/drv.dir/build.make drv/CMakeFiles/drv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=21,22,23,24,25,26,27 "Built target drv"
+.PHONY : drv/CMakeFiles/drv.dir/all
+
+# Build rule for subdir invocation for target.
+drv/CMakeFiles/drv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drv/CMakeFiles/drv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
+.PHONY : drv/CMakeFiles/drv.dir/rule
+
+# Convenience name for target.
+drv: drv/CMakeFiles/drv.dir/rule
+.PHONY : drv
+
+# codegen rule for target.
+drv/CMakeFiles/drv.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f drv/CMakeFiles/drv.dir/build.make drv/CMakeFiles/drv.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=21,22,23,24,25,26,27 "Finished codegen for target drv"
+.PHONY : drv/CMakeFiles/drv.dir/codegen
+
+# clean rule for target.
+drv/CMakeFiles/drv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f drv/CMakeFiles/drv.dir/build.make drv/CMakeFiles/drv.dir/clean
+.PHONY : drv/CMakeFiles/drv.dir/clean
+
+#=============================================================================
 # Target rules for target bsp/CMakeFiles/bsp.dir
 
 # All Build rule for target.
 bsp/CMakeFiles/bsp.dir/all: target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/all
 bsp/CMakeFiles/bsp.dir/all: third_party/CMakeFiles/freertos_kernel.dir/all
 bsp/CMakeFiles/bsp.dir/all: third_party/CMakeFiles/stm32f1_hal.dir/all
-bsp/CMakeFiles/bsp.dir/all: dal/dal_display/CMakeFiles/dal_display.dir/all
+bsp/CMakeFiles/bsp.dir/all: drv/CMakeFiles/drv.dir/all
+bsp/CMakeFiles/bsp.dir/all: dal/CMakeFiles/dal.dir/all
 	$(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/depend
 	$(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=3,4,5 "Built target bsp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14 "Built target bsp"
 .PHONY : bsp/CMakeFiles/bsp.dir/all
 
 # Build rule for subdir invocation for target.
 bsp/CMakeFiles/bsp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 33
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 49
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bsp/CMakeFiles/bsp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
 .PHONY : bsp/CMakeFiles/bsp.dir/rule
@@ -487,7 +524,7 @@ bsp: bsp/CMakeFiles/bsp.dir/rule
 # codegen rule for target.
 bsp/CMakeFiles/bsp.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=3,4,5 "Finished codegen for target bsp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14 "Finished codegen for target bsp"
 .PHONY : bsp/CMakeFiles/bsp.dir/codegen
 
 # clean rule for target.
@@ -496,68 +533,36 @@ bsp/CMakeFiles/bsp.dir/clean:
 .PHONY : bsp/CMakeFiles/bsp.dir/clean
 
 #=============================================================================
-# Target rules for target dal/dal_display/CMakeFiles/dal_display.dir
+# Target rules for target dal/CMakeFiles/dal.dir
 
 # All Build rule for target.
-dal/dal_display/CMakeFiles/dal_display.dir/all:
-	$(MAKE) $(MAKESILENT) -f dal/dal_display/CMakeFiles/dal_display.dir/build.make dal/dal_display/CMakeFiles/dal_display.dir/depend
-	$(MAKE) $(MAKESILENT) -f dal/dal_display/CMakeFiles/dal_display.dir/build.make dal/dal_display/CMakeFiles/dal_display.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=10,11 "Built target dal_display"
-.PHONY : dal/dal_display/CMakeFiles/dal_display.dir/all
+dal/CMakeFiles/dal.dir/all:
+	$(MAKE) $(MAKESILENT) -f dal/CMakeFiles/dal.dir/build.make dal/CMakeFiles/dal.dir/depend
+	$(MAKE) $(MAKESILENT) -f dal/CMakeFiles/dal.dir/build.make dal/CMakeFiles/dal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=19,20 "Built target dal"
+.PHONY : dal/CMakeFiles/dal.dir/all
 
 # Build rule for subdir invocation for target.
-dal/dal_display/CMakeFiles/dal_display.dir/rule: cmake_check_build_system
+dal/CMakeFiles/dal.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal/dal_display/CMakeFiles/dal_display.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal/CMakeFiles/dal.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
-.PHONY : dal/dal_display/CMakeFiles/dal_display.dir/rule
+.PHONY : dal/CMakeFiles/dal.dir/rule
 
 # Convenience name for target.
-dal_display: dal/dal_display/CMakeFiles/dal_display.dir/rule
-.PHONY : dal_display
+dal: dal/CMakeFiles/dal.dir/rule
+.PHONY : dal
 
 # codegen rule for target.
-dal/dal_display/CMakeFiles/dal_display.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f dal/dal_display/CMakeFiles/dal_display.dir/build.make dal/dal_display/CMakeFiles/dal_display.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=10,11 "Finished codegen for target dal_display"
-.PHONY : dal/dal_display/CMakeFiles/dal_display.dir/codegen
+dal/CMakeFiles/dal.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f dal/CMakeFiles/dal.dir/build.make dal/CMakeFiles/dal.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=19,20 "Finished codegen for target dal"
+.PHONY : dal/CMakeFiles/dal.dir/codegen
 
 # clean rule for target.
-dal/dal_display/CMakeFiles/dal_display.dir/clean:
-	$(MAKE) $(MAKESILENT) -f dal/dal_display/CMakeFiles/dal_display.dir/build.make dal/dal_display/CMakeFiles/dal_display.dir/clean
-.PHONY : dal/dal_display/CMakeFiles/dal_display.dir/clean
-
-#=============================================================================
-# Target rules for target dal/dal_motor/CMakeFiles/dal_motor.dir
-
-# All Build rule for target.
-dal/dal_motor/CMakeFiles/dal_motor.dir/all:
-	$(MAKE) $(MAKESILENT) -f dal/dal_motor/CMakeFiles/dal_motor.dir/build.make dal/dal_motor/CMakeFiles/dal_motor.dir/depend
-	$(MAKE) $(MAKESILENT) -f dal/dal_motor/CMakeFiles/dal_motor.dir/build.make dal/dal_motor/CMakeFiles/dal_motor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=12,13 "Built target dal_motor"
-.PHONY : dal/dal_motor/CMakeFiles/dal_motor.dir/all
-
-# Build rule for subdir invocation for target.
-dal/dal_motor/CMakeFiles/dal_motor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal/dal_motor/CMakeFiles/dal_motor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
-.PHONY : dal/dal_motor/CMakeFiles/dal_motor.dir/rule
-
-# Convenience name for target.
-dal_motor: dal/dal_motor/CMakeFiles/dal_motor.dir/rule
-.PHONY : dal_motor
-
-# codegen rule for target.
-dal/dal_motor/CMakeFiles/dal_motor.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f dal/dal_motor/CMakeFiles/dal_motor.dir/build.make dal/dal_motor/CMakeFiles/dal_motor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=12,13 "Finished codegen for target dal_motor"
-.PHONY : dal/dal_motor/CMakeFiles/dal_motor.dir/codegen
-
-# clean rule for target.
-dal/dal_motor/CMakeFiles/dal_motor.dir/clean:
-	$(MAKE) $(MAKESILENT) -f dal/dal_motor/CMakeFiles/dal_motor.dir/build.make dal/dal_motor/CMakeFiles/dal_motor.dir/clean
-.PHONY : dal/dal_motor/CMakeFiles/dal_motor.dir/clean
+dal/CMakeFiles/dal.dir/clean:
+	$(MAKE) $(MAKESILENT) -f dal/CMakeFiles/dal.dir/build.make dal/CMakeFiles/dal.dir/clean
+.PHONY : dal/CMakeFiles/dal.dir/clean
 
 #=============================================================================
 # Target rules for target middleware/mw_pid/CMakeFiles/mw_pid.dir
@@ -566,7 +571,7 @@ dal/dal_motor/CMakeFiles/dal_motor.dir/clean:
 middleware/mw_pid/CMakeFiles/mw_pid.dir/all:
 	$(MAKE) $(MAKESILENT) -f middleware/mw_pid/CMakeFiles/mw_pid.dir/build.make middleware/mw_pid/CMakeFiles/mw_pid.dir/depend
 	$(MAKE) $(MAKESILENT) -f middleware/mw_pid/CMakeFiles/mw_pid.dir/build.make middleware/mw_pid/CMakeFiles/mw_pid.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=24,25 "Built target mw_pid"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=38,39 "Built target mw_pid"
 .PHONY : middleware/mw_pid/CMakeFiles/mw_pid.dir/all
 
 # Build rule for subdir invocation for target.
@@ -583,7 +588,7 @@ mw_pid: middleware/mw_pid/CMakeFiles/mw_pid.dir/rule
 # codegen rule for target.
 middleware/mw_pid/CMakeFiles/mw_pid.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f middleware/mw_pid/CMakeFiles/mw_pid.dir/build.make middleware/mw_pid/CMakeFiles/mw_pid.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=24,25 "Finished codegen for target mw_pid"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=38,39 "Finished codegen for target mw_pid"
 .PHONY : middleware/mw_pid/CMakeFiles/mw_pid.dir/codegen
 
 # clean rule for target.
@@ -596,15 +601,14 @@ middleware/mw_pid/CMakeFiles/mw_pid.dir/clean:
 
 # All Build rule for target.
 svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/all: third_party/CMakeFiles/freertos_kernel.dir/all
-svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/all: dal/dal_motor/CMakeFiles/dal_motor.dir/all
 	$(MAKE) $(MAKESILENT) -f svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/build.make svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/depend
 	$(MAKE) $(MAKESILENT) -f svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/build.make svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=46,47 "Built target svc_mot_ctrl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=60,61 "Built target svc_mot_ctrl"
 .PHONY : svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/all
 
 # Build rule for subdir invocation for target.
 svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
 .PHONY : svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/rule
@@ -616,7 +620,7 @@ svc_mot_ctrl: svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/rule
 # codegen rule for target.
 svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/build.make svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=46,47 "Finished codegen for target svc_mot_ctrl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=60,61 "Finished codegen for target svc_mot_ctrl"
 .PHONY : svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/codegen
 
 # clean rule for target.
@@ -632,7 +636,7 @@ svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/all: third_party/CMakeFiles/freerto
 svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/all: middleware/mw_pid/CMakeFiles/mw_pid.dir/all
 	$(MAKE) $(MAKESILENT) -f svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/build.make svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/depend
 	$(MAKE) $(MAKESILENT) -f svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/build.make svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=44,45 "Built target svc_att_algo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=58,59 "Built target svc_att_algo"
 .PHONY : svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -649,7 +653,7 @@ svc_att_algo: svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/rule
 # codegen rule for target.
 svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/build.make svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=44,45 "Finished codegen for target svc_att_algo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=58,59 "Finished codegen for target svc_att_algo"
 .PHONY : svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/codegen
 
 # clean rule for target.
@@ -664,17 +668,18 @@ svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/clean:
 app/CMakeFiles/stm32f103_test.elf.dir/all: target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/all
 app/CMakeFiles/stm32f103_test.elf.dir/all: third_party/CMakeFiles/freertos_kernel.dir/all
 app/CMakeFiles/stm32f103_test.elf.dir/all: third_party/CMakeFiles/stm32f1_hal.dir/all
+app/CMakeFiles/stm32f103_test.elf.dir/all: drv/CMakeFiles/drv.dir/all
 app/CMakeFiles/stm32f103_test.elf.dir/all: bsp/CMakeFiles/bsp.dir/all
-app/CMakeFiles/stm32f103_test.elf.dir/all: dal/dal_display/CMakeFiles/dal_display.dir/all
+app/CMakeFiles/stm32f103_test.elf.dir/all: dal/CMakeFiles/dal.dir/all
 app/CMakeFiles/stm32f103_test.elf.dir/all: app/app_hmi/CMakeFiles/app_hmi.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=26,27,28 "Built target stm32f103_test.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=40,41,42 "Built target stm32f103_test.elf"
 .PHONY : app/CMakeFiles/stm32f103_test.elf.dir/all
 
 # Build rule for subdir invocation for target.
 app/CMakeFiles/stm32f103_test.elf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 54
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/stm32f103_test.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
 .PHONY : app/CMakeFiles/stm32f103_test.elf.dir/rule
@@ -686,7 +691,7 @@ stm32f103_test.elf: app/CMakeFiles/stm32f103_test.elf.dir/rule
 # codegen rule for target.
 app/CMakeFiles/stm32f103_test.elf.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/stm32f103_test.elf.dir/build.make app/CMakeFiles/stm32f103_test.elf.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=26,27,28 "Finished codegen for target stm32f103_test.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=40,41,42 "Finished codegen for target stm32f103_test.elf"
 .PHONY : app/CMakeFiles/stm32f103_test.elf.dir/codegen
 
 # clean rule for target.
@@ -701,12 +706,12 @@ app/CMakeFiles/stm32f103_test.elf.dir/clean:
 app/CMakeFiles/flash.dir/all: app/CMakeFiles/stm32f103_test.elf.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/flash.dir/build.make app/CMakeFiles/flash.dir/depend
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/flash.dir/build.make app/CMakeFiles/flash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=14 "Built target flash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=28 "Built target flash"
 .PHONY : app/CMakeFiles/flash.dir/all
 
 # Build rule for subdir invocation for target.
 app/CMakeFiles/flash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 39
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 55
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/flash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles 0
 .PHONY : app/CMakeFiles/flash.dir/rule
@@ -718,7 +723,7 @@ flash: app/CMakeFiles/flash.dir/rule
 # codegen rule for target.
 app/CMakeFiles/flash.dir/codegen: app/CMakeFiles/stm32f103_test.elf.dir/all
 	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/flash.dir/build.make app/CMakeFiles/flash.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=14 "Finished codegen for target flash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=28 "Finished codegen for target flash"
 .PHONY : app/CMakeFiles/flash.dir/codegen
 
 # clean rule for target.
@@ -730,7 +735,7 @@ app/CMakeFiles/flash.dir/clean:
 # Target rules for target app/app_hmi/CMakeFiles/app_hmi.dir
 
 # All Build rule for target.
-app/app_hmi/CMakeFiles/app_hmi.dir/all: dal/dal_display/CMakeFiles/dal_display.dir/all
+app/app_hmi/CMakeFiles/app_hmi.dir/all: dal/CMakeFiles/dal.dir/all
 	$(MAKE) $(MAKESILENT) -f app/app_hmi/CMakeFiles/app_hmi.dir/build.make app/app_hmi/CMakeFiles/app_hmi.dir/depend
 	$(MAKE) $(MAKESILENT) -f app/app_hmi/CMakeFiles/app_hmi.dir/build.make app/app_hmi/CMakeFiles/app_hmi.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=1,2 "Built target app_hmi"

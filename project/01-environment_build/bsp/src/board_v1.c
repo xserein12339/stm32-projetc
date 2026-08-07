@@ -1,5 +1,4 @@
 #include "board_v1.h"
-#include "bsp_gpio.h"
 #include "stm32f1xx.h"
 
 /**
@@ -38,13 +37,9 @@ void SystemClock_Config(void)
 
 int bsp_init(void)
 {
-    int ret;
     SystemClock_Config();
 
     HAL_Init(); 
-
-    ret = bsp_gpio_init();
-    if (ret != 0) return ret;
 
     return 0;
 }

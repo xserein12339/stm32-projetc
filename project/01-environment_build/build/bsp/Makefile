@@ -154,29 +154,245 @@ src/board_v1.c.s:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/board_v1.c.s
 .PHONY : src/board_v1.c.s
 
-src/bsp_gpio.obj: src/bsp_gpio.c.obj
-.PHONY : src/bsp_gpio.obj
+src/bsp_esp8266.obj: src/bsp_esp8266.c.obj
+.PHONY : src/bsp_esp8266.obj
 
 # target to build an object file
-src/bsp_gpio.c.obj:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_gpio.c.obj
-.PHONY : src/bsp_gpio.c.obj
+src/bsp_esp8266.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj
+.PHONY : src/bsp_esp8266.c.obj
 
-src/bsp_gpio.i: src/bsp_gpio.c.i
-.PHONY : src/bsp_gpio.i
+src/bsp_esp8266.i: src/bsp_esp8266.c.i
+.PHONY : src/bsp_esp8266.i
 
 # target to preprocess a source file
-src/bsp_gpio.c.i:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_gpio.c.i
-.PHONY : src/bsp_gpio.c.i
+src/bsp_esp8266.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_esp8266.c.i
+.PHONY : src/bsp_esp8266.c.i
 
-src/bsp_gpio.s: src/bsp_gpio.c.s
-.PHONY : src/bsp_gpio.s
+src/bsp_esp8266.s: src/bsp_esp8266.c.s
+.PHONY : src/bsp_esp8266.s
 
 # target to generate assembly for a file
-src/bsp_gpio.c.s:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_gpio.c.s
-.PHONY : src/bsp_gpio.c.s
+src/bsp_esp8266.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_esp8266.c.s
+.PHONY : src/bsp_esp8266.c.s
+
+src/bsp_key.obj: src/bsp_key.c.obj
+.PHONY : src/bsp_key.obj
+
+# target to build an object file
+src/bsp_key.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_key.c.obj
+.PHONY : src/bsp_key.c.obj
+
+src/bsp_key.i: src/bsp_key.c.i
+.PHONY : src/bsp_key.i
+
+# target to preprocess a source file
+src/bsp_key.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_key.c.i
+.PHONY : src/bsp_key.c.i
+
+src/bsp_key.s: src/bsp_key.c.s
+.PHONY : src/bsp_key.s
+
+# target to generate assembly for a file
+src/bsp_key.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_key.c.s
+.PHONY : src/bsp_key.c.s
+
+src/bsp_led.obj: src/bsp_led.c.obj
+.PHONY : src/bsp_led.obj
+
+# target to build an object file
+src/bsp_led.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_led.c.obj
+.PHONY : src/bsp_led.c.obj
+
+src/bsp_led.i: src/bsp_led.c.i
+.PHONY : src/bsp_led.i
+
+# target to preprocess a source file
+src/bsp_led.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_led.c.i
+.PHONY : src/bsp_led.c.i
+
+src/bsp_led.s: src/bsp_led.c.s
+.PHONY : src/bsp_led.s
+
+# target to generate assembly for a file
+src/bsp_led.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_led.c.s
+.PHONY : src/bsp_led.c.s
+
+src/bsp_motor.obj: src/bsp_motor.c.obj
+.PHONY : src/bsp_motor.obj
+
+# target to build an object file
+src/bsp_motor.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_motor.c.obj
+.PHONY : src/bsp_motor.c.obj
+
+src/bsp_motor.i: src/bsp_motor.c.i
+.PHONY : src/bsp_motor.i
+
+# target to preprocess a source file
+src/bsp_motor.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_motor.c.i
+.PHONY : src/bsp_motor.c.i
+
+src/bsp_motor.s: src/bsp_motor.c.s
+.PHONY : src/bsp_motor.s
+
+# target to generate assembly for a file
+src/bsp_motor.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_motor.c.s
+.PHONY : src/bsp_motor.c.s
+
+src/bsp_mpu6050.obj: src/bsp_mpu6050.c.obj
+.PHONY : src/bsp_mpu6050.obj
+
+# target to build an object file
+src/bsp_mpu6050.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj
+.PHONY : src/bsp_mpu6050.c.obj
+
+src/bsp_mpu6050.i: src/bsp_mpu6050.c.i
+.PHONY : src/bsp_mpu6050.i
+
+# target to preprocess a source file
+src/bsp_mpu6050.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.i
+.PHONY : src/bsp_mpu6050.c.i
+
+src/bsp_mpu6050.s: src/bsp_mpu6050.c.s
+.PHONY : src/bsp_mpu6050.s
+
+# target to generate assembly for a file
+src/bsp_mpu6050.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.s
+.PHONY : src/bsp_mpu6050.c.s
+
+src/bsp_oled.obj: src/bsp_oled.c.obj
+.PHONY : src/bsp_oled.obj
+
+# target to build an object file
+src/bsp_oled.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_oled.c.obj
+.PHONY : src/bsp_oled.c.obj
+
+src/bsp_oled.i: src/bsp_oled.c.i
+.PHONY : src/bsp_oled.i
+
+# target to preprocess a source file
+src/bsp_oled.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_oled.c.i
+.PHONY : src/bsp_oled.c.i
+
+src/bsp_oled.s: src/bsp_oled.c.s
+.PHONY : src/bsp_oled.s
+
+# target to generate assembly for a file
+src/bsp_oled.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_oled.c.s
+.PHONY : src/bsp_oled.c.s
+
+src/bsp_stm32_gpio.obj: src/bsp_stm32_gpio.c.obj
+.PHONY : src/bsp_stm32_gpio.obj
+
+# target to build an object file
+src/bsp_stm32_gpio.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_gpio.c.obj
+.PHONY : src/bsp_stm32_gpio.c.obj
+
+src/bsp_stm32_gpio.i: src/bsp_stm32_gpio.c.i
+.PHONY : src/bsp_stm32_gpio.i
+
+# target to preprocess a source file
+src/bsp_stm32_gpio.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_gpio.c.i
+.PHONY : src/bsp_stm32_gpio.c.i
+
+src/bsp_stm32_gpio.s: src/bsp_stm32_gpio.c.s
+.PHONY : src/bsp_stm32_gpio.s
+
+# target to generate assembly for a file
+src/bsp_stm32_gpio.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_gpio.c.s
+.PHONY : src/bsp_stm32_gpio.c.s
+
+src/bsp_stm32_i2c.obj: src/bsp_stm32_i2c.c.obj
+.PHONY : src/bsp_stm32_i2c.obj
+
+# target to build an object file
+src/bsp_stm32_i2c.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_i2c.c.obj
+.PHONY : src/bsp_stm32_i2c.c.obj
+
+src/bsp_stm32_i2c.i: src/bsp_stm32_i2c.c.i
+.PHONY : src/bsp_stm32_i2c.i
+
+# target to preprocess a source file
+src/bsp_stm32_i2c.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_i2c.c.i
+.PHONY : src/bsp_stm32_i2c.c.i
+
+src/bsp_stm32_i2c.s: src/bsp_stm32_i2c.c.s
+.PHONY : src/bsp_stm32_i2c.s
+
+# target to generate assembly for a file
+src/bsp_stm32_i2c.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_i2c.c.s
+.PHONY : src/bsp_stm32_i2c.c.s
+
+src/bsp_stm32_timer.obj: src/bsp_stm32_timer.c.obj
+.PHONY : src/bsp_stm32_timer.obj
+
+# target to build an object file
+src/bsp_stm32_timer.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_timer.c.obj
+.PHONY : src/bsp_stm32_timer.c.obj
+
+src/bsp_stm32_timer.i: src/bsp_stm32_timer.c.i
+.PHONY : src/bsp_stm32_timer.i
+
+# target to preprocess a source file
+src/bsp_stm32_timer.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_timer.c.i
+.PHONY : src/bsp_stm32_timer.c.i
+
+src/bsp_stm32_timer.s: src/bsp_stm32_timer.c.s
+.PHONY : src/bsp_stm32_timer.s
+
+# target to generate assembly for a file
+src/bsp_stm32_timer.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_timer.c.s
+.PHONY : src/bsp_stm32_timer.c.s
+
+src/bsp_stm32_usart.obj: src/bsp_stm32_usart.c.obj
+.PHONY : src/bsp_stm32_usart.obj
+
+# target to build an object file
+src/bsp_stm32_usart.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_usart.c.obj
+.PHONY : src/bsp_stm32_usart.c.obj
+
+src/bsp_stm32_usart.i: src/bsp_stm32_usart.c.i
+.PHONY : src/bsp_stm32_usart.i
+
+# target to preprocess a source file
+src/bsp_stm32_usart.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_usart.c.i
+.PHONY : src/bsp_stm32_usart.c.i
+
+src/bsp_stm32_usart.s: src/bsp_stm32_usart.c.s
+.PHONY : src/bsp_stm32_usart.s
+
+# target to generate assembly for a file
+src/bsp_stm32_usart.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_stm32_usart.c.s
+.PHONY : src/bsp_stm32_usart.c.s
 
 # Help Target
 help:
@@ -190,9 +406,36 @@ help:
 	@echo "... src/board_v1.obj"
 	@echo "... src/board_v1.i"
 	@echo "... src/board_v1.s"
-	@echo "... src/bsp_gpio.obj"
-	@echo "... src/bsp_gpio.i"
-	@echo "... src/bsp_gpio.s"
+	@echo "... src/bsp_esp8266.obj"
+	@echo "... src/bsp_esp8266.i"
+	@echo "... src/bsp_esp8266.s"
+	@echo "... src/bsp_key.obj"
+	@echo "... src/bsp_key.i"
+	@echo "... src/bsp_key.s"
+	@echo "... src/bsp_led.obj"
+	@echo "... src/bsp_led.i"
+	@echo "... src/bsp_led.s"
+	@echo "... src/bsp_motor.obj"
+	@echo "... src/bsp_motor.i"
+	@echo "... src/bsp_motor.s"
+	@echo "... src/bsp_mpu6050.obj"
+	@echo "... src/bsp_mpu6050.i"
+	@echo "... src/bsp_mpu6050.s"
+	@echo "... src/bsp_oled.obj"
+	@echo "... src/bsp_oled.i"
+	@echo "... src/bsp_oled.s"
+	@echo "... src/bsp_stm32_gpio.obj"
+	@echo "... src/bsp_stm32_gpio.i"
+	@echo "... src/bsp_stm32_gpio.s"
+	@echo "... src/bsp_stm32_i2c.obj"
+	@echo "... src/bsp_stm32_i2c.i"
+	@echo "... src/bsp_stm32_i2c.s"
+	@echo "... src/bsp_stm32_timer.obj"
+	@echo "... src/bsp_stm32_timer.i"
+	@echo "... src/bsp_stm32_timer.s"
+	@echo "... src/bsp_stm32_usart.obj"
+	@echo "... src/bsp_stm32_usart.i"
+	@echo "... src/bsp_stm32_usart.s"
 .PHONY : help
 
 

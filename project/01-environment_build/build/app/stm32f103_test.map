@@ -2,14 +2,12 @@ Archive member included to satisfy reference by file (symbol)
 
 ../bsp/libbsp.a(board_v1.c.obj)
                               CMakeFiles/stm32f103_test.elf.dir/main.c.obj (bsp_init)
-../bsp/libbsp.a(bsp_gpio.c.obj)
-                              ../bsp/libbsp.a(board_v1.c.obj) (bsp_gpio_init)
 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
                               (Reset_Handler)
 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
                               ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj) (SystemInit)
 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                              CMakeFiles/stm32f103_test.elf.dir/main.c.obj (xTaskCreate)
+                              CMakeFiles/stm32f103_test.elf.dir/main.c.obj (vTaskStartScheduler)
 ../third_party/libfreertos_kernel.a(list.c.obj)
                               ../third_party/libfreertos_kernel.a(tasks.c.obj) (vListInitialise)
 ../third_party/libfreertos_kernel.a(port.c.obj)
@@ -20,8 +18,6 @@ Archive member included to satisfy reference by file (symbol)
                               ../bsp/libbsp.a(board_v1.c.obj) (HAL_Init)
 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
                               ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj) (HAL_NVIC_SetPriorityGrouping)
-../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                              ../bsp/libbsp.a(bsp_gpio.c.obj) (HAL_GPIO_Init)
 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
                               /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (atexit)
 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-exit.o)
@@ -217,95 +213,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x1df ../bsp/libbsp.a(board_v1.c.obj)
  .debug_macro   0x00000000      0x190 ../bsp/libbsp.a(board_v1.c.obj)
  .comment       0x00000000       0x3a ../bsp/libbsp.a(board_v1.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .group         0x00000000        0xc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .text          0x00000000        0x0 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .data          0x00000000        0x0 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .bss           0x00000000        0x0 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0xad2 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x22 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x8e ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x51 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x103 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x6a ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x1df ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0xd6 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x2e ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x22 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x1c ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x22 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0xbd ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0xd23 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000     0xe09e ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x6d ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000     0x34a2 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x190 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x5c ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x5bc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x289 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x1cb ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x114 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x1b2 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x27 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x136 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x1bc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x34 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x3c ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x57 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x87 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x240 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x140 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x28e ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x217 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x287 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x46a ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x1b5 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x8ed ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000      0x1ef ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0xeb ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00000000       0x83 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .comment       0x00000000       0x3a ../bsp/libbsp.a(bsp_gpio.c.obj)
  .text          0x00000000       0x14 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
  .data          0x00000000        0x0 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
  .bss           0x00000000        0x0 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
@@ -395,6 +302,14 @@ Discarded input sections
                 0x00000000       0x78 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvTaskCheckFreeStackSpace
                 0x00000000       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .text.prvCreateTask
+                0x00000000       0x5c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .text.prvAddCurrentTaskToDelayedList
+                0x00000000       0xbc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .text.xTaskCreate
+                0x00000000       0x2c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .text.vTaskDelete
+                0x00000000      0x104 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.eTaskGetState
                 0x00000000       0xb0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.uxTaskPriorityGet
@@ -413,6 +328,8 @@ Discarded input sections
                 0x00000000       0xd0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.vTaskEndScheduler
                 0x00000000       0x40 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .text.xTaskGetTickCount
+                0x00000000        0xc ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.xTaskGetTickCountFromISR
                 0x00000000       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.uxTaskGetNumberOfTasks
@@ -423,6 +340,8 @@ Discarded input sections
                 0x00000000       0x70 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.xTaskPeriodicDelay
                 0x00000000       0x94 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .text.xTaskDelayUntil
+                0x00000000       0xb0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.vTaskDelay
                 0x00000000       0x50 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.uxTaskCallForEachTask
@@ -540,6 +459,10 @@ Discarded input sections
  .text          0x00000000        0x0 ../third_party/libfreertos_kernel.a(list.c.obj)
  .data          0x00000000        0x0 ../third_party/libfreertos_kernel.a(list.c.obj)
  .bss           0x00000000        0x0 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .text.vListInsertEnd
+                0x00000000       0x16 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .text.vListInsert
+                0x00000000       0x32 ../third_party/libfreertos_kernel.a(list.c.obj)
  .debug_macro   0x00000000      0xacc ../third_party/libfreertos_kernel.a(list.c.obj)
  .debug_macro   0x00000000       0x24 ../third_party/libfreertos_kernel.a(list.c.obj)
  .debug_macro   0x00000000       0x22 ../third_party/libfreertos_kernel.a(list.c.obj)
@@ -659,6 +582,10 @@ Discarded input sections
  .text          0x00000000        0x0 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .data          0x00000000        0x0 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .bss           0x00000000        0x0 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .text.prvHeapInit
+                0x00000000       0x58 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .text.pvPortMalloc
+                0x00000000      0x198 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .text.xPortGetFreeHeapSize
                 0x00000000        0xc ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .text.xPortGetMinimumEverFreeHeapSize
@@ -673,6 +600,10 @@ Discarded input sections
                 0x00000000       0x80 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .text.vPortHeapResetState
                 0x00000000       0x2c ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.xNumberOfSuccessfulAllocations
+                0x00000000        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.xMinimumEverFreeBytesRemaining
+                0x00000000        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .debug_macro   0x00000000      0xacc ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .debug_macro   0x00000000       0x24 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .debug_macro   0x00000000       0x22 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
@@ -961,104 +892,6 @@ Discarded input sections
  .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000       0x83 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .comment       0x00000000       0x3a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .group         0x00000000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .text          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .data          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .bss           0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .text.HAL_GPIO_DeInit
-                0x00000000       0xfc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .text.HAL_GPIO_ReadPin
-                0x00000000        0xe ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .text.HAL_GPIO_LockPin
-                0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .text.HAL_GPIO_EXTI_Callback
-                0x00000000        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .text.HAL_GPIO_EXTI_IRQHandler
-                0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x2e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x8e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x51 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x103 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x6a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x1df ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x22 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0xbd ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0xd23 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000     0xe09e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x6d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000     0x34a2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x190 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x5c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x5bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x289 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x1cb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x114 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x1b2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x27 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x136 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x1bc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x34 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x3c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x57 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x217 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x46a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000       0x83 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .comment       0x00000000       0x3a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .text          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
  .data          0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
  .bss           0x00000000        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
@@ -1387,9 +1220,10 @@ LOAD CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 LOAD CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
 LOAD app_hmi/libapp_hmi.a
 LOAD ../bsp/libbsp.a
-LOAD ../dal/dal_display/libdal_display.a
+LOAD ../dal/libdal.a
 LOAD ../target/stm32_f103c8t6/libchip_runtime.a
 LOAD ../third_party/libfreertos_kernel.a
+LOAD ../drv/libdrv.a
 LOAD ../third_party/libstm32f1_hal.a
 START GROUP
 LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
@@ -1419,7 +1253,7 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
                 0x08000000                g_pfnVectors
                 0x0800010c                        . = ALIGN (0x4)
 
-.text           0x0800010c     0x1848
+.text           0x0800010c      0xfd0
                 0x0800010c                        . = ALIGN (0x4)
  *(.text)
  *(.text*)
@@ -1427,315 +1261,263 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
                 0x0800010c       0x24 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
  .text.frame_dummy
                 0x08000130       0x1c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
- .text.startup_selftest_task
-                0x0800014c       0x44 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .text.main     0x08000190       0x2c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-                0x08000190                main
+ .text.main     0x0800014c       0x10 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                0x0800014c                main
  .text.vApplicationGetIdleTaskMemory
-                0x080001bc       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
-                0x080001bc                vApplicationGetIdleTaskMemory
+                0x0800015c       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+                0x0800015c                vApplicationGetIdleTaskMemory
  .text.vApplicationStackOverflowHook
-                0x080001d4        0x4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
-                0x080001d4                vApplicationStackOverflowHook
+                0x08000174        0x4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+                0x08000174                vApplicationStackOverflowHook
  .text.SystemClock_Config
-                0x080001d8       0x64 ../bsp/libbsp.a(board_v1.c.obj)
-                0x080001d8                SystemClock_Config
+                0x08000178       0x64 ../bsp/libbsp.a(board_v1.c.obj)
+                0x08000178                SystemClock_Config
  .text.bsp_init
-                0x0800023c       0x10 ../bsp/libbsp.a(board_v1.c.obj)
-                0x0800023c                bsp_init
- .text.bsp_gpio_init
-                0x0800024c       0x54 ../bsp/libbsp.a(bsp_gpio.c.obj)
-                0x0800024c                bsp_gpio_init
- .text.bsp_led_set
-                0x080002a0       0x38 ../bsp/libbsp.a(bsp_gpio.c.obj)
-                0x080002a0                bsp_led_set
- .text.bsp_led_toggle
-                0x080002d8       0x1c ../bsp/libbsp.a(bsp_gpio.c.obj)
-                0x080002d8                bsp_led_toggle
+                0x080001dc        0xe ../bsp/libbsp.a(board_v1.c.obj)
+                0x080001dc                bsp_init
+ *fill*         0x080001ea        0x2 
  .text.Reset_Handler
-                0x080002f4       0x48 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-                0x080002f4                Reset_Handler
+                0x080001ec       0x48 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x080001ec                Reset_Handler
  .text.Default_Handler
-                0x0800033c        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-                0x0800033c                RTC_Alarm_IRQHandler
-                0x0800033c                EXTI2_IRQHandler
-                0x0800033c                DebugMon_Handler
-                0x0800033c                TIM1_CC_IRQHandler
-                0x0800033c                HardFault_Handler
-                0x0800033c                PVD_IRQHandler
-                0x0800033c                NMI_Handler
-                0x0800033c                EXTI3_IRQHandler
-                0x0800033c                EXTI0_IRQHandler
-                0x0800033c                I2C2_EV_IRQHandler
-                0x0800033c                UsageFault_Handler
-                0x0800033c                ADC1_2_IRQHandler
-                0x0800033c                SPI1_IRQHandler
-                0x0800033c                TAMPER_IRQHandler
-                0x0800033c                DMA1_Channel4_IRQHandler
-                0x0800033c                USART3_IRQHandler
-                0x0800033c                RTC_IRQHandler
-                0x0800033c                DMA1_Channel7_IRQHandler
-                0x0800033c                CAN1_RX1_IRQHandler
-                0x0800033c                TIM4_IRQHandler
-                0x0800033c                I2C1_EV_IRQHandler
-                0x0800033c                DMA1_Channel6_IRQHandler
-                0x0800033c                TIM3_IRQHandler
-                0x0800033c                RCC_IRQHandler
-                0x0800033c                TIM1_TRG_COM_IRQHandler
-                0x0800033c                DMA1_Channel1_IRQHandler
-                0x0800033c                Default_Handler
-                0x0800033c                EXTI15_10_IRQHandler
-                0x0800033c                EXTI9_5_IRQHandler
-                0x0800033c                SPI2_IRQHandler
-                0x0800033c                MemManage_Handler
-                0x0800033c                DMA1_Channel5_IRQHandler
-                0x0800033c                EXTI4_IRQHandler
-                0x0800033c                USB_LP_CAN1_RX0_IRQHandler
-                0x0800033c                USB_HP_CAN1_TX_IRQHandler
-                0x0800033c                DMA1_Channel3_IRQHandler
-                0x0800033c                TIM1_UP_IRQHandler
-                0x0800033c                WWDG_IRQHandler
-                0x0800033c                TIM2_IRQHandler
-                0x0800033c                TIM1_BRK_IRQHandler
-                0x0800033c                EXTI1_IRQHandler
-                0x0800033c                USART2_IRQHandler
-                0x0800033c                I2C2_ER_IRQHandler
-                0x0800033c                DMA1_Channel2_IRQHandler
-                0x0800033c                CAN1_SCE_IRQHandler
-                0x0800033c                FLASH_IRQHandler
-                0x0800033c                BusFault_Handler
-                0x0800033c                USART1_IRQHandler
-                0x0800033c                I2C1_ER_IRQHandler
-                0x0800033c                USBWakeUp_IRQHandler
+                0x08000234        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x08000234                RTC_Alarm_IRQHandler
+                0x08000234                EXTI2_IRQHandler
+                0x08000234                DebugMon_Handler
+                0x08000234                TIM1_CC_IRQHandler
+                0x08000234                HardFault_Handler
+                0x08000234                PVD_IRQHandler
+                0x08000234                NMI_Handler
+                0x08000234                EXTI3_IRQHandler
+                0x08000234                EXTI0_IRQHandler
+                0x08000234                I2C2_EV_IRQHandler
+                0x08000234                UsageFault_Handler
+                0x08000234                ADC1_2_IRQHandler
+                0x08000234                SPI1_IRQHandler
+                0x08000234                TAMPER_IRQHandler
+                0x08000234                DMA1_Channel4_IRQHandler
+                0x08000234                USART3_IRQHandler
+                0x08000234                RTC_IRQHandler
+                0x08000234                DMA1_Channel7_IRQHandler
+                0x08000234                CAN1_RX1_IRQHandler
+                0x08000234                TIM4_IRQHandler
+                0x08000234                I2C1_EV_IRQHandler
+                0x08000234                DMA1_Channel6_IRQHandler
+                0x08000234                TIM3_IRQHandler
+                0x08000234                RCC_IRQHandler
+                0x08000234                TIM1_TRG_COM_IRQHandler
+                0x08000234                DMA1_Channel1_IRQHandler
+                0x08000234                Default_Handler
+                0x08000234                EXTI15_10_IRQHandler
+                0x08000234                EXTI9_5_IRQHandler
+                0x08000234                SPI2_IRQHandler
+                0x08000234                MemManage_Handler
+                0x08000234                DMA1_Channel5_IRQHandler
+                0x08000234                EXTI4_IRQHandler
+                0x08000234                USB_LP_CAN1_RX0_IRQHandler
+                0x08000234                USB_HP_CAN1_TX_IRQHandler
+                0x08000234                DMA1_Channel3_IRQHandler
+                0x08000234                TIM1_UP_IRQHandler
+                0x08000234                WWDG_IRQHandler
+                0x08000234                TIM2_IRQHandler
+                0x08000234                TIM1_BRK_IRQHandler
+                0x08000234                EXTI1_IRQHandler
+                0x08000234                USART2_IRQHandler
+                0x08000234                I2C2_ER_IRQHandler
+                0x08000234                DMA1_Channel2_IRQHandler
+                0x08000234                CAN1_SCE_IRQHandler
+                0x08000234                FLASH_IRQHandler
+                0x08000234                BusFault_Handler
+                0x08000234                USART1_IRQHandler
+                0x08000234                I2C1_ER_IRQHandler
+                0x08000234                USBWakeUp_IRQHandler
  .text.SystemInit
-                0x0800033e        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
-                0x0800033e                SystemInit
+                0x08000236        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x08000236                SystemInit
  .text.SystemCoreClockUpdate
-                0x08000340       0x94 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
-                0x08000340                SystemCoreClockUpdate
+                0x08000238       0x94 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x08000238                SystemCoreClockUpdate
  .text.prvResetNextTaskUnblockTime
-                0x080003d4       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080002cc       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvInitialiseNewTask
-                0x080003fc       0xba ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080002f4       0xba ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvCreateStaticTask
-                0x080004b6       0x90 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- *fill*         0x08000546        0x2 
+                0x080003ae       0x90 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ *fill*         0x0800043e        0x2 
  .text.prvInitialiseTaskLists
-                0x08000548       0x68 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08000440       0x68 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvAddNewTaskToReadyList
-                0x080005b0       0xcc ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .text.prvCreateTask
-                0x0800067c       0x5c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080004a8       0xcc ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvDeleteTCB
-                0x080006d8       0x38 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08000574       0x38 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvCheckTasksWaitingTermination
-                0x08000710       0x4c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080005ac       0x4c ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvIdleTask
-                0x0800075c       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .text.prvAddCurrentTaskToDelayedList
-                0x08000784       0xbc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080005f8       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.xTaskCreateStatic
-                0x08000840       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000840                xTaskCreateStatic
+                0x08000620       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08000620                xTaskCreateStatic
  .text.prvCreateIdleTasks
-                0x08000868       0x80 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .text.xTaskCreate
-                0x080008e8       0x2c ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x080008e8                xTaskCreate
- .text.vTaskDelete
-                0x08000914      0x104 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000914                vTaskDelete
+                0x08000648       0x80 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.vTaskStartScheduler
-                0x08000a18       0x64 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000a18                vTaskStartScheduler
+                0x080006c8       0x64 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080006c8                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08000a7c       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000a7c                vTaskSuspendAll
- .text.xTaskGetTickCount
-                0x08000a8c        0xc ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000a8c                xTaskGetTickCount
+                0x0800072c       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x0800072c                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x08000a98      0x178 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000a98                xTaskIncrementTick
+                0x0800073c      0x178 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x0800073c                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x08000c10      0x158 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000c10                xTaskResumeAll
- .text.xTaskDelayUntil
-                0x08000d68       0xb0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000d68                xTaskDelayUntil
+                0x080008b4      0x158 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080008b4                xTaskResumeAll
  .text.vTaskSwitchContext
-                0x08000e18       0xdc ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08000e18                vTaskSwitchContext
+                0x08000a0c       0xdc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08000a0c                vTaskSwitchContext
  .text.vListInitialise
-                0x08000ef4       0x16 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08000ef4                vListInitialise
+                0x08000ae8       0x16 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x08000ae8                vListInitialise
  .text.vListInitialiseItem
-                0x08000f0a        0x6 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08000f0a                vListInitialiseItem
- .text.vListInsertEnd
-                0x08000f10       0x16 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08000f10                vListInsertEnd
- .text.vListInsert
-                0x08000f26       0x32 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08000f26                vListInsert
+                0x08000afe        0x6 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x08000afe                vListInitialiseItem
  .text.uxListRemove
-                0x08000f58       0x24 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08000f58                uxListRemove
+                0x08000b04       0x24 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x08000b04                uxListRemove
  .text.prvTaskExitError
-                0x08000f7c       0x40 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000b28       0x40 ../third_party/libfreertos_kernel.a(port.c.obj)
  .text.SVC_Handler
-                0x08000fbc       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08000fbc                SVC_Handler
+                0x08000b68       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000b68                SVC_Handler
  .text.prvPortStartFirstTask
-                0x08000fe0       0x20 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000b8c       0x20 ../third_party/libfreertos_kernel.a(port.c.obj)
  .text.PendSV_Handler
-                0x08001000       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001000                PendSV_Handler
+                0x08000bac       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000bac                PendSV_Handler
  .text.pxPortInitialiseStack
-                0x08001044       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001044                pxPortInitialiseStack
+                0x08000bf0       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000bf0                pxPortInitialiseStack
  .text.vPortEnterCritical
-                0x08001068       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001068                vPortEnterCritical
+                0x08000c14       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000c14                vPortEnterCritical
  .text.vPortExitCritical
-                0x080010ac       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x080010ac                vPortExitCritical
+                0x08000c58       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000c58                vPortExitCritical
  .text.SysTick_Handler
-                0x080010d8       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x080010d8                SysTick_Handler
+                0x08000c84       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000c84                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x08001104       0x18 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001104                vPortSetupTimerInterrupt
+                0x08000cb0       0x18 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000cb0                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x0800111c      0x138 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x0800111c                xPortStartScheduler
- .text.prvHeapInit
-                0x08001254       0x58 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x08000cc8      0x138 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08000cc8                xPortStartScheduler
  .text.prvInsertBlockIntoFreeList
-                0x080012ac       0x88 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .text.pvPortMalloc
-                0x08001334      0x198 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
-                0x08001334                pvPortMalloc
+                0x08000e00       0x88 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .text.vPortFree
-                0x080014cc       0x9c ../third_party/libfreertos_kernel.a(heap_4.c.obj)
-                0x080014cc                vPortFree
+                0x08000e88       0x9c ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x08000e88                vPortFree
  .text.HAL_MspInit
-                0x08001568        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x08001568                HAL_MspInit
- *fill*         0x0800156a        0x2 
+                0x08000f24        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08000f24                HAL_MspInit
+ *fill*         0x08000f26        0x2 
  .text.HAL_InitTick
-                0x0800156c       0x4c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x0800156c                HAL_InitTick
+                0x08000f28       0x4c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08000f28                HAL_InitTick
  .text.HAL_Init
-                0x080015b8       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x080015b8                HAL_Init
+                0x08000f74       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08000f74                HAL_Init
  .text.__NVIC_SetPriority
-                0x080015dc       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08000f98       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.NVIC_EncodePriority
-                0x08001604       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- *fill*         0x08001642        0x2 
+                0x08000fc0       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ *fill*         0x08000ffe        0x2 
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08001644       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
-                0x08001644                HAL_NVIC_SetPriorityGrouping
+                0x08001000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08001000                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08001668       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
-                0x08001668                HAL_NVIC_SetPriority
+                0x08001024       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08001024                HAL_NVIC_SetPriority
  .text.HAL_SYSTICK_Config
-                0x08001688       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
-                0x08001688                HAL_SYSTICK_Config
- .text.HAL_GPIO_Init
-                0x080016b0      0x214 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                0x080016b0                HAL_GPIO_Init
- .text.HAL_GPIO_WritePin
-                0x080018c4        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                0x080018c4                HAL_GPIO_WritePin
- .text.HAL_GPIO_TogglePin
-                0x080018d0       0x12 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                0x080018d0                HAL_GPIO_TogglePin
- .text.memset   0x080018e2       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
-                0x080018e2                memset
- *fill*         0x080018f2        0x2 
+                0x08001044       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08001044                HAL_SYSTICK_Config
+ .text.memset   0x0800106c       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+                0x0800106c                memset
  .text.__libc_init_array
-                0x080018f4       0x48 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
-                0x080018f4                __libc_init_array
+                0x0800107c       0x48 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+                0x0800107c                __libc_init_array
  *(.glue_7t)
- .glue_7t       0x0800193c        0x0 linker stubs
+ .glue_7t       0x080010c4        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0800193c        0x0 linker stubs
+ .glue_7        0x080010c4        0x0 linker stubs
  *(.glue_7m)
  *(.eh_frame)
- .eh_frame      0x0800193c        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x080010c4        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x0800193c        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
-                0x0800193c                _init
- .init          0x08001940        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+ .init          0x080010c4        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+                0x080010c4                _init
+ .init          0x080010c8        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x08001948        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
-                0x08001948                _fini
- .fini          0x0800194c        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
-                0x08001954                        . = ALIGN (0x4)
-                0x08001954                        _etext = .
+ .fini          0x080010d0        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+                0x080010d0                _fini
+ .fini          0x080010d4        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+                0x080010dc                        . = ALIGN (0x4)
+                0x080010dc                        _etext = .
 
-.vfp11_veneer   0x08001954        0x0
- .vfp11_veneer  0x08001954        0x0 linker stubs
+.vfp11_veneer   0x080010dc        0x0
+ .vfp11_veneer  0x080010dc        0x0 linker stubs
 
-.v4_bx          0x08001954        0x0
- .v4_bx         0x08001954        0x0 linker stubs
+.v4_bx          0x080010dc        0x0
+ .v4_bx         0x080010dc        0x0 linker stubs
 
-.iplt           0x08001954        0x0
- .iplt          0x08001954        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x080010dc        0x0
+ .iplt          0x080010dc        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x08001954       0x30
-                0x08001954                        . = ALIGN (0x4)
+.rodata         0x080010dc       0x1c
+                0x080010dc                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
- .rodata.main.str1.4
-                0x08001954       0x11 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-                                  0x9 (size before relaxing)
- *fill*         0x08001965        0x3 
- .rodata.led_table
-                0x08001968        0x8 ../bsp/libbsp.a(bsp_gpio.c.obj)
  .rodata.AHBPrescTable
-                0x08001970       0x10 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
-                0x08001970                AHBPrescTable
+                0x080010dc       0x10 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x080010dc                AHBPrescTable
  .rodata.prvCreateIdleTasks.str1.4
-                0x08001980        0x5 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080010ec        0x5 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ *fill*         0x080010f1        0x3 
  .rodata.uxTopUsedPriority
-                0x08001980        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08001988                        . = ALIGN (0x4)
+                0x080010f4        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080010f8                        . = ALIGN (0x4)
 
-.rel.dyn        0x08001984        0x0
- .rel.iplt      0x08001984        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x080010f8        0x0
+ .rel.iplt      0x080010f8        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08001984        0x0
-                0x08001984                        __exidx_start = .
+.ARM            0x080010f8        0x0
+                0x080010f8                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08001984                        __exidx_end = .
+                0x080010f8                        __exidx_end = .
 
-.preinit_array  0x08001984        0x0
-                0x08001984                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080010f8        0x0
+                0x080010f8                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08001984                        PROVIDE (__preinit_array_end = .)
+                0x080010f8                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08001984        0x4
-                0x08001984                        PROVIDE (__init_array_start = .)
+.init_array     0x080010f8        0x4
+                0x080010f8                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08001984        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x08001988                        PROVIDE (__init_array_end = .)
+ .init_array    0x080010f8        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x080010fc                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08001988        0x4
-                0x08001988                        PROVIDE (__fini_array_start = .)
+.fini_array     0x080010fc        0x4
+                0x080010fc                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08001988        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x0800198c                        PROVIDE (__fini_array_end = .)
-                0x0800198c                        _sidata = LOADADDR (.data)
+ .fini_array    0x080010fc        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x08001100                        PROVIDE (__fini_array_end = .)
+                0x08001100                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x10 load address 0x0800198c
+.data           0x20000000       0x10 load address 0x08001100
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -1755,10 +1537,10 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
                 0x20000010                        . = ALIGN (0x4)
                 0x20000010                        _edata = .
 
-.igot.plt       0x20000010        0x0 load address 0x0800199c
+.igot.plt       0x20000010        0x0 load address 0x08001110
  .igot.plt      0x20000010        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.bss            0x20000010     0x2ba0 load address 0x0800199c
+.bss            0x20000010     0x2b98 load address 0x08001110
                 0x20000010                        . = ALIGN (0x4)
                 0x20000010                        _sbss = .
                 0x20000010                        __bss_start__ = _sbss
@@ -1822,30 +1604,26 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  *fill*         0x20000391        0x3 
  .bss.xNumberOfSuccessfulFrees
                 0x20000394        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.xNumberOfSuccessfulAllocations
-                0x20000398        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.xMinimumEverFreeBytesRemaining
-                0x2000039c        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .bss.xFreeBytesRemaining
-                0x200003a0        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.pxEnd     0x200003a4        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.xStart    0x200003a8        0x8 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.ucHeap    0x200003b0     0x2800 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x20000398        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.pxEnd     0x2000039c        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.xStart    0x200003a0        0x8 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.ucHeap    0x200003a8     0x2800 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  *(COMMON)
-                0x20002bb0                        . = ALIGN (0x4)
-                0x20002bb0                        _ebss = .
-                0x20002bb0                        __bss_end__ = _ebss
+                0x20002ba8                        . = ALIGN (0x4)
+                0x20002ba8                        _ebss = .
+                0x20002ba8                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20002bb0      0x600 load address 0x0800199c
-                0x20002bb0                        . = ALIGN (0x8)
-                0x20002bb0                        PROVIDE (end = .)
+                0x20002ba8      0x600 load address 0x08001110
+                0x20002ba8                        . = ALIGN (0x8)
+                0x20002ba8                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x20002db0                        . = (. + _Min_Heap_Size)
- *fill*         0x20002bb0      0x200 
-                0x200031b0                        . = (. + _Min_Stack_Size)
- *fill*         0x20002db0      0x400 
-                0x200031b0                        . = ALIGN (0x8)
+                0x20002da8                        . = (. + _Min_Heap_Size)
+ *fill*         0x20002ba8      0x200 
+                0x200031a8                        . = (. + _Min_Stack_Size)
+ *fill*         0x20002da8      0x400 
+                0x200031a8                        . = ALIGN (0x8)
 
 /DISCARD/
  *(.comment)
@@ -1866,258 +1644,233 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  .ARM.attributes
                 0x000000a4       0x2d ../bsp/libbsp.a(board_v1.c.obj)
  .ARM.attributes
-                0x000000d1       0x2d ../bsp/libbsp.a(bsp_gpio.c.obj)
+                0x000000d1       0x21 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
  .ARM.attributes
-                0x000000fe       0x21 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x000000f2       0x2d ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
  .ARM.attributes
-                0x0000011f       0x2d ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x0000011f       0x2d ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .ARM.attributes
-                0x0000014c       0x2d ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x0000014c       0x2d ../third_party/libfreertos_kernel.a(list.c.obj)
  .ARM.attributes
-                0x00000179       0x2d ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x00000179       0x2d ../third_party/libfreertos_kernel.a(port.c.obj)
  .ARM.attributes
-                0x000001a6       0x2d ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x000001a6       0x2d ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .ARM.attributes
-                0x000001d3       0x2d ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x000001d3       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .ARM.attributes
-                0x00000200       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x00000200       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .ARM.attributes
-                0x0000022d       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x0000022d       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
  .ARM.attributes
-                0x0000025a       0x2d ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x0000025a       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
  .ARM.attributes
-                0x00000287       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
- .ARM.attributes
-                0x000002b4       0x2d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
- .ARM.attributes
-                0x000002e1       0x1d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+                0x00000287       0x1d /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
 OUTPUT(stm32f103_test.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000     0x8304
- .debug_info    0x00000000      0x3a5 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_info    0x000003a5      0x334 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_info    0x000006d9      0x2c1 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_info    0x0000099a      0x4e8 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_info    0x00000e82       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_info    0x00000eb2      0x26b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_info    0x0000111d     0x4378 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_info    0x00005495      0x30e ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_info    0x000057a3      0x604 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_info    0x00005da7      0x7bb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_info    0x00006562      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_info    0x00006de6      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_info    0x00007c29      0x6db ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_info     0x00000000     0x743b
+ .debug_info    0x00000000       0xcb CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_info    0x000000cb      0x334 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_info    0x000003ff      0x295 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_info    0x00000694       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_info    0x000006c4      0x26b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_info    0x0000092f     0x4378 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_info    0x00004ca7      0x30e ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_info    0x00004fb5      0x604 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_info    0x000055b9      0x7bb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_info    0x00005d74      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_info    0x000065f8      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_abbrev   0x00000000     0x19d5
- .debug_abbrev  0x00000000      0x1b1 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_abbrev  0x000001b1       0xd8 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_abbrev  0x00000289      0x135 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_abbrev  0x000003be      0x1cf ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_abbrev  0x0000058d       0x1d ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_abbrev  0x000005aa      0x143 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_abbrev  0x000006ed      0x436 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_abbrev  0x00000b23      0x120 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_abbrev  0x00000c43      0x2b7 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_abbrev  0x00000efa      0x2d4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_abbrev  0x000011ce      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_abbrev  0x00001403      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_abbrev  0x000017b0      0x225 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_abbrev   0x00000000     0x1485
+ .debug_abbrev  0x00000000       0x7e CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_abbrev  0x0000007e       0xd8 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_abbrev  0x00000156      0x10c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_abbrev  0x00000262       0x1d ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_abbrev  0x0000027f      0x143 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_abbrev  0x000003c2      0x436 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_abbrev  0x000007f8      0x120 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_abbrev  0x00000918      0x2b7 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_abbrev  0x00000bcf      0x2d4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_abbrev  0x00000ea3      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_abbrev  0x000010d8      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_loc      0x00000000     0x5bf9
- .debug_loc     0x00000000       0xb2 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_loc     0x000000b2       0x55 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_loc     0x00000107      0x1fc ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_loc     0x00000303      0x11b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_loc     0x0000041e     0x3ef9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_loc     0x00004317       0xeb ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_loc     0x00004402      0x1c4 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_loc     0x000045c6      0x627 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_loc     0x00004bed      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_loc     0x00004de6      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_loc     0x0000569a      0x55f ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_loc      0x00000000     0x53f7
+ .debug_loc     0x00000000       0x20 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_loc     0x00000020       0x40 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_loc     0x00000060      0x11b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_loc     0x0000017b     0x3ef9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_loc     0x00004074       0xeb ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_loc     0x0000415f      0x1c4 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_loc     0x00004323      0x627 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_loc     0x0000494a      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_loc     0x00004b43      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_aranges  0x00000000      0x670
+.debug_aranges  0x00000000      0x5e0
  .debug_aranges
-                0x00000000       0x28 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                0x00000000       0x20 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_aranges
-                0x00000028       0x28 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+                0x00000020       0x28 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
  .debug_aranges
-                0x00000050       0x28 ../bsp/libbsp.a(board_v1.c.obj)
+                0x00000048       0x28 ../bsp/libbsp.a(board_v1.c.obj)
  .debug_aranges
-                0x00000078       0x30 ../bsp/libbsp.a(bsp_gpio.c.obj)
+                0x00000070       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
  .debug_aranges
-                0x000000a8       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x00000098       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
  .debug_aranges
-                0x000000d0       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x000000c0      0x258 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .debug_aranges
-                0x000000f8      0x258 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x00000318       0x40 ../third_party/libfreertos_kernel.a(list.c.obj)
  .debug_aranges
-                0x00000350       0x40 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x00000358       0x78 ../third_party/libfreertos_kernel.a(port.c.obj)
  .debug_aranges
-                0x00000390       0x78 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x000003d0       0x70 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .debug_aranges
-                0x00000408       0x70 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x00000440       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_aranges
-                0x00000478       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_aranges
-                0x00000558       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_aranges
-                0x00000618       0x58 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x00000520       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_ranges   0x00000000      0x8a0
- .debug_ranges  0x00000000       0x18 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_ranges  0x00000018       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_ranges  0x00000030       0x18 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_ranges  0x00000048       0x20 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_ranges  0x00000068       0x20 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_ranges  0x00000088       0x18 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_ranges  0x000000a0      0x510 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_ranges  0x000005b0       0x30 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_ranges  0x000005e0       0x98 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_ranges  0x00000678       0x60 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_ranges  0x000006d8       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_ranges  0x000007a8       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_ranges  0x00000858       0x48 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_ranges   0x00000000      0x830
+ .debug_ranges  0x00000000       0x10 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_ranges  0x00000010       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_ranges  0x00000028       0x18 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_ranges  0x00000040       0x20 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_ranges  0x00000060       0x18 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_ranges  0x00000078      0x510 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_ranges  0x00000588       0x30 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_ranges  0x000005b8       0x98 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_ranges  0x00000650       0x60 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_ranges  0x000006b0       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_ranges  0x00000780       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_macro    0x00000000    0x1bcbb
- .debug_macro   0x00000000       0xf7 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000000f7      0xacc CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00000bc3       0x22 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00000be5       0x8e CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00000c73       0x51 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00000cc4      0x103 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00000dc7       0x6a CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00000e31      0x1df CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00001010      0x190 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000011a0       0x16 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000011b6       0xfa CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000012b0       0x34 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000012e4      0x182 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00001466       0xe7 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x0000154d       0x34 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00001581       0x1f CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000015a0       0x12 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000015b2     0x1113 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000026c5       0xc3 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x00002788      0x161 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_macro   0x000028e9       0xdf CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_macro   0x000029c8      0x1e5 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00002bad      0xad2 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0000367f       0x2e ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000036ad       0x22 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000036cf       0x1c ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000036eb       0x22 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0000370d       0xbd ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000037ca      0xd23 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000044ed     0xe09e ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001258b       0x6d ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000125f8       0xd6 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000126ce     0x34a2 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00015b70       0x5c ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00015bcc      0x5bc ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016188      0x289 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016411      0x1cb ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000165dc      0x114 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000166f0      0x1b2 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000168a2       0x27 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000168c9      0x136 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000169ff      0x1bc ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016bbb       0x34 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016bef       0x3c ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016c2b       0x57 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016c82       0x87 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016d09      0x240 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016f49      0x140 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00017089      0x28e ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00017317      0x217 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001752e      0x287 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000177b5      0x46a ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00017c1f      0x1b5 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00017dd4      0x8ed ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000186c1      0x1ef ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000188b0       0xeb ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001899b       0x83 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00018a1e      0x1ea ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00018c08       0x22 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_macro   0x00018c2a       0xc8 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_macro   0x00018cf2      0xac6 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_macro   0x000197b8      0x2b9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019a71       0x24 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019a95       0x75 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019b0a       0x94 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019b9e       0x3c ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019bda       0x34 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019c0e       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019c24      0x11c ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019d40       0x9b ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019ddb       0x57 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x00019e32      0x364 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a196       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a1ac       0x4a ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a1f6       0x34 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a22a       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a23a       0x58 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a292      0x1e5 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a477       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a48d       0x29 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a4b6       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a4cc       0x3c ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a508       0x98 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a5a0       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001a5b6      0x193 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_macro   0x0001a749      0x1ab ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_macro   0x0001a8f4      0x223 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_macro   0x0001ab17      0x1f5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x0001ad0c      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x0001b7d8       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x0001b8ae      0x1d1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_macro   0x0001ba7f      0x23c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_macro    0x00000000    0x1b85f
+ .debug_macro   0x00000000       0xed CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000000ed      0xacc CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000bb9      0x190 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000d49       0x22 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000d6b       0x8e CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000df9       0x51 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000e4a      0x103 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000f4d       0x6a CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00000fb7      0x1df CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00001196       0x16 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000011ac       0xfa CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000012a6       0x34 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000012da      0x182 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x0000145c       0xe7 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00001543       0x34 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00001577       0x1f CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x00001596       0x12 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000015a8     0x1113 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000026bb       0xc3 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x0000277e      0x161 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_macro   0x000028df       0xdf CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_macro   0x000029be      0x1db ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00002b99      0xad2 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0000366b       0x2e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00003699       0x22 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000036bb       0x1c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000036d7       0x22 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000036f9       0xbd ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000037b6      0xd23 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000044d9     0xe09e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00012577       0x6d ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000125e4       0xd6 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000126ba     0x34a2 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00015b5c       0x5c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00015bb8      0x5bc ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016174      0x289 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000163fd      0x1cb ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000165c8      0x114 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000166dc      0x1b2 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0001688e       0x27 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000168b5      0x136 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000169eb      0x1bc ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016ba7       0x34 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016bdb       0x3c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016c17       0x57 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016c6e       0x87 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016cf5      0x240 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016f35      0x140 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017075      0x28e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017303      0x217 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0001751a      0x287 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000177a1      0x46a ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017c0b      0x1b5 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017dc0      0x8ed ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000186ad      0x1ef ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0001889c       0xeb ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00018987       0x83 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00018a0a       0xc8 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00018ad2      0xac6 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x00019598      0x2b9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019851       0x24 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019875       0x75 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x000198ea       0x94 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001997e       0x3c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x000199ba       0x34 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x000199ee       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019a04      0x11c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019b20       0x9b ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019bbb       0x57 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019c12      0x364 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019f76       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019f8c       0x4a ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x00019fd6       0x34 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a00a       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a01a       0x58 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a072      0x1e5 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a257       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a26d       0x29 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a296       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a2ac       0x3c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a2e8       0x98 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a380       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001a396      0x193 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_macro   0x0001a529      0x1ab ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_macro   0x0001a6d4      0x223 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_macro   0x0001a8f7      0x1f5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x0001aaec      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x0001b5b8       0xd6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x0001b68e      0x1d1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_line     0x00000000     0x8a09
- .debug_line    0x00000000      0x473 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_line    0x00000473      0x37f CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_line    0x000007f2      0x799 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_line    0x00000f8b      0x781 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_line    0x0000170c       0xc2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_line    0x000017ce      0x3c3 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_line    0x00001b91     0x3654 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_line    0x000051e5      0x5b7 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_line    0x0000579c      0x785 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_line    0x00005f21      0xb06 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_line    0x00006a27      0x9b1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_line    0x000073d8      0xb96 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_line    0x00007f6e      0xa9b ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_line     0x00000000     0x776a
+ .debug_line    0x00000000      0x409 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_line    0x00000409      0x37f CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_line    0x00000788      0x780 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_line    0x00000f08       0xc2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_line    0x00000fca      0x3c3 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_line    0x0000138d     0x3654 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_line    0x000049e1      0x5b7 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_line    0x00004f98      0x785 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_line    0x0000571d      0xb06 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_line    0x00006223      0x9b1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_line    0x00006bd4      0xb96 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_str      0x00000000    0x9e3b4
- .debug_str     0x00000000    0x9e3b4 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-                               0xeea3 (size before relaxing)
- .debug_str     0x0009e3b4     0xeef4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_str     0x0009e3b4    0x8c3d0 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_str     0x0009e3b4    0x8c532 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_str     0x0009e3b4       0xda ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_str     0x0009e3b4    0x547ab ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_str     0x0009e3b4    0x14389 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_str     0x0009e3b4    0x10604 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_str     0x0009e3b4     0xf669 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_str     0x0009e3b4    0x121cb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_str     0x0009e3b4    0x8cace ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_str     0x0009e3b4    0x8ca1a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_str     0x0009e3b4    0x8c721 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_str      0x00000000    0x9de19
+ .debug_str     0x00000000    0x9de19 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                               0xed44 (size before relaxing)
+ .debug_str     0x0009de19     0xeef4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_str     0x0009de19    0x8c3b6 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_str     0x0009de19       0xda ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_str     0x0009de19    0x547ab ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_str     0x0009de19    0x14389 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_str     0x0009de19    0x10604 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_str     0x0009de19     0xf669 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_str     0x0009de19    0x121cb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_str     0x0009de19    0x8cace ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_str     0x0009de19    0x8ca1a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
-.debug_frame    0x00000000      0xfcc
- .debug_frame   0x00000000       0x48 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_frame   0x00000048       0x30 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_frame   0x00000078       0x40 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_frame   0x000000b8       0x68 ../bsp/libbsp.a(bsp_gpio.c.obj)
- .debug_frame   0x00000120       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_frame   0x00000150      0x7d0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_frame   0x00000920       0x70 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_frame   0x00000990       0xf4 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_frame   0x00000a84       0xfc ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_frame   0x00000b80      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_frame   0x00000d4c      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_frame   0x00000ee8       0xe4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_frame    0x00000000      0xe60
+ .debug_frame   0x00000000       0x28 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_frame   0x00000028       0x30 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_frame   0x00000058       0x40 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_frame   0x00000098       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_frame   0x000000c8      0x7d0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_frame   0x00000898       0x70 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_frame   0x00000908       0xf4 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_frame   0x000009fc       0xfc ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_frame   0x00000af8      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_frame   0x00000cc4      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 
 Cross Reference Table
 
@@ -2153,17 +1906,6 @@ HAL_DBGMCU_EnableDBGStandbyMode                   ../third_party/libstm32f1_hal.
 HAL_DBGMCU_EnableDBGStopMode                      ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
 HAL_DeInit                                        ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
 HAL_Delay                                         ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-HAL_GPIO_DeInit                                   ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-HAL_GPIO_EXTI_Callback                            ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-HAL_GPIO_EXTI_IRQHandler                          ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-HAL_GPIO_Init                                     ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                                                  ../bsp/libbsp.a(bsp_gpio.c.obj)
-HAL_GPIO_LockPin                                  ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-HAL_GPIO_ReadPin                                  ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-HAL_GPIO_TogglePin                                ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                                                  ../bsp/libbsp.a(bsp_gpio.c.obj)
-HAL_GPIO_WritePin                                 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                                                  ../bsp/libbsp.a(bsp_gpio.c.obj)
 HAL_GetDEVID                                      ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
 HAL_GetHalVersion                                 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
 HAL_GetREVID                                      ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
@@ -2391,13 +2133,7 @@ _write_r                                          /opt/xpack-gcc/bin/../lib/gcc/
                                                   /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-stdio.o)
 atexit                                            /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-atexit.o)
                                                   /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
-bsp_gpio_init                                     ../bsp/libbsp.a(bsp_gpio.c.obj)
-                                                  ../bsp/libbsp.a(board_v1.c.obj)
 bsp_init                                          ../bsp/libbsp.a(board_v1.c.obj)
-                                                  CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-bsp_led_set                                       ../bsp/libbsp.a(bsp_gpio.c.obj)
-                                                  CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-bsp_led_toggle                                    ../bsp/libbsp.a(bsp_gpio.c.obj)
                                                   CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 eTaskGetState                                     ../third_party/libfreertos_kernel.a(tasks.c.obj)
 end                                               /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libnosys.a(sbrk.o)
@@ -2480,7 +2216,6 @@ vPortValidateInterruptPriority                    ../third_party/libfreertos_ker
                                                   ../third_party/libfreertos_kernel.a(tasks.c.obj)
 vTaskDelay                                        ../third_party/libfreertos_kernel.a(tasks.c.obj)
 vTaskDelete                                       ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                                                  CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 vTaskEndScheduler                                 ../third_party/libfreertos_kernel.a(tasks.c.obj)
 vTaskGenericNotifyGiveFromISR                     ../third_party/libfreertos_kernel.a(tasks.c.obj)
 vTaskGetInfo                                      ../third_party/libfreertos_kernel.a(tasks.c.obj)
@@ -2510,10 +2245,8 @@ xPortStartScheduler                               ../third_party/libfreertos_ker
 xTaskCatchUpTicks                                 ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskCheckForTimeOut                              ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskCreate                                       ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                                                  CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 xTaskCreateStatic                                 ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskDelayUntil                                   ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                                                  CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 xTaskGenericNotify                                ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskGenericNotifyFromISR                         ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskGenericNotifyStateClear                      ../third_party/libfreertos_kernel.a(tasks.c.obj)
@@ -2522,7 +2255,6 @@ xTaskGetCurrentTaskHandle                         ../third_party/libfreertos_ker
 xTaskGetCurrentTaskHandleForCore                  ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskGetStaticBuffers                             ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskGetTickCount                                 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                                                  CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 xTaskGetTickCountFromISR                          ../third_party/libfreertos_kernel.a(tasks.c.obj)
 xTaskIncrementTick                                ../third_party/libfreertos_kernel.a(tasks.c.obj)
                                                   ../third_party/libfreertos_kernel.a(port.c.obj)

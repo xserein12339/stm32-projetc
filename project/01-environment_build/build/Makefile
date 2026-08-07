@@ -156,6 +156,19 @@ stm32f1_hal/fast:
 .PHONY : stm32f1_hal/fast
 
 #=============================================================================
+# Target rules for targets named drv
+
+# Build rule for target.
+drv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drv
+.PHONY : drv
+
+# fast build rule for target.
+drv/fast:
+	$(MAKE) $(MAKESILENT) -f drv/CMakeFiles/drv.dir/build.make drv/CMakeFiles/drv.dir/build
+.PHONY : drv/fast
+
+#=============================================================================
 # Target rules for targets named bsp
 
 # Build rule for target.
@@ -169,30 +182,17 @@ bsp/fast:
 .PHONY : bsp/fast
 
 #=============================================================================
-# Target rules for targets named dal_display
+# Target rules for targets named dal
 
 # Build rule for target.
-dal_display: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal_display
-.PHONY : dal_display
+dal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal
+.PHONY : dal
 
 # fast build rule for target.
-dal_display/fast:
-	$(MAKE) $(MAKESILENT) -f dal/dal_display/CMakeFiles/dal_display.dir/build.make dal/dal_display/CMakeFiles/dal_display.dir/build
-.PHONY : dal_display/fast
-
-#=============================================================================
-# Target rules for targets named dal_motor
-
-# Build rule for target.
-dal_motor: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dal_motor
-.PHONY : dal_motor
-
-# fast build rule for target.
-dal_motor/fast:
-	$(MAKE) $(MAKESILENT) -f dal/dal_motor/CMakeFiles/dal_motor.dir/build.make dal/dal_motor/CMakeFiles/dal_motor.dir/build
-.PHONY : dal_motor/fast
+dal/fast:
+	$(MAKE) $(MAKESILENT) -f dal/CMakeFiles/dal.dir/build.make dal/CMakeFiles/dal.dir/build
+.PHONY : dal/fast
 
 #=============================================================================
 # Target rules for targets named mw_pid
@@ -284,8 +284,8 @@ help:
 	@echo "... app_hmi"
 	@echo "... bsp"
 	@echo "... chip_runtime"
-	@echo "... dal_display"
-	@echo "... dal_motor"
+	@echo "... dal"
+	@echo "... drv"
 	@echo "... freertos_kernel"
 	@echo "... mw_pid"
 	@echo "... stm32f103_test.elf"

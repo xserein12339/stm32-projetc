@@ -12,6 +12,5 @@ target_include_directories(svc_mot_ctrl PUBLIC
 target_link_libraries(svc_mot_ctrl 
     PRIVATE
         freertos_kernel
-        dal_motor
 
 )
