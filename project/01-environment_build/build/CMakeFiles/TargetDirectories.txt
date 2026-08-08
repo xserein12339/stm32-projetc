@@ -7,11 +7,6 @@
 /home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/CMakeFiles/stm32f1_hal.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/CMakeFiles/edit_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/third_party/CMakeFiles/rebuild_cache.dir
-/home/xiamu/git/stm32_project/project/01-environment_build/build/hal/CMakeFiles/edit_cache.dir
-/home/xiamu/git/stm32_project/project/01-environment_build/build/hal/CMakeFiles/rebuild_cache.dir
-/home/xiamu/git/stm32_project/project/01-environment_build/build/drv/CMakeFiles/drv.dir
-/home/xiamu/git/stm32_project/project/01-environment_build/build/drv/CMakeFiles/edit_cache.dir
-/home/xiamu/git/stm32_project/project/01-environment_build/build/drv/CMakeFiles/rebuild_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/bsp.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/edit_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp/CMakeFiles/rebuild_cache.dir

@@ -57,9 +57,7 @@ target_link_libraries(stm32f1_cmsis_device INTERFACE cmsis_core)
 # 模块添加 (严格按依赖顺序，自底向上)
 # =============================================================================
 add_subdirectory(target/stm32_f103c8t6) # 目标库 (启动文件、链接脚本)
-add_subdirectory(third_party)           # HAL 驱动 + FreeRTOS
-add_subdirectory(hal)  
-add_subdirectory(drv)  
+add_subdirectory(third_party)           # HAL 驱动 + FreeRTOS  
 add_subdirectory(bsp)           # 板级支持包 (依赖 third_party)
 add_subdirectory(dal)           # 设备抽象层
 add_subdirectory(middleware)    # 中间件

@@ -1,45 +1,89 @@
 #include "board_v1.h"
-#include "stm32f1xx.h"
+#include "board_v1_config.h"
+
+#include "bsp_i2c.h"
+#include "bsp_usart.h"
+#include "bsp_timer.h"
+#include "bsp_key.h"
+#include "bsp_led.h"
+#include "bsp_motor.h"
+#include "bsp_oled.h"
+#include "bsp_mpu6050.h"
+#include "bsp_esp8266.h"
+
 
 /**
- * @brief  配置系统时钟为 72MHz (HSE 8MHz × PLL9)
- * @note   必须在 bsp_init() 最早阶段调用
+ * @brief  配置系统时钟至 72MHz (HSE + PLL)
+ * @note   根据实际晶振频率和原理图修改 RCC_OscInitTypeDef 参数
+ * @retval BSP_OK 成功 / BSP_ERR_CLOCK 失败
  */
-void SystemClock_Config(void)
+static bsp_err_t bsp_system_clock_config(void)
 {
-    /* 使能 HSE */
-    RCC->CR |= RCC_CR_HSEON;
-    while (!(RCC->CR & RCC_CR_HSERDY)) {}
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-    /* 配置 Flash 等待周期（72MHz 需要 2 个等待周期） */
-    FLASH->ACR = FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2;
+    /* 1. 配置 HSE + PLL → SYSCLK = 72MHz */
+    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+    RCC_OscInitStruct.HSEState       = RCC_HSE_ON;
+    RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+    RCC_OscInitStruct.PLL.PLLState   = RCC_PLL_ON;
+    RCC_OscInitStruct.PLL.PLLSource  = RCC_PLLSOURCE_HSE;
+    RCC_OscInitStruct.PLL.PLLMUL     = RCC_PLL_MUL9;  /* 8MHz × 9 = 72MHz */
 
-    /* AHB=72MHz, APB1=36MHz, APB2=72MHz */
-    RCC->CFGR = RCC_CFGR_PPRE1_DIV2   /* APB1 = HCLK/2 */
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+        return BSP_ERR_CLOCK;
+    }
 
-              | RCC_CFGR_PPRE2_DIV1   /* APB2 = HCLK   */
-              | RCC_CFGR_HPRE_DIV1;   /* AHB  = SYSCLK */
+    /* 2. 配置总线时钟 AHB/APB1/APB2 */
+    RCC_ClkInitStruct.ClockType      = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK |
+                                       RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+    RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;    /* AHB  = 72MHz */
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;      /* APB1 = 36MHz */
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;      /* APB2 = 72MHz */
 
-    /* PLL: HSE × 9 = 72MHz */
-    RCC->CFGR |= RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL9;
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
+        return BSP_ERR_CLOCK;
+    }
 
-    /* 使能 PLL */
-    RCC->CR |= RCC_CR_PLLON;
-    while (!(RCC->CR & RCC_CR_PLLRDY)) {}
+    return BSP_OK;
+}
 
-    /* 切换系统时钟到 PLL */
-    RCC->CFGR |= RCC_CFGR_SW_PLL;
-    while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL) {}
+/* ========================================================================== */
+/*                         BSP 统一初始化入口                                   */
+/* ========================================================================== */
 
-    SystemCoreClockUpdate();
+
+bsp_err_t bsp_init(void)
+{
+    HAL_Init();
+    bsp_err_t ret;
+
+    /* Phase 1: 系统基础 */
+    ret = bsp_system_clock_config();
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    }
+
+    bsp_key_init();      
+    bsp_led_init();
+
+
+    return BSP_OK;
 }
 
 
-int bsp_init(void)
+void Error_Handler(void)
 {
-    SystemClock_Config();
+    /* 关闭全局中断，防止 ISR 干扰故障现场 */
+    __disable_irq();
 
-    HAL_Init(); 
+    /* 可选：翻转错误指示 LED / 记录故障码到备份寄存器 */
+    // HAL_GPIO_WritePin(ERR_LED_PORT, ERR_LED_PIN, GPIO_PIN_SET);
 
-    return 0;
+    /* 永久停驻，等待调试器附加或硬件看门狗复位 */
+    while (1) {
+        __NOP();
+    }
 }

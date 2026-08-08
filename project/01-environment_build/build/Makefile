@@ -156,19 +156,6 @@ stm32f1_hal/fast:
 .PHONY : stm32f1_hal/fast
 
 #=============================================================================
-# Target rules for targets named drv
-
-# Build rule for target.
-drv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 drv
-.PHONY : drv
-
-# fast build rule for target.
-drv/fast:
-	$(MAKE) $(MAKESILENT) -f drv/CMakeFiles/drv.dir/build.make drv/CMakeFiles/drv.dir/build
-.PHONY : drv/fast
-
-#=============================================================================
 # Target rules for targets named bsp
 
 # Build rule for target.
@@ -285,7 +272,6 @@ help:
 	@echo "... bsp"
 	@echo "... chip_runtime"
 	@echo "... dal"
-	@echo "... drv"
 	@echo "... freertos_kernel"
 	@echo "... mw_pid"
 	@echo "... stm32f103_test.elf"

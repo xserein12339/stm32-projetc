@@ -37,10 +37,9 @@
 /*                       I2C1 资源定义 (默认引脚 PB6/PB7 )                      */
 /* ========================================================================== */
 #define BSP_I2C1_PORT               I2C1
+#define BSP_I2C1_GPIO_PORT          BSP_GPIOB_PORT
 #define BSP_I2C1_SCL_PIN            BSP_GPIOB_PIN6
-#define BSP_I2C1_SCL_PORT           BSP_GPIOB_PORT
 #define BSP_I2C1_SDA_PIN            BSP_GPIOB_PIN7
-#define BSP_I2C1_SDA_PORT           BSP_GPIOB_PORT
 
 /* ========================================================================== */
 /*                      USART3 资源定义 (默认引脚 PB10/PB11 )                   */
