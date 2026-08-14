@@ -2,7 +2,7 @@
 #include "board_v1_config.h"
 
 #include "bsp_i2c.h"
-#include "bsp_usart.h"
+#include "bsp_uart.h"
 #include "bsp_timer.h"
 #include "bsp_key.h"
 #include "bsp_led.h"

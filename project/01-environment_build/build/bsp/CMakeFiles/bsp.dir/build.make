@@ -114,19 +114,19 @@ bsp/CMakeFiles/bsp.dir/src/bsp_timer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bsp.dir/src/bsp_timer.c.s"
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_timer.c -o CMakeFiles/bsp.dir/src/bsp_timer.c.s
 
-bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj: bsp/CMakeFiles/bsp.dir/flags.make
-bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_usart.c
-bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj: bsp/CMakeFiles/bsp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj"
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj -MF CMakeFiles/bsp.dir/src/bsp_usart.c.obj.d -o CMakeFiles/bsp.dir/src/bsp_usart.c.obj -c /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_usart.c
+bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj: bsp/CMakeFiles/bsp.dir/flags.make
+bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_uart.c
+bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj: bsp/CMakeFiles/bsp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj -MF CMakeFiles/bsp.dir/src/bsp_uart.c.obj.d -o CMakeFiles/bsp.dir/src/bsp_uart.c.obj -c /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_uart.c
 
-bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bsp.dir/src/bsp_usart.c.i"
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_usart.c > CMakeFiles/bsp.dir/src/bsp_usart.c.i
+bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bsp.dir/src/bsp_uart.c.i"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_uart.c > CMakeFiles/bsp.dir/src/bsp_uart.c.i
 
-bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bsp.dir/src/bsp_usart.c.s"
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_usart.c -o CMakeFiles/bsp.dir/src/bsp_usart.c.s
+bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bsp.dir/src/bsp_uart.c.s"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_uart.c -o CMakeFiles/bsp.dir/src/bsp_uart.c.s
 
 bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj: bsp/CMakeFiles/bsp.dir/flags.make
 bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_mpu6050.c
@@ -231,7 +231,7 @@ bsp_OBJECTS = \
 "CMakeFiles/bsp.dir/src/board_v1.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_i2c.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_timer.c.obj" \
-"CMakeFiles/bsp.dir/src/bsp_usart.c.obj" \
+"CMakeFiles/bsp.dir/src/bsp_uart.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_oled.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj" \
@@ -246,7 +246,7 @@ bsp_EXTERNAL_OBJECTS =
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/board_v1.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_i2c.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_timer.c.obj
-bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj
+bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_oled.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj

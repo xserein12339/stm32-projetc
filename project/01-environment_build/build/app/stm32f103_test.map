@@ -218,6 +218,8 @@ Discarded input sections
  .group         0x00000000        0xc ../bsp/libbsp.a(board_v1.c.obj)
  .group         0x00000000        0xc ../bsp/libbsp.a(board_v1.c.obj)
  .group         0x00000000        0xc ../bsp/libbsp.a(board_v1.c.obj)
+ .group         0x00000000        0xc ../bsp/libbsp.a(board_v1.c.obj)
+ .group         0x00000000        0xc ../bsp/libbsp.a(board_v1.c.obj)
  .text          0x00000000        0x0 ../bsp/libbsp.a(board_v1.c.obj)
  .data          0x00000000        0x0 ../bsp/libbsp.a(board_v1.c.obj)
  .bss           0x00000000        0x0 ../bsp/libbsp.a(board_v1.c.obj)
@@ -332,13 +334,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x87 ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000      0x240 ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000      0x140 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00000000      0x295 ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000      0x28e ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00000000      0x287 ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000      0x8ed ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000      0x1ef ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000       0xeb ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000       0x83 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00000000      0x220 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00000000      0x25a ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000       0x16 ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000       0xfa ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_macro   0x00000000       0x34 ../bsp/libbsp.a(bsp_key.c.obj)
@@ -453,13 +455,13 @@ Discarded input sections
  .debug_macro   0x00000000       0x87 ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000      0x240 ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000      0x140 ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_macro   0x00000000      0x295 ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000      0x28e ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_macro   0x00000000      0x287 ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000      0x8ed ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000      0x1ef ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000       0xeb ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000       0x83 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_macro   0x00000000      0x220 ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_macro   0x00000000      0x25a ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000       0x16 ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000       0xfa ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_macro   0x00000000       0x34 ../bsp/libbsp.a(bsp_led.c.obj)
@@ -511,8 +513,18 @@ Discarded input sections
  .text          0x00000000        0x0 ../dal/libdal.a(dal_key.c.obj)
  .data          0x00000000        0x0 ../dal/libdal.a(dal_key.c.obj)
  .bss           0x00000000        0x0 ../dal/libdal.a(dal_key.c.obj)
+ .text.dal_key_get_count
+                0x00000000       0x1c ../dal/libdal.a(dal_key.c.obj)
+ .text.dal_key_get_dev_by_index
+                0x00000000       0x5c ../dal/libdal.a(dal_key.c.obj)
+ .text.dal_key_deinit
+                0x00000000       0x44 ../dal/libdal.a(dal_key.c.obj)
  .text.dal_key_selftest
                 0x00000000       0x2c ../dal/libdal.a(dal_key.c.obj)
+ .text.dal_key_set_callback
+                0x00000000       0x24 ../dal/libdal.a(dal_key.c.obj)
+ .text.dal_key_set_irq_enable
+                0x00000000       0x40 ../dal/libdal.a(dal_key.c.obj)
  .debug_macro   0x00000000       0x22 ../dal/libdal.a(dal_key.c.obj)
  .debug_macro   0x00000000       0x8e ../dal/libdal.a(dal_key.c.obj)
  .debug_macro   0x00000000       0x51 ../dal/libdal.a(dal_key.c.obj)
@@ -561,8 +573,12 @@ Discarded input sections
  .text          0x00000000        0x0 ../dal/libdal.a(dal_led.c.obj)
  .data          0x00000000        0x0 ../dal/libdal.a(dal_led.c.obj)
  .bss           0x00000000        0x0 ../dal/libdal.a(dal_led.c.obj)
+ .text.dal_led_get_count
+                0x00000000       0x1c ../dal/libdal.a(dal_led.c.obj)
+ .text.dal_led_get_dev_by_index
+                0x00000000       0x5c ../dal/libdal.a(dal_led.c.obj)
  .text.dal_led_deinit
-                0x00000000       0x38 ../dal/libdal.a(dal_led.c.obj)
+                0x00000000       0x36 ../dal/libdal.a(dal_led.c.obj)
  .text.dal_led_selftest
                 0x00000000       0x2c ../dal/libdal.a(dal_led.c.obj)
  .text.dal_led_get_state
@@ -758,8 +774,6 @@ Discarded input sections
                 0x00000000       0xd0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.vTaskEndScheduler
                 0x00000000       0x40 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .text.xTaskGetTickCountFromISR
-                0x00000000       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.uxTaskGetNumberOfTasks
                 0x00000000        0xc ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.pcTaskGetName
@@ -956,8 +970,6 @@ Discarded input sections
  .bss           0x00000000        0x0 ../third_party/libfreertos_kernel.a(port.c.obj)
  .text.vPortEndScheduler
                 0x00000000       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
- .text.vPortValidateInterruptPriority
-                0x00000000       0x5c ../third_party/libfreertos_kernel.a(port.c.obj)
  .debug_macro   0x00000000      0xacc ../third_party/libfreertos_kernel.a(port.c.obj)
  .debug_macro   0x00000000      0x190 ../third_party/libfreertos_kernel.a(port.c.obj)
  .debug_macro   0x00000000       0x22 ../third_party/libfreertos_kernel.a(port.c.obj)
@@ -1183,8 +1195,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x00000000      0x295 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
@@ -1232,18 +1244,12 @@ Discarded input sections
  .text          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .data          0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .bss           0x00000000        0x0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .text.__NVIC_DisableIRQ
-                0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.__NVIC_GetPriority
                 0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.NVIC_DecodePriority
                 0x00000000       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.__NVIC_SystemReset
                 0x00000000       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .text.HAL_NVIC_EnableIRQ
-                0x00000000       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .text.HAL_NVIC_DisableIRQ
-                0x00000000        0x8 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.HAL_NVIC_SystemReset
                 0x00000000        0x6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.HAL_NVIC_GetPriorityGrouping
@@ -1297,8 +1303,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x00000000      0x295 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
@@ -1401,8 +1407,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x00000000      0x295 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
@@ -1493,8 +1499,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x87 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .debug_macro   0x00000000      0x240 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .debug_macro   0x00000000      0x140 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00000000      0x295 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .debug_macro   0x00000000      0x28e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
- .debug_macro   0x00000000      0x287 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .debug_macro   0x00000000      0x8ed ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .debug_macro   0x00000000      0x1ef ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
  .debug_macro   0x00000000       0xeb ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
@@ -1863,7 +1869,7 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
                 0x08000000                g_pfnVectors
                 0x0800010c                        . = ALIGN (0x4)
 
-.text           0x0800010c     0x25c0
+.text           0x0800010c     0x28b8
                 0x0800010c                        . = ALIGN (0x4)
  *(.text)
  .text          0x0800010c       0x14 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-strcmp.o)
@@ -1874,417 +1880,450 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  .text.frame_dummy
                 0x08000144       0x1c /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
  .text.app_start_task
-                0x08000160       0x58 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                0x08000160       0x5c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
                 0x08000160                app_start_task
- .text.main     0x080001b8       0x3c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-                0x080001b8                main
+ .text.main     0x080001bc       0x3c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                0x080001bc                main
  .text.vApplicationGetIdleTaskMemory
-                0x080001f4       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
-                0x080001f4                vApplicationGetIdleTaskMemory
+                0x080001f8       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+                0x080001f8                vApplicationGetIdleTaskMemory
  .text.vApplicationStackOverflowHook
-                0x0800020c        0x4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
-                0x0800020c                vApplicationStackOverflowHook
+                0x08000210        0x4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+                0x08000210                vApplicationStackOverflowHook
  .text.bsp_system_clock_config
-                0x08000210       0x66 ../bsp/libbsp.a(board_v1.c.obj)
+                0x08000214       0x66 ../bsp/libbsp.a(board_v1.c.obj)
  .text.Error_Handler
-                0x08000276        0x6 ../bsp/libbsp.a(board_v1.c.obj)
-                0x08000276                Error_Handler
+                0x0800027a        0x6 ../bsp/libbsp.a(board_v1.c.obj)
+                0x0800027a                Error_Handler
  .text.bsp_init
-                0x0800027c       0x1c ../bsp/libbsp.a(board_v1.c.obj)
-                0x0800027c                bsp_init
- .text.read_raw
-                0x08000298       0x1a ../bsp/libbsp.a(bsp_key.c.obj)
- .text.bsp_key_ops_get_state
-                0x080002b2       0x30 ../bsp/libbsp.a(bsp_key.c.obj)
- .text.bsp_key_ops_deinit
-                0x080002e2       0x38 ../bsp/libbsp.a(bsp_key.c.obj)
- *fill*         0x0800031a        0x2 
+                0x08000280       0x1c ../bsp/libbsp.a(board_v1.c.obj)
+                0x08000280                bsp_init
+ .text._gpio_clock_enable
+                0x0800029c       0xb0 ../bsp/libbsp.a(bsp_key.c.obj)
+ .text._read_raw
+                0x0800034c       0x1a ../bsp/libbsp.a(bsp_key.c.obj)
+ .text._update_debounce_from_isr
+                0x08000366       0x34 ../bsp/libbsp.a(bsp_key.c.obj)
+ *fill*         0x0800039a        0x2 
+ .text._bsp_key_irq_handler
+                0x0800039c       0x64 ../bsp/libbsp.a(bsp_key.c.obj)
+ .text.bsp_key_ops_get_level
+                0x08000400       0x4a ../bsp/libbsp.a(bsp_key.c.obj)
  .text.bsp_key_ops_init
-                0x0800031c       0xe0 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x0800044a       0x58 ../bsp/libbsp.a(bsp_key.c.obj)
+ *fill*         0x080004a2        0x2 
+ .text._config_exti
+                0x080004a4       0x60 ../bsp/libbsp.a(bsp_key.c.obj)
+ .text.bsp_key_ops_set_irq_enable
+                0x08000504       0x82 ../bsp/libbsp.a(bsp_key.c.obj)
+ .text.bsp_key_ops_deinit
+                0x08000586       0x3e ../bsp/libbsp.a(bsp_key.c.obj)
+ .text.EXTI0_IRQHandler
+                0x080005c4        0xa ../bsp/libbsp.a(bsp_key.c.obj)
+                0x080005c4                EXTI0_IRQHandler
+ .text.EXTI1_IRQHandler
+                0x080005ce        0xa ../bsp/libbsp.a(bsp_key.c.obj)
+                0x080005ce                EXTI1_IRQHandler
+ .text.EXTI2_IRQHandler
+                0x080005d8        0xa ../bsp/libbsp.a(bsp_key.c.obj)
+                0x080005d8                EXTI2_IRQHandler
+ *fill*         0x080005e2        0x2 
  .text.bsp_key_init
-                0x080003fc       0x78 ../bsp/libbsp.a(bsp_key.c.obj)
-                0x080003fc                bsp_key_init
+                0x080005e4       0x9c ../bsp/libbsp.a(bsp_key.c.obj)
+                0x080005e4                bsp_key_init
+ .text._gpio_clock_enable
+                0x08000680       0xb0 ../bsp/libbsp.a(bsp_led.c.obj)
  .text.bsp_led_ops_get_state
-                0x08000474       0x1c ../bsp/libbsp.a(bsp_led.c.obj)
+                0x08000730       0x1c ../bsp/libbsp.a(bsp_led.c.obj)
  .text.bsp_led_ops_set_state
-                0x08000490       0x34 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x0800074c       0x30 ../bsp/libbsp.a(bsp_led.c.obj)
  .text.bsp_led_ops_deinit
-                0x080004c4       0x3a ../bsp/libbsp.a(bsp_led.c.obj)
- *fill*         0x080004fe        0x2 
+                0x0800077c       0x48 ../bsp/libbsp.a(bsp_led.c.obj)
  .text.bsp_led_ops_init
-                0x08000500       0xe8 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x080007c4       0x52 ../bsp/libbsp.a(bsp_led.c.obj)
+ *fill*         0x08000816        0x2 
  .text.bsp_led_init
-                0x080005e8       0x88 ../bsp/libbsp.a(bsp_led.c.obj)
-                0x080005e8                bsp_led_init
+                0x08000818       0x88 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x08000818                bsp_led_init
  .text._key_reg_ensure_init
-                0x08000670       0x30 ../dal/libdal.a(dal_key.c.obj)
+                0x080008a0       0x30 ../dal/libdal.a(dal_key.c.obj)
  .text.dal_registry_find_ops
-                0x080006a0       0x26 ../dal/libdal.a(dal_key.c.obj)
- *fill*         0x080006c6        0x2 
+                0x080008d0       0x26 ../dal/libdal.a(dal_key.c.obj)
+ *fill*         0x080008f6        0x2 
  .text._key_dev_is_registered
-                0x080006c8       0x48 ../dal/libdal.a(dal_key.c.obj)
+                0x080008f8       0x48 ../dal/libdal.a(dal_key.c.obj)
  .text.dal_key_register
-                0x08000710       0x60 ../dal/libdal.a(dal_key.c.obj)
-                0x08000710                dal_key_register
- .text.dal_key_get_dev
-                0x08000770       0x38 ../dal/libdal.a(dal_key.c.obj)
-                0x08000770                dal_key_get_dev
- .text.dal_key_init
-                0x080007a8       0x44 ../dal/libdal.a(dal_key.c.obj)
-                0x080007a8                dal_key_init
- .text.dal_key_deinit
-                0x080007ec       0x38 ../dal/libdal.a(dal_key.c.obj)
-                0x080007ec                dal_key_deinit
+                0x08000940       0x64 ../dal/libdal.a(dal_key.c.obj)
+                0x08000940                dal_key_register
  .text.dal_key_unregister
-                0x08000824       0x48 ../dal/libdal.a(dal_key.c.obj)
-                0x08000824                dal_key_unregister
- .text.dal_key_get_state
-                0x0800086c       0x2a ../dal/libdal.a(dal_key.c.obj)
-                0x0800086c                dal_key_get_state
- *fill*         0x08000896        0x2 
+                0x080009a4       0x58 ../dal/libdal.a(dal_key.c.obj)
+                0x080009a4                dal_key_unregister
+ .text.dal_key_get_dev
+                0x080009fc       0x38 ../dal/libdal.a(dal_key.c.obj)
+                0x080009fc                dal_key_get_dev
+ .text.dal_key_init
+                0x08000a34       0x44 ../dal/libdal.a(dal_key.c.obj)
+                0x08000a34                dal_key_init
+ .text.dal_key_get_level
+                0x08000a78       0x40 ../dal/libdal.a(dal_key.c.obj)
+                0x08000a78                dal_key_get_level
+ .text.dal_key_notify_event
+                0x08000ab8       0x20 ../dal/libdal.a(dal_key.c.obj)
+                0x08000ab8                dal_key_notify_event
  .text._led_reg_ensure_init
-                0x08000898       0x30 ../dal/libdal.a(dal_led.c.obj)
+                0x08000ad8       0x30 ../dal/libdal.a(dal_led.c.obj)
  .text.dal_registry_find_ops
-                0x080008c8       0x26 ../dal/libdal.a(dal_led.c.obj)
- *fill*         0x080008ee        0x2 
+                0x08000b08       0x26 ../dal/libdal.a(dal_led.c.obj)
+ *fill*         0x08000b2e        0x2 
  .text._led_dev_is_registered
-                0x080008f0       0x48 ../dal/libdal.a(dal_led.c.obj)
+                0x08000b30       0x48 ../dal/libdal.a(dal_led.c.obj)
  .text.dal_led_register
-                0x08000938       0x60 ../dal/libdal.a(dal_led.c.obj)
-                0x08000938                dal_led_register
+                0x08000b78       0x60 ../dal/libdal.a(dal_led.c.obj)
+                0x08000b78                dal_led_register
  .text.dal_led_unregister
-                0x08000998       0x40 ../dal/libdal.a(dal_led.c.obj)
-                0x08000998                dal_led_unregister
+                0x08000bd8       0x44 ../dal/libdal.a(dal_led.c.obj)
+                0x08000bd8                dal_led_unregister
  .text.dal_led_get_dev
-                0x080009d8       0x38 ../dal/libdal.a(dal_led.c.obj)
-                0x080009d8                dal_led_get_dev
+                0x08000c1c       0x38 ../dal/libdal.a(dal_led.c.obj)
+                0x08000c1c                dal_led_get_dev
  .text.dal_led_init
-                0x08000a10       0x44 ../dal/libdal.a(dal_led.c.obj)
-                0x08000a10                dal_led_init
+                0x08000c54       0x44 ../dal/libdal.a(dal_led.c.obj)
+                0x08000c54                dal_led_init
  .text.dal_led_set_state
-                0x08000a54       0x42 ../dal/libdal.a(dal_led.c.obj)
-                0x08000a54                dal_led_set_state
+                0x08000c98       0x42 ../dal/libdal.a(dal_led.c.obj)
+                0x08000c98                dal_led_set_state
  .text.dal_registry_init
-                0x08000a96       0x48 ../dal/libdal.a(dal_registry.c.obj)
-                0x08000a96                dal_registry_init
+                0x08000cda       0x48 ../dal/libdal.a(dal_registry.c.obj)
+                0x08000cda                dal_registry_init
  .text.dal_registry_register
-                0x08000ade       0x9c ../dal/libdal.a(dal_registry.c.obj)
-                0x08000ade                dal_registry_register
+                0x08000d22       0x9c ../dal/libdal.a(dal_registry.c.obj)
+                0x08000d22                dal_registry_register
  .text.dal_registry_unregister
-                0x08000b7a       0x6e ../dal/libdal.a(dal_registry.c.obj)
-                0x08000b7a                dal_registry_unregister
+                0x08000dbe       0x6e ../dal/libdal.a(dal_registry.c.obj)
+                0x08000dbe                dal_registry_unregister
  .text.dal_registry_find
-                0x08000be8       0x8a ../dal/libdal.a(dal_registry.c.obj)
-                0x08000be8                dal_registry_find
- *fill*         0x08000c72        0x2 
+                0x08000e2c       0x8a ../dal/libdal.a(dal_registry.c.obj)
+                0x08000e2c                dal_registry_find
+ *fill*         0x08000eb6        0x2 
  .text.Reset_Handler
-                0x08000c74       0x48 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-                0x08000c74                Reset_Handler
+                0x08000eb8       0x48 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x08000eb8                Reset_Handler
  .text.Default_Handler
-                0x08000cbc        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-                0x08000cbc                RTC_Alarm_IRQHandler
-                0x08000cbc                EXTI2_IRQHandler
-                0x08000cbc                DebugMon_Handler
-                0x08000cbc                TIM1_CC_IRQHandler
-                0x08000cbc                HardFault_Handler
-                0x08000cbc                PVD_IRQHandler
-                0x08000cbc                NMI_Handler
-                0x08000cbc                EXTI3_IRQHandler
-                0x08000cbc                EXTI0_IRQHandler
-                0x08000cbc                I2C2_EV_IRQHandler
-                0x08000cbc                UsageFault_Handler
-                0x08000cbc                ADC1_2_IRQHandler
-                0x08000cbc                SPI1_IRQHandler
-                0x08000cbc                TAMPER_IRQHandler
-                0x08000cbc                DMA1_Channel4_IRQHandler
-                0x08000cbc                USART3_IRQHandler
-                0x08000cbc                RTC_IRQHandler
-                0x08000cbc                DMA1_Channel7_IRQHandler
-                0x08000cbc                CAN1_RX1_IRQHandler
-                0x08000cbc                TIM4_IRQHandler
-                0x08000cbc                I2C1_EV_IRQHandler
-                0x08000cbc                DMA1_Channel6_IRQHandler
-                0x08000cbc                TIM3_IRQHandler
-                0x08000cbc                RCC_IRQHandler
-                0x08000cbc                TIM1_TRG_COM_IRQHandler
-                0x08000cbc                DMA1_Channel1_IRQHandler
-                0x08000cbc                Default_Handler
-                0x08000cbc                EXTI15_10_IRQHandler
-                0x08000cbc                EXTI9_5_IRQHandler
-                0x08000cbc                SPI2_IRQHandler
-                0x08000cbc                MemManage_Handler
-                0x08000cbc                DMA1_Channel5_IRQHandler
-                0x08000cbc                EXTI4_IRQHandler
-                0x08000cbc                USB_LP_CAN1_RX0_IRQHandler
-                0x08000cbc                USB_HP_CAN1_TX_IRQHandler
-                0x08000cbc                DMA1_Channel3_IRQHandler
-                0x08000cbc                TIM1_UP_IRQHandler
-                0x08000cbc                WWDG_IRQHandler
-                0x08000cbc                TIM2_IRQHandler
-                0x08000cbc                TIM1_BRK_IRQHandler
-                0x08000cbc                EXTI1_IRQHandler
-                0x08000cbc                USART2_IRQHandler
-                0x08000cbc                I2C2_ER_IRQHandler
-                0x08000cbc                DMA1_Channel2_IRQHandler
-                0x08000cbc                CAN1_SCE_IRQHandler
-                0x08000cbc                FLASH_IRQHandler
-                0x08000cbc                BusFault_Handler
-                0x08000cbc                USART1_IRQHandler
-                0x08000cbc                I2C1_ER_IRQHandler
-                0x08000cbc                USBWakeUp_IRQHandler
+                0x08000f00        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x08000f00                RTC_Alarm_IRQHandler
+                0x08000f00                DebugMon_Handler
+                0x08000f00                TIM1_CC_IRQHandler
+                0x08000f00                HardFault_Handler
+                0x08000f00                PVD_IRQHandler
+                0x08000f00                NMI_Handler
+                0x08000f00                EXTI3_IRQHandler
+                0x08000f00                I2C2_EV_IRQHandler
+                0x08000f00                UsageFault_Handler
+                0x08000f00                ADC1_2_IRQHandler
+                0x08000f00                SPI1_IRQHandler
+                0x08000f00                TAMPER_IRQHandler
+                0x08000f00                DMA1_Channel4_IRQHandler
+                0x08000f00                USART3_IRQHandler
+                0x08000f00                RTC_IRQHandler
+                0x08000f00                DMA1_Channel7_IRQHandler
+                0x08000f00                CAN1_RX1_IRQHandler
+                0x08000f00                TIM4_IRQHandler
+                0x08000f00                I2C1_EV_IRQHandler
+                0x08000f00                DMA1_Channel6_IRQHandler
+                0x08000f00                TIM3_IRQHandler
+                0x08000f00                RCC_IRQHandler
+                0x08000f00                TIM1_TRG_COM_IRQHandler
+                0x08000f00                DMA1_Channel1_IRQHandler
+                0x08000f00                Default_Handler
+                0x08000f00                EXTI15_10_IRQHandler
+                0x08000f00                EXTI9_5_IRQHandler
+                0x08000f00                SPI2_IRQHandler
+                0x08000f00                MemManage_Handler
+                0x08000f00                DMA1_Channel5_IRQHandler
+                0x08000f00                EXTI4_IRQHandler
+                0x08000f00                USB_LP_CAN1_RX0_IRQHandler
+                0x08000f00                USB_HP_CAN1_TX_IRQHandler
+                0x08000f00                DMA1_Channel3_IRQHandler
+                0x08000f00                TIM1_UP_IRQHandler
+                0x08000f00                WWDG_IRQHandler
+                0x08000f00                TIM2_IRQHandler
+                0x08000f00                TIM1_BRK_IRQHandler
+                0x08000f00                USART2_IRQHandler
+                0x08000f00                I2C2_ER_IRQHandler
+                0x08000f00                DMA1_Channel2_IRQHandler
+                0x08000f00                CAN1_SCE_IRQHandler
+                0x08000f00                FLASH_IRQHandler
+                0x08000f00                BusFault_Handler
+                0x08000f00                USART1_IRQHandler
+                0x08000f00                I2C1_ER_IRQHandler
+                0x08000f00                USBWakeUp_IRQHandler
  .text.SystemInit
-                0x08000cbe        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
-                0x08000cbe                SystemInit
+                0x08000f02        0x2 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x08000f02                SystemInit
  .text.prvResetNextTaskUnblockTime
-                0x08000cc0       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08000f04       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvInitialiseNewTask
-                0x08000ce8       0xba ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08000f2c       0xba ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvCreateStaticTask
-                0x08000da2       0x90 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- *fill*         0x08000e32        0x2 
+                0x08000fe6       0x90 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ *fill*         0x08001076        0x2 
  .text.prvInitialiseTaskLists
-                0x08000e34       0x68 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001078       0x68 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvAddNewTaskToReadyList
-                0x08000e9c       0xcc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080010e0       0xcc ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvCreateTask
-                0x08000f68       0x5c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080011ac       0x5c ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvDeleteTCB
-                0x08000fc4       0x38 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001208       0x38 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvCheckTasksWaitingTermination
-                0x08000ffc       0x4c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001240       0x4c ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvIdleTask
-                0x08001048       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x0800128c       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.prvAddCurrentTaskToDelayedList
-                0x08001070       0xbc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080012b4       0xbc ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.xTaskCreateStatic
-                0x0800112c       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x0800112c                xTaskCreateStatic
+                0x08001370       0x28 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001370                xTaskCreateStatic
  .text.prvCreateIdleTasks
-                0x08001154       0x80 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001398       0x80 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .text.xTaskCreate
-                0x080011d4       0x2c ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x080011d4                xTaskCreate
+                0x08001418       0x2c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001418                xTaskCreate
  .text.vTaskStartScheduler
-                0x08001200       0x64 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08001200                vTaskStartScheduler
+                0x08001444       0x64 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08001444                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08001264       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08001264                vTaskSuspendAll
+                0x080014a8       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080014a8                vTaskSuspendAll
  .text.xTaskGetTickCount
-                0x08001274        0xc ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08001274                xTaskGetTickCount
+                0x080014b8        0xc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080014b8                xTaskGetTickCount
+ .text.xTaskGetTickCountFromISR
+                0x080014c4       0x10 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080014c4                xTaskGetTickCountFromISR
  .text.xTaskIncrementTick
-                0x08001280      0x178 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08001280                xTaskIncrementTick
+                0x080014d4      0x178 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080014d4                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x080013f8      0x158 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x080013f8                xTaskResumeAll
+                0x0800164c      0x158 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x0800164c                xTaskResumeAll
  .text.vTaskDelay
-                0x08001550       0x50 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x08001550                vTaskDelay
+                0x080017a4       0x50 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080017a4                vTaskDelay
  .text.vTaskSwitchContext
-                0x080015a0       0xdc ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x080015a0                vTaskSwitchContext
+                0x080017f4       0xdc ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x080017f4                vTaskSwitchContext
  .text.vListInitialise
-                0x0800167c       0x16 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x0800167c                vListInitialise
+                0x080018d0       0x16 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x080018d0                vListInitialise
  .text.vListInitialiseItem
-                0x08001692        0x6 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08001692                vListInitialiseItem
+                0x080018e6        0x6 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x080018e6                vListInitialiseItem
  .text.vListInsert
-                0x08001698       0x32 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x08001698                vListInsert
+                0x080018ec       0x32 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x080018ec                vListInsert
  .text.uxListRemove
-                0x080016ca       0x24 ../third_party/libfreertos_kernel.a(list.c.obj)
-                0x080016ca                uxListRemove
- *fill*         0x080016ee        0x2 
+                0x0800191e       0x24 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x0800191e                uxListRemove
+ *fill*         0x08001942        0x2 
  .text.prvTaskExitError
-                0x080016f0       0x40 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001944       0x40 ../third_party/libfreertos_kernel.a(port.c.obj)
  .text.SVC_Handler
-                0x08001730       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001730                SVC_Handler
+                0x08001984       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001984                SVC_Handler
  .text.prvPortStartFirstTask
-                0x08001754       0x20 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x080019a8       0x20 ../third_party/libfreertos_kernel.a(port.c.obj)
  .text.PendSV_Handler
-                0x08001774       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001774                PendSV_Handler
+                0x080019c8       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x080019c8                PendSV_Handler
  .text.pxPortInitialiseStack
-                0x080017b8       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x080017b8                pxPortInitialiseStack
+                0x08001a0c       0x24 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001a0c                pxPortInitialiseStack
  .text.vPortEnterCritical
-                0x080017dc       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x080017dc                vPortEnterCritical
+                0x08001a30       0x44 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001a30                vPortEnterCritical
  .text.vPortExitCritical
-                0x08001820       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001820                vPortExitCritical
+                0x08001a74       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001a74                vPortExitCritical
  .text.SysTick_Handler
-                0x0800184c       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x0800184c                SysTick_Handler
+                0x08001aa0       0x2c ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001aa0                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x08001878       0x18 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001878                vPortSetupTimerInterrupt
+                0x08001acc       0x18 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001acc                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x08001890      0x138 ../third_party/libfreertos_kernel.a(port.c.obj)
-                0x08001890                xPortStartScheduler
+                0x08001ae4      0x138 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001ae4                xPortStartScheduler
+ .text.vPortValidateInterruptPriority
+                0x08001c1c       0x5c ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x08001c1c                vPortValidateInterruptPriority
  .text.prvHeapInit
-                0x080019c8       0x58 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x08001c78       0x58 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .text.prvInsertBlockIntoFreeList
-                0x08001a20       0x88 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x08001cd0       0x88 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .text.pvPortMalloc
-                0x08001aa8      0x198 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
-                0x08001aa8                pvPortMalloc
+                0x08001d58      0x198 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x08001d58                pvPortMalloc
  .text.vPortFree
-                0x08001c40       0x9c ../third_party/libfreertos_kernel.a(heap_4.c.obj)
-                0x08001c40                vPortFree
+                0x08001ef0       0x9c ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x08001ef0                vPortFree
  .text.HAL_MspInit
-                0x08001cdc        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x08001cdc                HAL_MspInit
- *fill*         0x08001cde        0x2 
+                0x08001f8c        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08001f8c                HAL_MspInit
+ *fill*         0x08001f8e        0x2 
  .text.HAL_InitTick
-                0x08001ce0       0x4c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x08001ce0                HAL_InitTick
+                0x08001f90       0x4c ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08001f90                HAL_InitTick
  .text.HAL_Init
-                0x08001d2c       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x08001d2c                HAL_Init
+                0x08001fdc       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08001fdc                HAL_Init
  .text.HAL_GetTick
-                0x08001d50        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x08001d50                HAL_GetTick
+                0x08002000        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x08002000                HAL_GetTick
+ .text.__NVIC_DisableIRQ
+                0x0800200c       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.__NVIC_SetPriority
-                0x08001d5c       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08002030       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .text.NVIC_EncodePriority
-                0x08001d84       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- *fill*         0x08001dc2        0x2 
+                0x08002058       0x3e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ *fill*         0x08002096        0x2 
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08001dc4       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
-                0x08001dc4                HAL_NVIC_SetPriorityGrouping
+                0x08002098       0x24 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08002098                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08001de8       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
-                0x08001de8                HAL_NVIC_SetPriority
+                0x080020bc       0x20 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x080020bc                HAL_NVIC_SetPriority
+ .text.HAL_NVIC_EnableIRQ
+                0x080020dc       0x1c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x080020dc                HAL_NVIC_EnableIRQ
+ .text.HAL_NVIC_DisableIRQ
+                0x080020f8        0x8 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x080020f8                HAL_NVIC_DisableIRQ
  .text.HAL_SYSTICK_Config
-                0x08001e08       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
-                0x08001e08                HAL_SYSTICK_Config
+                0x08002100       0x28 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x08002100                HAL_SYSTICK_Config
  .text.RCC_Delay
-                0x08001e30       0x2c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08002128       0x2c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .text.HAL_RCC_OscConfig
-                0x08001e5c      0x410 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
-                0x08001e5c                HAL_RCC_OscConfig
+                0x08002154      0x410 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08002154                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x0800226c       0x54 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
-                0x0800226c                HAL_RCC_GetSysClockFreq
+                0x08002564       0x54 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08002564                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x080022c0      0x16c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
-                0x080022c0                HAL_RCC_ClockConfig
+                0x080025b8      0x16c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x080025b8                HAL_RCC_ClockConfig
  .text.HAL_GPIO_Init
-                0x0800242c      0x214 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                0x0800242c                HAL_GPIO_Init
+                0x08002724      0x214 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x08002724                HAL_GPIO_Init
  .text.HAL_GPIO_ReadPin
-                0x08002640        0xe ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                0x08002640                HAL_GPIO_ReadPin
+                0x08002938        0xe ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x08002938                HAL_GPIO_ReadPin
  .text.HAL_GPIO_WritePin
-                0x0800264e        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
-                0x0800264e                HAL_GPIO_WritePin
- .text.memset   0x0800265a       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
-                0x0800265a                memset
- *fill*         0x0800266a        0x2 
+                0x08002946        0xc ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x08002946                HAL_GPIO_WritePin
+ .text.memset   0x08002952       0x10 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-memset.o)
+                0x08002952                memset
+ *fill*         0x08002962        0x2 
  .text.__libc_init_array
-                0x0800266c       0x48 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
-                0x0800266c                __libc_init_array
+                0x08002964       0x48 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-init.o)
+                0x08002964                __libc_init_array
  *(.glue_7t)
- .glue_7t       0x080026b4        0x0 linker stubs
+ .glue_7t       0x080029ac        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x080026b4        0x0 linker stubs
+ .glue_7        0x080029ac        0x0 linker stubs
  *(.glue_7m)
  *(.eh_frame)
- .eh_frame      0x080026b4        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x080029ac        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x080026b4        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
-                0x080026b4                _init
- .init          0x080026b8        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+ .init          0x080029ac        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+                0x080029ac                _init
+ .init          0x080029b0        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x080026c0        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
-                0x080026c0                _fini
- .fini          0x080026c4        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
-                0x080026cc                        . = ALIGN (0x4)
-                0x080026cc                        _etext = .
+ .fini          0x080029b8        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
+                0x080029b8                _fini
+ .fini          0x080029bc        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
+                0x080029c4                        . = ALIGN (0x4)
+                0x080029c4                        _etext = .
 
-.vfp11_veneer   0x080026cc        0x0
- .vfp11_veneer  0x080026cc        0x0 linker stubs
+.vfp11_veneer   0x080029c4        0x0
+ .vfp11_veneer  0x080029c4        0x0 linker stubs
 
-.v4_bx          0x080026cc        0x0
- .v4_bx         0x080026cc        0x0 linker stubs
+.v4_bx          0x080029c4        0x0
+ .v4_bx         0x080029c4        0x0 linker stubs
 
-.iplt           0x080026cc        0x0
- .iplt          0x080026cc        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x080029c4        0x0
+ .iplt          0x080029c4        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x080026cc       0xf0
-                0x080026cc                        . = ALIGN (0x4)
+.rodata         0x080029c4      0x100
+                0x080029c4                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.app_start_task.str1.4
-                0x080026cc       0x41 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                0x080029c4       0x41 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
                                   0xd (size before relaxing)
  .rodata.main.str1.4
-                0x0800270d        0x9 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- *fill*         0x0800270d        0x3 
+                0x08002a05        0x9 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ *fill*         0x08002a05        0x3 
  .rodata.g_bsp_key_ops
-                0x08002710       0x10 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x08002a08       0x14 ../bsp/libbsp.a(bsp_key.c.obj)
  .rodata.str1.4
-                0x08002720       0x15 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x08002a1c       0x15 ../bsp/libbsp.a(bsp_key.c.obj)
  .rodata.s_key_table
-                0x08002720       0x30 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x08002a1c       0x3c ../bsp/libbsp.a(bsp_key.c.obj)
  .rodata.g_bsp_led_ops
-                0x08002750       0x14 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x08002a58       0x14 ../bsp/libbsp.a(bsp_led.c.obj)
  .rodata.str1.4
-                0x08002764       0x15 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x08002a6c       0x15 ../bsp/libbsp.a(bsp_led.c.obj)
  .rodata.s_led_table
-                0x08002764       0x30 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x08002a6c       0x30 ../bsp/libbsp.a(bsp_led.c.obj)
  .rodata.AHBPrescTable
-                0x08002794       0x10 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
-                0x08002794                AHBPrescTable
+                0x08002a9c       0x10 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x08002a9c                AHBPrescTable
  .rodata.prvCreateIdleTasks.str1.4
-                0x080027a4        0x5 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08002aac        0x5 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .rodata.uxTopUsedPriority
-                0x080027a4        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x08002aac        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .rodata.aPredivFactorTable.0
-                0x080027a8        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- *fill*         0x080027aa        0x2 
+                0x08002ab0        0x2 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ *fill*         0x08002ab2        0x2 
  .rodata.aPLLMULFactorTable.1
-                0x080027ac       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
-                0x080027bc                        . = ALIGN (0x4)
+                0x08002ab4       0x10 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x08002ac4                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080027bc        0x8
-                0x080027bc                        __exidx_start = .
+.ARM            0x08002ac4        0x8
+                0x08002ac4                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x080027bc        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-strcmp.o)
-                0x080027c4                        __exidx_end = .
+ .ARM.exidx     0x08002ac4        0x8 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg_nano.a(libc_a-strcmp.o)
+                0x08002acc                        __exidx_end = .
 
-.rel.dyn        0x080027c4        0x0
- .rel.iplt      0x080027c4        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x08002acc        0x0
+ .rel.iplt      0x08002acc        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.preinit_array  0x080027c4        0x0
-                0x080027c4                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08002acc        0x0
+                0x08002acc                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080027c4                        PROVIDE (__preinit_array_end = .)
+                0x08002acc                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x080027c4        0x4
-                0x080027c4                        PROVIDE (__init_array_start = .)
+.init_array     0x08002acc        0x4
+                0x08002acc                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080027c4        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x080027c8                        PROVIDE (__init_array_end = .)
+ .init_array    0x08002acc        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x08002ad0                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x080027c8        0x4
-                0x080027c8                        PROVIDE (__fini_array_start = .)
+.fini_array     0x08002ad0        0x4
+                0x08002ad0                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080027c8        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x080027cc                        PROVIDE (__fini_array_end = .)
-                0x080027cc                        _sidata = LOADADDR (.data)
+ .fini_array    0x08002ad0        0x4 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x08002ad4                        PROVIDE (__fini_array_end = .)
+                0x08002ad4                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x10 load address 0x080027cc
+.data           0x20000000       0x10 load address 0x08002ad4
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -2304,10 +2343,10 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
                 0x20000010                        . = ALIGN (0x4)
                 0x20000010                        _edata = .
 
-.igot.plt       0x20000010        0x0 load address 0x080027dc
+.igot.plt       0x20000010        0x0 load address 0x08002ae4
  .igot.plt      0x20000010        0x0 /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.bss            0x20000010     0x2d00 load address 0x080027dc
+.bss            0x20000010     0x2d30 load address 0x08002ae4
                 0x20000010                        . = ALIGN (0x4)
                 0x20000010                        _sbss = .
                 0x20000010                        __bss_start__ = _sbss
@@ -2322,103 +2361,103 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  .bss.xIdleTaskTCB
                 0x2000022c       0x5c CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
  .bss.s_dev_pool
-                0x20000288       0x30 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x20000288       0x48 ../bsp/libbsp.a(bsp_key.c.obj)
  .bss.s_priv_pool
-                0x200002b8       0x30 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x200002d0       0x48 ../bsp/libbsp.a(bsp_key.c.obj)
  .bss.s_dev_pool
-                0x200002e8       0x30 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x20000318       0x30 ../bsp/libbsp.a(bsp_led.c.obj)
  .bss.s_priv_pool
-                0x20000318       0x24 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x20000348       0x24 ../bsp/libbsp.a(bsp_led.c.obj)
  .bss.s_key_reg_inited
-                0x2000033c        0x1 ../dal/libdal.a(dal_key.c.obj)
- *fill*         0x2000033d        0x3 
+                0x2000036c        0x1 ../dal/libdal.a(dal_key.c.obj)
+ *fill*         0x2000036d        0x3 
  .bss.s_key_reg
-                0x20000340        0x8 ../dal/libdal.a(dal_key.c.obj)
+                0x20000370        0x8 ../dal/libdal.a(dal_key.c.obj)
  .bss.s_key_reg_buf
-                0x20000348       0x30 ../dal/libdal.a(dal_key.c.obj)
+                0x20000378       0x30 ../dal/libdal.a(dal_key.c.obj)
  .bss.s_led_reg_inited
-                0x20000378        0x1 ../dal/libdal.a(dal_led.c.obj)
- *fill*         0x20000379        0x3 
+                0x200003a8        0x1 ../dal/libdal.a(dal_led.c.obj)
+ *fill*         0x200003a9        0x3 
  .bss.s_led_reg
-                0x2000037c        0x8 ../dal/libdal.a(dal_led.c.obj)
+                0x200003ac        0x8 ../dal/libdal.a(dal_led.c.obj)
  .bss.s_led_reg_buf
-                0x20000384       0x60 ../dal/libdal.a(dal_led.c.obj)
+                0x200003b4       0x60 ../dal/libdal.a(dal_led.c.obj)
  .bss.uxSchedulerSuspended
-                0x200003e4        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x20000414        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .bss.xIdleTaskHandles
-                0x200003e8        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x20000418        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .bss.xNextTaskUnblockTime
-                0x200003ec        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x2000041c        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .bss.uxTaskNumber
-                0x200003f0        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x20000420        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .bss.xNumOfOverflows
-                0x200003f4        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xYieldPendings
-                0x200003f8        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xPendedTicks
-                0x200003fc        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xSchedulerRunning
-                0x20000400        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.uxTopReadyPriority
-                0x20000404        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xTickCount
-                0x20000408        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.uxCurrentNumberOfTasks
-                0x2000040c        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xSuspendedTaskList
-                0x20000410       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.uxDeletedTasksWaitingCleanUp
                 0x20000424        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xTasksWaitingTermination
-                0x20000428       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xPendingReadyList
-                0x2000043c       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.pxOverflowDelayedTaskList
-                0x20000450        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.pxDelayedTaskList
+ .bss.xYieldPendings
+                0x20000428        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.xPendedTicks
+                0x2000042c        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.xSchedulerRunning
+                0x20000430        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.uxTopReadyPriority
+                0x20000434        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.xTickCount
+                0x20000438        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.uxCurrentNumberOfTasks
+                0x2000043c        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.xSuspendedTaskList
+                0x20000440       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.uxDeletedTasksWaitingCleanUp
                 0x20000454        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xDelayedTaskList2
+ .bss.xTasksWaitingTermination
                 0x20000458       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .bss.xDelayedTaskList1
+ .bss.xPendingReadyList
                 0x2000046c       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.pxOverflowDelayedTaskList
+                0x20000480        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.pxDelayedTaskList
+                0x20000484        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.xDelayedTaskList2
+                0x20000488       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .bss.xDelayedTaskList1
+                0x2000049c       0x14 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .bss.pxReadyTasksLists
-                0x20000480       0x64 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x200004b0       0x64 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .bss.pxCurrentTCB
-                0x200004e4        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
-                0x200004e4                pxCurrentTCB
+                0x20000514        0x4 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x20000514                pxCurrentTCB
  .bss.ulMaxPRIGROUPValue
-                0x200004e8        0x4 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x20000518        0x4 ../third_party/libfreertos_kernel.a(port.c.obj)
  .bss.ucMaxSysCallPriority
-                0x200004ec        0x1 ../third_party/libfreertos_kernel.a(port.c.obj)
- *fill*         0x200004ed        0x3 
+                0x2000051c        0x1 ../third_party/libfreertos_kernel.a(port.c.obj)
+ *fill*         0x2000051d        0x3 
  .bss.xNumberOfSuccessfulFrees
-                0x200004f0        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x20000520        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .bss.xNumberOfSuccessfulAllocations
-                0x200004f4        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x20000524        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .bss.xMinimumEverFreeBytesRemaining
-                0x200004f8        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x20000528        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .bss.xFreeBytesRemaining
-                0x200004fc        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.pxEnd     0x20000500        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.xStart    0x20000504        0x8 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.ucHeap    0x2000050c     0x2800 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .bss.uwTick    0x20002d0c        0x4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
-                0x20002d0c                uwTick
+                0x2000052c        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.pxEnd     0x20000530        0x4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.xStart    0x20000534        0x8 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.ucHeap    0x2000053c     0x2800 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .bss.uwTick    0x20002d3c        0x4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x20002d3c                uwTick
  *(COMMON)
-                0x20002d10                        . = ALIGN (0x4)
-                0x20002d10                        _ebss = .
-                0x20002d10                        __bss_end__ = _ebss
+                0x20002d40                        . = ALIGN (0x4)
+                0x20002d40                        _ebss = .
+                0x20002d40                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20002d10      0x600 load address 0x080027dc
-                0x20002d10                        . = ALIGN (0x8)
-                0x20002d10                        PROVIDE (end = .)
+                0x20002d40      0x600 load address 0x08002ae4
+                0x20002d40                        . = ALIGN (0x8)
+                0x20002d40                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x20002f10                        . = (. + _Min_Heap_Size)
- *fill*         0x20002d10      0x200 
-                0x20003310                        . = (. + _Min_Stack_Size)
- *fill*         0x20002f10      0x400 
-                0x20003310                        . = ALIGN (0x8)
+                0x20002f40                        . = (. + _Min_Heap_Size)
+ *fill*         0x20002d40      0x200 
+                0x20003340                        . = (. + _Min_Stack_Size)
+ *fill*         0x20002f40      0x400 
+                0x20003340                        . = ALIGN (0x8)
 
 /DISCARD/
  *(.comment)
@@ -2479,65 +2518,65 @@ LOAD /opt/xpack-gcc/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
 OUTPUT(stm32f103_test.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000     0xba3a
- .debug_info    0x00000000      0x79f CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_info    0x0000079f      0x334 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_info    0x00000ad3      0x408 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_info    0x00000edb      0xa0d ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_info    0x000018e8      0x9df ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_info    0x000022c7      0x8ab ../dal/libdal.a(dal_key.c.obj)
- .debug_info    0x00002b72      0x942 ../dal/libdal.a(dal_led.c.obj)
- .debug_info    0x000034b4      0x5da ../dal/libdal.a(dal_registry.c.obj)
- .debug_info    0x00003a8e       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_info    0x00003abe      0x26b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_info    0x00003d29     0x4378 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_info    0x000080a1      0x30e ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_info    0x000083af      0x604 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_info    0x000089b3      0x7bb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_info    0x0000916e      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_info    0x000099f2      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_info    0x0000a835      0xb2a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_info    0x0000b35f      0x6db ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_info     0x00000000     0xc875
+ .debug_info    0x00000000      0x85c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_info    0x0000085c      0x334 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_info    0x00000b90      0x40f ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_info    0x00000f9f     0x118b ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_info    0x0000212a      0xacd ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_info    0x00002bf7      0xc35 ../dal/libdal.a(dal_key.c.obj)
+ .debug_info    0x0000382c      0xac3 ../dal/libdal.a(dal_led.c.obj)
+ .debug_info    0x000042ef      0x5da ../dal/libdal.a(dal_registry.c.obj)
+ .debug_info    0x000048c9       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_info    0x000048f9      0x26b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_info    0x00004b64     0x4378 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_info    0x00008edc      0x30e ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_info    0x000091ea      0x604 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_info    0x000097ee      0x7bb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_info    0x00009fa9      0x884 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_info    0x0000a82d      0xe43 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_info    0x0000b670      0xb2a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_info    0x0000c19a      0x6db ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_abbrev   0x00000000     0x2680
+.debug_abbrev   0x00000000     0x290d
  .debug_abbrev  0x00000000      0x1fe CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_abbrev  0x000001fe       0xd8 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
  .debug_abbrev  0x000002d6      0x1de ../bsp/libbsp.a(board_v1.c.obj)
- .debug_abbrev  0x000004b4      0x256 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_abbrev  0x0000070a      0x288 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_abbrev  0x00000992      0x1f8 ../dal/libdal.a(dal_key.c.obj)
- .debug_abbrev  0x00000b8a      0x1ef ../dal/libdal.a(dal_led.c.obj)
- .debug_abbrev  0x00000d79      0x1e6 ../dal/libdal.a(dal_registry.c.obj)
- .debug_abbrev  0x00000f5f       0x1d ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_abbrev  0x00000f7c      0x143 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_abbrev  0x000010bf      0x436 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_abbrev  0x000014f5      0x120 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_abbrev  0x00001615      0x2b7 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_abbrev  0x000018cc      0x2d4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_abbrev  0x00001ba0      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_abbrev  0x00001dd5      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_abbrev  0x00002182      0x2d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_abbrev  0x0000245b      0x225 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_abbrev  0x000004b4      0x3a9 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_abbrev  0x0000085d      0x2ce ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_abbrev  0x00000b2b      0x280 ../dal/libdal.a(dal_key.c.obj)
+ .debug_abbrev  0x00000dab      0x25b ../dal/libdal.a(dal_led.c.obj)
+ .debug_abbrev  0x00001006      0x1e6 ../dal/libdal.a(dal_registry.c.obj)
+ .debug_abbrev  0x000011ec       0x1d ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_abbrev  0x00001209      0x143 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_abbrev  0x0000134c      0x436 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_abbrev  0x00001782      0x120 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_abbrev  0x000018a2      0x2b7 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_abbrev  0x00001b59      0x2d4 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_abbrev  0x00001e2d      0x235 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_abbrev  0x00002062      0x3ad ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_abbrev  0x0000240f      0x2d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_abbrev  0x000026e8      0x225 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_loc      0x00000000     0x84b1
- .debug_loc     0x00000000      0x107 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_loc     0x00000107       0x88 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_loc     0x0000018f      0x459 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_loc     0x000005e8      0x526 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_loc     0x00000b0e      0x7bb ../dal/libdal.a(dal_key.c.obj)
- .debug_loc     0x000012c9      0x818 ../dal/libdal.a(dal_led.c.obj)
- .debug_loc     0x00001ae1      0x914 ../dal/libdal.a(dal_registry.c.obj)
- .debug_loc     0x000023f5      0x11b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_loc     0x00002510     0x3ef9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_loc     0x00006409       0xeb ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_loc     0x000064f4      0x1c4 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_loc     0x000066b8      0x627 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_loc     0x00006cdf      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_loc     0x00006ed8      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_loc     0x0000778c      0x7c6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_loc     0x00007f52      0x55f ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_loc      0x00000000     0x8da5
+ .debug_loc     0x00000000      0x11c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_loc     0x0000011c       0x88 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_loc     0x000001a4      0x8b7 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_loc     0x00000a5b      0x541 ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_loc     0x00000f9c      0xadc ../dal/libdal.a(dal_key.c.obj)
+ .debug_loc     0x00001a78      0x95d ../dal/libdal.a(dal_led.c.obj)
+ .debug_loc     0x000023d5      0x914 ../dal/libdal.a(dal_registry.c.obj)
+ .debug_loc     0x00002ce9      0x11b ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_loc     0x00002e04     0x3ef9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_loc     0x00006cfd       0xeb ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_loc     0x00006de8      0x1c4 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_loc     0x00006fac      0x627 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_loc     0x000075d3      0x1f9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_loc     0x000077cc      0x8b4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_loc     0x00008080      0x7c6 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_loc     0x00008846      0x55f ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_aranges  0x00000000      0x880
+.debug_aranges  0x00000000      0x900
  .debug_aranges
                 0x00000000       0x28 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_aranges
@@ -2545,57 +2584,57 @@ LOAD linker stubs
  .debug_aranges
                 0x00000050       0x30 ../bsp/libbsp.a(board_v1.c.obj)
  .debug_aranges
-                0x00000080       0x40 ../bsp/libbsp.a(bsp_key.c.obj)
+                0x00000080       0x80 ../bsp/libbsp.a(bsp_key.c.obj)
  .debug_aranges
-                0x000000c0       0x40 ../bsp/libbsp.a(bsp_led.c.obj)
+                0x00000100       0x48 ../bsp/libbsp.a(bsp_led.c.obj)
  .debug_aranges
-                0x00000100       0x68 ../dal/libdal.a(dal_key.c.obj)
+                0x00000148       0x90 ../dal/libdal.a(dal_key.c.obj)
  .debug_aranges
-                0x00000168       0x70 ../dal/libdal.a(dal_led.c.obj)
+                0x000001d8       0x80 ../dal/libdal.a(dal_led.c.obj)
  .debug_aranges
-                0x000001d8       0x50 ../dal/libdal.a(dal_registry.c.obj)
+                0x00000258       0x50 ../dal/libdal.a(dal_registry.c.obj)
  .debug_aranges
-                0x00000228       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+                0x000002a8       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
  .debug_aranges
-                0x00000250       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+                0x000002d0       0x28 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
  .debug_aranges
-                0x00000278      0x258 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                0x000002f8      0x258 ../third_party/libfreertos_kernel.a(tasks.c.obj)
  .debug_aranges
-                0x000004d0       0x40 ../third_party/libfreertos_kernel.a(list.c.obj)
+                0x00000550       0x40 ../third_party/libfreertos_kernel.a(list.c.obj)
  .debug_aranges
-                0x00000510       0x78 ../third_party/libfreertos_kernel.a(port.c.obj)
+                0x00000590       0x78 ../third_party/libfreertos_kernel.a(port.c.obj)
  .debug_aranges
-                0x00000588       0x70 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+                0x00000608       0x70 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
  .debug_aranges
-                0x000005f8       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                0x00000678       0xe0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
  .debug_aranges
-                0x000006d8       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                0x00000758       0xc0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
  .debug_aranges
-                0x00000798       0x90 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+                0x00000818       0x90 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
  .debug_aranges
-                0x00000828       0x58 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+                0x000008a8       0x58 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_ranges   0x00000000      0xb10
+.debug_ranges   0x00000000      0xbd8
  .debug_ranges  0x00000000       0x18 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_ranges  0x00000018       0x18 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
  .debug_ranges  0x00000030       0x20 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_ranges  0x00000050       0x60 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_ranges  0x000000b0       0x60 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_ranges  0x00000110       0x70 ../dal/libdal.a(dal_key.c.obj)
- .debug_ranges  0x00000180       0x60 ../dal/libdal.a(dal_led.c.obj)
- .debug_ranges  0x000001e0       0x58 ../dal/libdal.a(dal_registry.c.obj)
- .debug_ranges  0x00000238       0x20 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_ranges  0x00000258       0x18 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_ranges  0x00000270      0x510 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_ranges  0x00000780       0x30 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_ranges  0x000007b0       0x98 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_ranges  0x00000848       0x60 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_ranges  0x000008a8       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_ranges  0x00000978       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_ranges  0x00000a28       0xa0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_ranges  0x00000ac8       0x48 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_ranges  0x00000050       0xa0 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_ranges  0x000000f0       0x68 ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_ranges  0x00000158       0xb0 ../dal/libdal.a(dal_key.c.obj)
+ .debug_ranges  0x00000208       0xa0 ../dal/libdal.a(dal_led.c.obj)
+ .debug_ranges  0x000002a8       0x58 ../dal/libdal.a(dal_registry.c.obj)
+ .debug_ranges  0x00000300       0x20 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_ranges  0x00000320       0x18 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_ranges  0x00000338      0x510 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_ranges  0x00000848       0x30 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_ranges  0x00000878       0x98 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_ranges  0x00000910       0x60 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_ranges  0x00000970       0xd0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_ranges  0x00000a40       0xb0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_ranges  0x00000af0       0xa0 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_ranges  0x00000b90       0x48 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_macro    0x00000000    0x1cc3e
+.debug_macro    0x00000000    0x1ccce
  .debug_macro   0x00000000      0x11a CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_macro   0x0000011a      0xacc CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_macro   0x00000be6       0x22 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
@@ -2618,143 +2657,145 @@ LOAD linker stubs
  .debug_macro   0x0000270a       0xc3 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_macro   0x000027cd      0x161 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_macro   0x0000292e       0xdf CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_macro   0x00002a0d      0x21b ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00002c28      0xad2 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000036fa       0xca ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000037c4       0x2e ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000037f2       0x22 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00003814       0x1c ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00003830       0x22 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00003852       0xbd ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0000390f      0xd23 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00004632     0xe09e ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000126d0       0x6d ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001273d     0x34a2 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00015bdf       0x5c ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00015c3b      0x5bc ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000161f7      0x289 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016480      0x1cb ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001664b      0x114 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001675f      0x1b2 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016911       0x27 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016938      0x136 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016a6e      0x1bc ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016c2a       0x34 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016c5e       0x3c ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016c9a       0x57 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016cf1       0x87 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016d78      0x240 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00016fb8      0x140 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000170f8      0x28e ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00017386      0x287 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x0001760d      0x8ed ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00017efa      0x1ef ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000180e9       0xeb ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x000181d4       0x83 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00018257      0x220 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_macro   0x00018477      0x340 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x000187b7       0x7b ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018832       0x24 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018856       0x3c ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018892       0x34 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x000188c6      0x364 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018c2a       0x16 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018c40       0x4a ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018c8a       0x34 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018cbe       0x10 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018cce       0x58 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018d26      0x1e5 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018f0b       0x10 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018f1b       0x3c ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_macro   0x00018f57      0x336 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_macro   0x0001928d      0x158 ../dal/libdal.a(dal_key.c.obj)
- .debug_macro   0x000193e5      0xac0 ../dal/libdal.a(dal_key.c.obj)
- .debug_macro   0x00019ea5       0x12 ../dal/libdal.a(dal_key.c.obj)
- .debug_macro   0x00019eb7      0x158 ../dal/libdal.a(dal_led.c.obj)
- .debug_macro   0x0001a00f      0x14c ../dal/libdal.a(dal_registry.c.obj)
- .debug_macro   0x0001a15b       0xc8 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_macro   0x0001a223      0xac6 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_macro   0x0001ace9      0x2b9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001afa2       0x75 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b017       0x94 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b0ab       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b0c1      0x11c ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b1dd       0x9b ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b278       0x57 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b2cf       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b2e5       0x29 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b30e       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b324       0x98 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b3bc       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_macro   0x0001b3d2      0x193 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_macro   0x0001b565      0x1ab ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_macro   0x0001b710      0x223 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_macro   0x0001b933      0x1d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x0001bb0c      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x0001c5d8       0xca ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_macro   0x0001c6a2      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_macro   0x0001c857      0x1c7 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_macro   0x0001ca1e      0x220 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_macro   0x00002a0d      0x237 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00002c44      0xad2 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00003716       0xca ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000037e0       0x2e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0000380e       0x22 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00003830       0x1c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0000384c       0x22 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0000386e       0xbd ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0000392b      0xd23 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0000464e     0xe09e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000126ec       0x6d ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00012759     0x34a2 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00015bfb       0x5c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00015c57      0x5bc ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016213      0x289 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0001649c      0x1cb ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016667      0x114 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0001677b      0x1b2 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x0001692d       0x27 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016954      0x136 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016a8a      0x1bc ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016c46       0x34 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016c7a       0x3c ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016cb6       0x57 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016d0d       0x87 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016d94      0x240 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00016fd4      0x140 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017114      0x295 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000173a9      0x28e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017637      0x8ed ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00017f24      0x1ef ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00018113       0xeb ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000181fe       0x83 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00018281      0x25a ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000184db       0x16 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x000184f1       0x10 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_macro   0x00018501      0x346 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018847       0x7b ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x000188c2       0x24 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x000188e6       0x3c ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018922       0x34 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018956      0x364 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018cba       0x16 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018cd0       0x4a ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018d1a       0x34 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018d4e       0x10 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018d5e       0x58 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018db6      0x1e5 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018f9b       0x10 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018fab       0x3c ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_macro   0x00018fe7      0x336 ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_macro   0x0001931d      0x158 ../dal/libdal.a(dal_key.c.obj)
+ .debug_macro   0x00019475      0xac0 ../dal/libdal.a(dal_key.c.obj)
+ .debug_macro   0x00019f35       0x12 ../dal/libdal.a(dal_key.c.obj)
+ .debug_macro   0x00019f47      0x158 ../dal/libdal.a(dal_led.c.obj)
+ .debug_macro   0x0001a09f      0x14c ../dal/libdal.a(dal_registry.c.obj)
+ .debug_macro   0x0001a1eb       0xc8 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x0001a2b3      0xac6 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_macro   0x0001ad79      0x2b9 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b032       0x75 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b0a7       0x94 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b13b       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b151      0x11c ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b26d       0x9b ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b308       0x57 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b35f       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b375       0x29 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b39e       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b3b4       0x98 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b44c       0x16 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_macro   0x0001b462      0x193 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_macro   0x0001b5f5      0x1ab ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_macro   0x0001b7a0      0x223 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_macro   0x0001b9c3      0x1d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x0001bb9c      0xacc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x0001c668       0xca ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_macro   0x0001c732      0x1b5 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_macro   0x0001c8e7      0x1c7 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_macro   0x0001caae      0x220 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_line     0x00000000     0xc120
- .debug_line    0x00000000      0x4a4 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
- .debug_line    0x000004a4      0x37f CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_line    0x00000823      0x81f ../bsp/libbsp.a(board_v1.c.obj)
- .debug_line    0x00001042      0xc57 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_line    0x00001c99      0xc52 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_line    0x000028eb      0x6ba ../dal/libdal.a(dal_key.c.obj)
- .debug_line    0x00002fa5      0x723 ../dal/libdal.a(dal_led.c.obj)
- .debug_line    0x000036c8      0x75a ../dal/libdal.a(dal_registry.c.obj)
- .debug_line    0x00003e22       0xc2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_line    0x00003ee4      0x3c3 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_line    0x000042a7     0x3654 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_line    0x000078fb      0x5b7 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_line    0x00007eb2      0x785 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_line    0x00008637      0xb06 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_line    0x0000913d      0x969 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_line    0x00009aa6      0xb4e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_line    0x0000a5f4     0x10d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_line    0x0000b6cd      0xa53 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_line     0x00000000     0xc857
+ .debug_line    0x00000000      0x4ac CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+ .debug_line    0x000004ac      0x37f CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_line    0x0000082b      0x81e ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_line    0x00001049      0xf9f ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_line    0x00001fe8      0xcb3 ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_line    0x00002c9b      0x933 ../dal/libdal.a(dal_key.c.obj)
+ .debug_line    0x000035ce      0x831 ../dal/libdal.a(dal_led.c.obj)
+ .debug_line    0x00003dff      0x75a ../dal/libdal.a(dal_registry.c.obj)
+ .debug_line    0x00004559       0xc2 ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_line    0x0000461b      0x3c3 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_line    0x000049de     0x3654 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_line    0x00008032      0x5b7 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_line    0x000085e9      0x785 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_line    0x00008d6e      0xb06 ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_line    0x00009874      0x969 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_line    0x0000a1dd      0xb4e ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_line    0x0000ad2b     0x10d9 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_line    0x0000be04      0xa53 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_str      0x00000000    0x99f01
- .debug_str     0x00000000    0x99f01 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-                               0xf277 (size before relaxing)
- .debug_str     0x00099f01     0xeef4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
- .debug_str     0x00099f01    0x872a8 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_str     0x00099f01    0x94cbd ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_str     0x00099f01    0x94c96 ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_str     0x00099f01     0x7127 ../dal/libdal.a(dal_key.c.obj)
- .debug_str     0x00099f01     0x716a ../dal/libdal.a(dal_led.c.obj)
- .debug_str     0x00099f01     0x6f9f ../dal/libdal.a(dal_registry.c.obj)
- .debug_str     0x00099f01       0xda ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
- .debug_str     0x00099f01    0x547ab ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_str     0x00099f01    0x14389 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_str     0x00099f01    0x10604 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_str     0x00099f01     0xf669 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_str     0x00099f01    0x121cb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_str     0x00099f01    0x86c8e ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_str     0x00099f01    0x86bda ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_str     0x00099f01    0x8698a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_str     0x00099f01    0x868e1 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+.debug_str      0x00000000    0x9a617
+ .debug_str     0x00000000    0x9a617 CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+                               0xf31d (size before relaxing)
+ .debug_str     0x0009a617     0xeef4 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
+ .debug_str     0x0009a617    0x877b7 ../bsp/libbsp.a(board_v1.c.obj)
+ .debug_str     0x0009a617    0x9562e ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_str     0x0009a617    0x9510b ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_str     0x0009a617     0x7294 ../dal/libdal.a(dal_key.c.obj)
+ .debug_str     0x0009a617     0x71e3 ../dal/libdal.a(dal_led.c.obj)
+ .debug_str     0x0009a617     0x6f9f ../dal/libdal.a(dal_registry.c.obj)
+ .debug_str     0x0009a617       0xda ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+ .debug_str     0x0009a617    0x547ab ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_str     0x0009a617    0x14389 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_str     0x0009a617    0x10604 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_str     0x0009a617     0xf669 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_str     0x0009a617    0x121cb ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_str     0x0009a617    0x87007 ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_str     0x0009a617    0x86f53 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_str     0x0009a617    0x86d03 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_str     0x0009a617    0x86c5a ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
-.debug_frame    0x00000000     0x1694
+.debug_frame    0x00000000     0x189c
  .debug_frame   0x00000000       0x4c CMakeFiles/stm32f103_test.elf.dir/main.c.obj
  .debug_frame   0x0000004c       0x30 CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj
  .debug_frame   0x0000007c       0x58 ../bsp/libbsp.a(board_v1.c.obj)
- .debug_frame   0x000000d4       0xa4 ../bsp/libbsp.a(bsp_key.c.obj)
- .debug_frame   0x00000178       0x9c ../bsp/libbsp.a(bsp_led.c.obj)
- .debug_frame   0x00000214      0x168 ../dal/libdal.a(dal_key.c.obj)
- .debug_frame   0x0000037c      0x1a4 ../dal/libdal.a(dal_led.c.obj)
- .debug_frame   0x00000520      0x144 ../dal/libdal.a(dal_registry.c.obj)
- .debug_frame   0x00000664       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
- .debug_frame   0x00000694      0x7d0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
- .debug_frame   0x00000e64       0x70 ../third_party/libfreertos_kernel.a(list.c.obj)
- .debug_frame   0x00000ed4       0xf4 ../third_party/libfreertos_kernel.a(port.c.obj)
- .debug_frame   0x00000fc8       0xfc ../third_party/libfreertos_kernel.a(heap_4.c.obj)
- .debug_frame   0x000010c4      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
- .debug_frame   0x00001290      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
- .debug_frame   0x0000142c      0x184 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
- .debug_frame   0x000015b0       0xe4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
+ .debug_frame   0x000000d4      0x184 ../bsp/libbsp.a(bsp_key.c.obj)
+ .debug_frame   0x00000258       0xbc ../bsp/libbsp.a(bsp_led.c.obj)
+ .debug_frame   0x00000314      0x234 ../dal/libdal.a(dal_key.c.obj)
+ .debug_frame   0x00000548      0x1e0 ../dal/libdal.a(dal_led.c.obj)
+ .debug_frame   0x00000728      0x144 ../dal/libdal.a(dal_registry.c.obj)
+ .debug_frame   0x0000086c       0x30 ../target/stm32_f103c8t6/libchip_runtime.a(system_stm32f1xx.c.obj)
+ .debug_frame   0x0000089c      0x7d0 ../third_party/libfreertos_kernel.a(tasks.c.obj)
+ .debug_frame   0x0000106c       0x70 ../third_party/libfreertos_kernel.a(list.c.obj)
+ .debug_frame   0x000010dc       0xf4 ../third_party/libfreertos_kernel.a(port.c.obj)
+ .debug_frame   0x000011d0       0xfc ../third_party/libfreertos_kernel.a(heap_4.c.obj)
+ .debug_frame   0x000012cc      0x1cc ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+ .debug_frame   0x00001498      0x19c ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+ .debug_frame   0x00001634      0x184 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_rcc.c.obj)
+ .debug_frame   0x000017b8       0xe4 ../third_party/libstm32f1_hal.a(stm32f1xx_hal_gpio.c.obj)
 
 Cross Reference Table
 
@@ -2776,10 +2817,10 @@ DMA1_Channel6_IRQHandler                          ../target/stm32_f103c8t6/libch
 DMA1_Channel7_IRQHandler                          ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
 DebugMon_Handler                                  ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
 Default_Handler                                   ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-EXTI0_IRQHandler                                  ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+EXTI0_IRQHandler                                  ../bsp/libbsp.a(bsp_key.c.obj)
 EXTI15_10_IRQHandler                              ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-EXTI1_IRQHandler                                  ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
-EXTI2_IRQHandler                                  ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
+EXTI1_IRQHandler                                  ../bsp/libbsp.a(bsp_key.c.obj)
+EXTI2_IRQHandler                                  ../bsp/libbsp.a(bsp_key.c.obj)
 EXTI3_IRQHandler                                  ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
 EXTI4_IRQHandler                                  ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
 EXTI9_5_IRQHandler                                ../target/stm32_f103c8t6/libchip_runtime.a(startup_stm32f103xb.s.obj)
@@ -2826,7 +2867,9 @@ HAL_MspDeInit                                     ../third_party/libstm32f1_hal.
 HAL_MspInit                                       ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
 HAL_NVIC_ClearPendingIRQ                          ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 HAL_NVIC_DisableIRQ                               ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                                                  ../bsp/libbsp.a(bsp_key.c.obj)
 HAL_NVIC_EnableIRQ                                ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
+                                                  ../bsp/libbsp.a(bsp_key.c.obj)
 HAL_NVIC_GetActive                                ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 HAL_NVIC_GetPendingIRQ                            ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 HAL_NVIC_GetPriority                              ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
@@ -2834,6 +2877,7 @@ HAL_NVIC_GetPriorityGrouping                      ../third_party/libstm32f1_hal.
 HAL_NVIC_SetPendingIRQ                            ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
 HAL_NVIC_SetPriority                              ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
                                                   ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
+                                                  ../bsp/libbsp.a(bsp_key.c.obj)
 HAL_NVIC_SetPriorityGrouping                      ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
                                                   ../third_party/libstm32f1_hal.a(stm32f1xx_hal.c.obj)
 HAL_NVIC_SystemReset                              ../third_party/libstm32f1_hal.a(stm32f1xx_hal_cortex.c.obj)
@@ -3059,20 +3103,28 @@ bsp_key_init                                      ../bsp/libbsp.a(bsp_key.c.obj)
 bsp_led_init                                      ../bsp/libbsp.a(bsp_led.c.obj)
                                                   ../bsp/libbsp.a(board_v1.c.obj)
 dal_key_deinit                                    ../dal/libdal.a(dal_key.c.obj)
+dal_key_get_count                                 ../dal/libdal.a(dal_key.c.obj)
 dal_key_get_dev                                   ../dal/libdal.a(dal_key.c.obj)
                                                   CMakeFiles/stm32f103_test.elf.dir/main.c.obj
-dal_key_get_state                                 ../dal/libdal.a(dal_key.c.obj)
+dal_key_get_dev_by_index                          ../dal/libdal.a(dal_key.c.obj)
+dal_key_get_level                                 ../dal/libdal.a(dal_key.c.obj)
                                                   CMakeFiles/stm32f103_test.elf.dir/main.c.obj
 dal_key_init                                      ../dal/libdal.a(dal_key.c.obj)
                                                   CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+dal_key_notify_event                              ../dal/libdal.a(dal_key.c.obj)
+                                                  ../bsp/libbsp.a(bsp_key.c.obj)
 dal_key_register                                  ../dal/libdal.a(dal_key.c.obj)
                                                   ../bsp/libbsp.a(bsp_key.c.obj)
 dal_key_selftest                                  ../dal/libdal.a(dal_key.c.obj)
+dal_key_set_callback                              ../dal/libdal.a(dal_key.c.obj)
+dal_key_set_irq_enable                            ../dal/libdal.a(dal_key.c.obj)
 dal_key_unregister                                ../dal/libdal.a(dal_key.c.obj)
                                                   ../bsp/libbsp.a(bsp_key.c.obj)
 dal_led_deinit                                    ../dal/libdal.a(dal_led.c.obj)
+dal_led_get_count                                 ../dal/libdal.a(dal_led.c.obj)
 dal_led_get_dev                                   ../dal/libdal.a(dal_led.c.obj)
                                                   CMakeFiles/stm32f103_test.elf.dir/main.c.obj
+dal_led_get_dev_by_index                          ../dal/libdal.a(dal_led.c.obj)
 dal_led_get_state                                 ../dal/libdal.a(dal_led.c.obj)
 dal_led_init                                      ../dal/libdal.a(dal_led.c.obj)
                                                   CMakeFiles/stm32f103_test.elf.dir/main.c.obj
@@ -3084,11 +3136,15 @@ dal_led_set_state                                 ../dal/libdal.a(dal_led.c.obj)
 dal_led_unregister                                ../dal/libdal.a(dal_led.c.obj)
                                                   ../bsp/libbsp.a(bsp_led.c.obj)
 dal_registry_count                                ../dal/libdal.a(dal_registry.c.obj)
+                                                  ../dal/libdal.a(dal_led.c.obj)
+                                                  ../dal/libdal.a(dal_key.c.obj)
 dal_registry_find                                 ../dal/libdal.a(dal_registry.c.obj)
                                                   ../dal/libdal.a(dal_led.c.obj)
                                                   ../dal/libdal.a(dal_key.c.obj)
 dal_registry_foreach                              ../dal/libdal.a(dal_registry.c.obj)
 dal_registry_get_entry                            ../dal/libdal.a(dal_registry.c.obj)
+                                                  ../dal/libdal.a(dal_led.c.obj)
+                                                  ../dal/libdal.a(dal_key.c.obj)
 dal_registry_init                                 ../dal/libdal.a(dal_registry.c.obj)
                                                   ../dal/libdal.a(dal_led.c.obj)
                                                   ../dal/libdal.a(dal_key.c.obj)
@@ -3226,6 +3282,7 @@ xTaskGetStaticBuffers                             ../third_party/libfreertos_ker
 xTaskGetTickCount                                 ../third_party/libfreertos_kernel.a(tasks.c.obj)
                                                   ../bsp/libbsp.a(bsp_key.c.obj)
 xTaskGetTickCountFromISR                          ../third_party/libfreertos_kernel.a(tasks.c.obj)
+                                                  ../bsp/libbsp.a(bsp_key.c.obj)
 xTaskIncrementTick                                ../third_party/libfreertos_kernel.a(tasks.c.obj)
                                                   ../third_party/libfreertos_kernel.a(port.c.obj)
 xTaskPeriodicDelay                                ../third_party/libfreertos_kernel.a(tasks.c.obj)

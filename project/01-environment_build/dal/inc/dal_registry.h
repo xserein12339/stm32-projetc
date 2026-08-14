@@ -5,13 +5,19 @@
  *        所有操作时间复杂度为 O(n)，n 为容量（线性扫描），
  *        适用于设备数量较少的场景（通常 < 32）。
  *
- * @warning 本框架不提供内部互斥保护。
- *          - register / unregister 必须在任务上下文调用
- *          - find / foreach 为只读操作，可在中断上下文调用
- *            （前提是调用期间不会有并发的 register / unregister）
+ * @warning 【线程安全与 ISR 安全契约】
+ *          本框架不提供内部互斥保护。
+ *          - register / unregister 必须在任务上下文调用，严禁在 ISR 中调用
+ *          - find / find_ops / count / get_entry / foreach 为纯只读操作，
+ *            可在中断上下文安全调用，前提是：
+ *            调用期间不会有并发的 register / unregister 操作
+ *          - 若需在 ISR 中使用且存在并发写可能，调用方必须在外部
+ *            使用临界区或自旋锁保护整个 read-modify-write 序列
+ *          - 本框架所有只读函数均不持有任何锁、不进行动态内存分配、
+ *            不调用任何阻塞 API，ISR 安全性由实现保证
  *
  * @author xserein
- * @version v1.0
+ * @version v1.1
  */
 #ifndef DAL_REGISTRY_H
 #define DAL_REGISTRY_H
@@ -110,7 +116,10 @@ dal_err_t dal_registry_unregister(dal_registry_t *reg, const char *name);
  * @retval DAL_ERR_NOT_FOUND     未找到
  * @retval DAL_ERR_PARAM_INVALID 参数无效
  *
- * @note 此函数只读，可在中断上下文调用（无并发写时）。
+ * @note 【ISR 安全】此函数为纯只读操作（仅遍历静态数组、字符串比较），
+ *       不持锁、不分配内存，可在中断上下文安全调用。
+ *       前提：调用期间无并发 register/unregister。
+ *       若未来修改内部实现引入互斥保护，必须同步提供 FromISR 版本。
  */
 dal_err_t dal_registry_find(const dal_registry_t *reg, const char *name,
                             const void **out_ops, void **out_ctx);
@@ -148,6 +157,10 @@ dal_err_t dal_registry_get_entry(const dal_registry_t *reg, uint16_t index,
  *            返回 true 继续遍历，false 提前终止
  * @param ud  用户上下文
  *
+ * @note 【ISR 安全】遍历本身为只读操作，可在中断上下文调用。
+ *       但回调函数 cb 的执行上下文继承调用者，若在 ISR 中调用，
+ *       cb 也必须遵守 ISR 安全约束。
+ *
  * @warning 遍历期间禁止对同一注册表调用 register / unregister，
  *          否则可能遍历到不一致状态（如重复访问、遗漏条目）。
  *          若需并发修改，请由调用方在外部加锁。
@@ -179,9 +192,9 @@ void dal_registry_foreach(const dal_registry_t *reg,
  * @param out_ctx  [出参] 上下文指针变量（void * 类型），不需要时传 NULL
  * @return ops 指针（const void *）；未找到返回 NULL
  *
- * @note 此函数为 static inline，无额外调用开销。
- *       调用方收到返回值后需自行强制转换为具体 ops 类型。
- *       一般推荐使用 DAL_REGISTRY_FIND_OPS() 宏以获得类型安全。
+ * @note 【ISR 安全】此函数为 static inline 包装，内部仅调用
+ *       dal_registry_find()，继承其 ISR 安全特性。
+ *       dal_motor_notify_fault() 等 ISR 入口通过此函数校验设备有效性。
  */
 static inline const void *
 dal_registry_find_ops(const dal_registry_t *reg, const char *name, void **out_ctx)

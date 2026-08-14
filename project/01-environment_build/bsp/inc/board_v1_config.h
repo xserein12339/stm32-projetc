@@ -82,6 +82,12 @@
 #define BSP_ENC_B_CH2_PORT          BSP_GPIOA_PORT
 
 /* ========================================================================== */
+/*                         编码器业务逻辑映射（非物理资源）                       */
+/* ========================================================================== */
+#define BSP_ENCODER_LEFT_TIM_ID     2   ///< 左编码器对应定时器编号（TIM2）
+#define BSP_ENCODER_RIGHT_TIM_ID    3   ///< 右编码器对应定时器编号（TIM3）
+
+/* ========================================================================== */
 /*                           OLED / MPU6050 资源定义                           */
 /* ========================================================================== */
 #define BSP_OLED_I2C_PORT           BSP_I2C1_PORT
@@ -137,10 +143,18 @@
 #define BSP_LED3_PIN                BSP_GPIOB_PIN13
 
 #define BSP_KEY1_PORT               BSP_GPIOA_PORT
-#define BSP_KEY1_PIN                BSP_GPIOA_PIN4
+#define BSP_KEY1_PIN                BSP_GPIOA_PIN3
 #define BSP_KEY2_PORT               BSP_GPIOA_PORT
-#define BSP_KEY2_PIN                BSP_GPIOA_PIN5
+#define BSP_KEY2_PIN                BSP_GPIOA_PIN4
 #define BSP_KEY3_PORT               BSP_GPIOA_PORT
-#define BSP_KEY3_PIN                BSP_GPIOA_PIN3
+#define BSP_KEY3_PIN                BSP_GPIOA_PIN5
+
+/* ---- KEY 中断资源（新增） ---- */
+#define BSP_KEY1_EXTI_LINE          EXTI_LINE_4
+#define BSP_KEY1_IRQN               EXTI4_IRQn
+#define BSP_KEY2_EXTI_LINE          EXTI_LINE_5
+#define BSP_KEY2_IRQN               EXTI9_5_IRQn
+#define BSP_KEY3_EXTI_LINE          EXTI_LINE_3
+#define BSP_KEY3_IRQN               EXTI3_IRQn
 
 #endif /* BOARD_V1_CONFIG_H */

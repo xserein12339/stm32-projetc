@@ -20,14 +20,14 @@ void app_start_task(void *arg)
         dal_led_init(led1);
     }
 
-    int key_state = 0;
+    dal_key_level_t key_state = DAL_KEY_LEVEL_RELEASED;
     dal_led_state_t led_state = DAL_LED_OFF;
 
     while (1) {
         /* 读取按键逻辑状态（1=按下，0=释放）*/
-        if (key1 && dal_key_get_state(key1, &key_state) == DAL_OK) {
+        if (key1 && dal_key_get_level(key1, &key_state) == DAL_OK) {
             /* 按下则点亮，释放则熄灭 */
-            led_state = (key_state == 1) ? DAL_LED_ON : DAL_LED_OFF;
+            led_state = (key_state == DAL_KEY_LEVEL_PRESSED) ? DAL_LED_ON : DAL_LED_OFF;
             dal_led_set_state(led1, led_state);
         }
         vTaskDelay(pdMS_TO_TICKS(10));

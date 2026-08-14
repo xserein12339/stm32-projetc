@@ -370,29 +370,29 @@ src/bsp_timer.c.s:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_timer.c.s
 .PHONY : src/bsp_timer.c.s
 
-src/bsp_usart.obj: src/bsp_usart.c.obj
-.PHONY : src/bsp_usart.obj
+src/bsp_uart.obj: src/bsp_uart.c.obj
+.PHONY : src/bsp_uart.obj
 
 # target to build an object file
-src/bsp_usart.c.obj:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj
-.PHONY : src/bsp_usart.c.obj
+src/bsp_uart.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj
+.PHONY : src/bsp_uart.c.obj
 
-src/bsp_usart.i: src/bsp_usart.c.i
-.PHONY : src/bsp_usart.i
+src/bsp_uart.i: src/bsp_uart.c.i
+.PHONY : src/bsp_uart.i
 
 # target to preprocess a source file
-src/bsp_usart.c.i:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.i
-.PHONY : src/bsp_usart.c.i
+src/bsp_uart.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.i
+.PHONY : src/bsp_uart.c.i
 
-src/bsp_usart.s: src/bsp_usart.c.s
-.PHONY : src/bsp_usart.s
+src/bsp_uart.s: src/bsp_uart.c.s
+.PHONY : src/bsp_uart.s
 
 # target to generate assembly for a file
-src/bsp_usart.c.s:
-	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.s
-.PHONY : src/bsp_usart.c.s
+src/bsp_uart.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.s
+.PHONY : src/bsp_uart.c.s
 
 # Help Target
 help:
@@ -433,9 +433,9 @@ help:
 	@echo "... src/bsp_timer.obj"
 	@echo "... src/bsp_timer.i"
 	@echo "... src/bsp_timer.s"
-	@echo "... src/bsp_usart.obj"
-	@echo "... src/bsp_usart.i"
-	@echo "... src/bsp_usart.s"
+	@echo "... src/bsp_uart.obj"
+	@echo "... src/bsp_uart.i"
+	@echo "... src/bsp_uart.s"
 .PHONY : help
 
 

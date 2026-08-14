@@ -18,7 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_mpu6050.c" "bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj.d"
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_oled.c" "bsp/CMakeFiles/bsp.dir/src/bsp_oled.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_oled.c.obj.d"
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_timer.c" "bsp/CMakeFiles/bsp.dir/src/bsp_timer.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_timer.c.obj.d"
-  "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_usart.c" "bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_usart.c.obj.d"
+  "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_uart.c" "bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_uart.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

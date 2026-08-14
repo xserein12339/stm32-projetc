@@ -60,11 +60,11 @@ extern "C" {
 #define USE_HAL_ADC_REGISTER_CALLBACKS         0U
 #define USE_HAL_CAN_REGISTER_CALLBACKS         0U
 #define USE_HAL_DAC_REGISTER_CALLBACKS         0U
-#define USE_HAL_I2C_REGISTER_CALLBACKS         0U
+#define USE_HAL_I2C_REGISTER_CALLBACKS         1U
 #define USE_HAL_SPI_REGISTER_CALLBACKS         0U
-#define USE_HAL_TIM_REGISTER_CALLBACKS         0U
-#define USE_HAL_UART_REGISTER_CALLBACKS        0U
-#define USE_HAL_USART_REGISTER_CALLBACKS       0U
+#define USE_HAL_TIM_REGISTER_CALLBACKS         1U
+#define USE_HAL_UART_REGISTER_CALLBACKS        1U
+#define USE_HAL_USART_REGISTER_CALLBACKS       1U
 #define USE_HAL_WWDG_REGISTER_CALLBACKS        0U
 
 /* ======================== 断言控制 ======================== */

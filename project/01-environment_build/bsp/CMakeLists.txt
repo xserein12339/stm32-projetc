@@ -4,7 +4,7 @@ add_library(bsp STATIC
     src/board_v1.c
     src/bsp_i2c.c
     src/bsp_timer.c
-    src/bsp_usart.c
+    src/bsp_uart.c
     src/bsp_mpu6050.c
     src/bsp_oled.c
     src/bsp_esp8266.c

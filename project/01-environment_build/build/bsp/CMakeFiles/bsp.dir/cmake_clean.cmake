@@ -19,8 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bsp.dir/src/bsp_oled.c.obj.d"
   "CMakeFiles/bsp.dir/src/bsp_timer.c.obj"
   "CMakeFiles/bsp.dir/src/bsp_timer.c.obj.d"
-  "CMakeFiles/bsp.dir/src/bsp_usart.c.obj"
-  "CMakeFiles/bsp.dir/src/bsp_usart.c.obj.d"
+  "CMakeFiles/bsp.dir/src/bsp_uart.c.obj"
+  "CMakeFiles/bsp.dir/src/bsp_uart.c.obj.d"
   "libbsp.a"
   "libbsp.pdb"
 )
