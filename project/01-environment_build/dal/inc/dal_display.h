@@ -1,14 +1,20 @@
 /**
  * @file    dal_display.h
- * @brief   显示设备抽象层 v1.0
- * 
+ * @brief   显示设备抽象层 v1.1
+ *
  * @details 支持点阵屏（OLED/LCD/TFT）、段码屏、字符屏的统一抽象。
  *          提供帧缓冲管理、局部刷新、背光控制、异步刷新完成通知。
  *          颜色格式统一为 RGB565 或 MONO，由驱动层负责硬件格式转换。
  *          全程整数运算，无 FPU 依赖。
- * 
+ *
+ * @par v1.1 变更日志
+ *      - [新增] flush_partial 局部刷新标准接口
+ *      - [新增] flush_async_cancel 异步刷新取消接口
+ *      - [修改] get_info 允许未初始化时查询静态硬件规格
+ *      - [修改] set_event_callback 增加临界区保护说明
+ *
  * @author xserein
- * @version v1.0
+ * @version v1.1
  */
 #ifndef __DAL_DISPLAY_H__
 #define __DAL_DISPLAY_H__
@@ -33,6 +39,8 @@ extern "C" {
  *   自行保证串行化（如通过互斥锁或临界区）。
  * - 事件回调函数在中断/DMA 完成上下文中执行，严禁调用任何阻塞 API。
  * - 跨设备操作无需互斥，设备间完全独立。
+ * - set_event_callback 与 notify_event 并发时，由 DAL 层保证
+ *   cb/user_data 的原子一致性（通过临界区实现）。
  * @}
  */
 
@@ -217,7 +225,7 @@ typedef struct {
      *        越界时返回 DAL_ERR_PARAM_INVALID。
      *
      * @note  此接口仅写入显存/GRAM，不保证屏幕立即可见。
-     *        绘制完成后应调用 flush / flush_async 使内容生效。
+     *        绘制完成后应调用 flush / flush_async / flush_partial 使内容生效。
      */
     dal_err_t (*draw)(dal_display_dev_t *dev, const dal_display_rect_t *rect,
                       const uint8_t *data, uint32_t len);
@@ -254,6 +262,33 @@ typedef struct {
      * @note  调用前建议通过 get_info() 查询 DAL_DISPLAY_CAP_ASYNC_FLUSH。
      */
     dal_err_t (*flush_async)(dal_display_dev_t *dev);
+
+    /**
+     * @brief 同步局部刷新指定矩形区域
+     * @param dev   设备实例指针
+     * @param rect  目标区域（必须为有效区域，w/h > 0）
+     * @retval DAL_OK               刷新完成
+     * @retval DAL_ERR_PARAM_INVALID 区域无效或越界
+     * @retval DAL_ERR_BUSY         异步刷新正在进行
+     * @retval DAL_ERR_NOTSUP       不支持局部刷新
+     *
+     * @note  【v1.1 新增】标准局部刷新接口，替代各 DRV 私有的非标准扩展。
+     *        若设备不支持局部刷新（未设置 PARTIAL_REFRESH capability），
+     *        可内部退化为全屏 flush。
+     */
+    dal_err_t (*flush_partial)(dal_display_dev_t *dev,
+                               const dal_display_rect_t *rect);
+
+    /**
+     * @brief 取消正在进行的异步刷新
+     * @retval DAL_OK         取消成功（或已无进行中的异步刷新）
+     * @retval DAL_ERR_NOTSUP 不支持取消操作
+     *
+     * @note  【v1.1 新增】用于紧急中止挂起的 DMA 传输。
+     *        取消成功后，设备状态应从 BUSY 恢复为 IDLE/OFF。
+     *        不保证已传输的部分数据在屏幕上可见。
+     */
+    dal_err_t (*flush_async_cancel)(dal_display_dev_t *dev);
 
     /* --- 段码屏/字符屏专用 --- */
 
@@ -310,7 +345,9 @@ typedef struct {
      * @param type       [出参] 显示类型，不需要时传 NULL
      * @param capability [出参] 能力标志位掩码，不需要时传 NULL
      *
-     * @note  width/height 反映当前旋转后的逻辑分辨率。
+     * @note  【v1.1 变更】允许在设备未初始化时调用，用于查询静态硬件规格。
+     *        DRV 层必须保证此函数在未初始化时仅访问静态常量，不访问硬件寄存器。
+     *        width/height 反映当前旋转后的逻辑分辨率。
      */
     dal_err_t (*get_info)(dal_display_dev_t *dev,
                           uint16_t *width, uint16_t *height,
@@ -406,6 +443,28 @@ dal_err_t dal_display_flush(dal_display_dev_t *dev);
 /** @brief 异步刷新整个屏幕 */
 dal_err_t dal_display_flush_async(dal_display_dev_t *dev);
 
+/**
+ * @brief 同步局部刷新指定矩形区域
+ * @param dev   设备实例指针
+ * @param rect  目标区域
+ * @retval DAL_OK               刷新完成
+ * @retval DAL_ERR_PARAM_INVALID 区域无效
+ * @retval DAL_ERR_NOT_READY    设备未初始化
+ * @retval DAL_ERR_NOTSUP       不支持局部刷新
+ * @note  【v1.1 新增】
+ */
+dal_err_t dal_display_flush_partial(dal_display_dev_t *dev,
+                                    const dal_display_rect_t *rect);
+
+/**
+ * @brief 取消正在进行的异步刷新
+ * @retval DAL_OK         取消成功
+ * @retval DAL_ERR_NOT_READY 设备未初始化
+ * @retval DAL_ERR_NOTSUP 不支持取消
+ * @note  【v1.1 新增】
+ */
+dal_err_t dal_display_flush_async_cancel(dal_display_dev_t *dev);
+
 /** @brief 设置段码图案或字符内容 */
 dal_err_t dal_display_set_segment(dal_display_dev_t *dev,
                                   uint32_t index, uint32_t value);
@@ -431,6 +490,7 @@ dal_err_t dal_display_get_fault(dal_display_dev_t *dev, uint32_t *fault);
 /**
  * @brief 获取显示设备硬件参数与能力标志
  * @see dal_display_ops_t::get_info
+ * @note  【v1.1】允许在设备未初始化时调用，查询静态硬件规格。
  */
 dal_err_t dal_display_get_info(dal_display_dev_t *dev,
                                uint16_t *width, uint16_t *height,
@@ -438,7 +498,11 @@ dal_err_t dal_display_get_info(dal_display_dev_t *dev,
                                dal_display_type_t *type,
                                uint32_t *capability);
 
-/** @brief 注册异步事件回调 */
+/**
+ * @brief 注册异步事件回调
+ * @note  本函数在临界区中完成更新，保证与 notify_event 的并发安全。
+ *        但调用者仍需保证不在 ISR 上下文中调用本函数。
+ */
 dal_err_t dal_display_set_event_callback(dal_display_dev_t *dev,
                                          dal_display_event_callback_t cb,
                                          void *user_data);

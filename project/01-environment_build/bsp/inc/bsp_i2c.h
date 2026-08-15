@@ -1,9 +1,10 @@
 /**
  * @file    bsp_i2c.h
- * @brief   板级 I2C BSP 层接口（仅支持 I2C1）v1.1
+ * @brief   板级 I2C BSP 层接口（仅支持 I2C1）v1.2
  * @note    - 硬件映射引用 board_v1_config.h
  *          - 提供阻塞读写接口，带超时保护与总线自动恢复
  *          - 单实例设计，不支持多总线
+ *          - [v1.2] 新增 DMA 非阻塞发送接口
  *
  * @par 线程安全契约
  *      本接口【非线程安全】。多任务环境下调用者须自行加锁，
@@ -11,7 +12,7 @@
  *      同一事务内的 write_reg + read_reg 必须由调用者保证原子性。
  *
  * @author  xserein
- * @version v1.1
+ * @version v1.2
  */
 
 #ifndef __BSP_I2C_H__
@@ -45,7 +46,7 @@ extern "C" {
  * @brief 初始化 I2C1 外设
  * @param freq_hz  I2C 时钟频率(Hz)，常用: 100000 / 400000
  * @retval BSP_OK           成功
- * @retval BSP_ERR_IO       HAL 初始化失败
+ * @retval BSP_ERR_IO       HAL 初始化失败或总线被硬件钳位
  * @retval BSP_ERR_BUSY     重复初始化（未先 deinit）
  */
 bsp_err_t bsp_i2c_init(uint32_t freq_hz);
@@ -153,6 +154,34 @@ bsp_err_t bsp_i2c_write_raw(uint8_t dev_addr,
 bsp_err_t bsp_i2c_read_raw(uint8_t dev_addr,
                            uint8_t *buf, uint16_t len,
                            uint32_t timeout_ms);
+
+/* ========================================================================== */
+/*                        DMA 扩展接口                                          */
+/* ========================================================================== */
+
+/**
+ * @brief I2C DMA 传输完成回调原型
+ * @param result  BSP_OK = 传输成功，BSP_ERR_IO = 传输失败
+ */
+typedef void (*bsp_i2c_dma_cb_t)(bsp_err_t result);
+
+/**
+ * @brief I2C 主机发送（DMA 非阻塞）
+ * @note  启动后持有 I2C 总线锁，直到 DMA 完成中断中自动释放。
+ *        传输期间缓冲区必须保持有效（不可在栈上分配）。
+ * @param dev_addr   7位设备地址（无需左移）
+ * @param data       待发送数据缓冲区
+ * @param len        数据长度
+ * @param cb         DMA 完成回调（ISR 上下文执行）
+ * @param timeout_ms 等待获取总线锁的超时
+ * @retval BSP_OK        DMA 传输已启动
+ * @retval BSP_ERR_BUSY  总线被占用
+ * @retval BSP_ERR_IO    HAL 启动 DMA 失败
+ */
+bsp_err_t bsp_i2c_master_tx_dma(uint8_t dev_addr,
+                                const uint8_t *data, uint16_t len,
+                                bsp_i2c_dma_cb_t cb,
+                                uint32_t timeout_ms);
 
 /* ========================================================================== */
 /*                          诊断接口                                            */

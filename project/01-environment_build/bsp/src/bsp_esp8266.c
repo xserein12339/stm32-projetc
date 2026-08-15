@@ -1,17 +1,19 @@
 /**
  * @file    bsp_esp8266.c
- * @brief   板级 ESP8266 BSP 层实现（AT 指令）v1.3
- * @note    - [v1.3] 修复扫描结果丢失：_at_send_cmd_wait 持锁期间同步解析 +CWLAP
+ * @brief   板级 ESP8266 BSP 层实现（AT 指令）v1.4
+ * @note    - [v1.4] RAM 深度优化：RX buf 2048→512，scan results 20→8
+ *          - [v1.4] _handle_ipd 移除 512B 栈缓冲，统一堆分配，消除栈溢出
+ *          - [v1.4] sta_connect/ap_start 缩减栈上 cmd 缓冲区
+ *          - [v1.4] bsp_esp8266_init 仅注册，不执行硬件初始化
+ *          - [v1.3] 修复扫描结果丢失：_at_send_cmd_wait 持锁期间同步解析 +CWLAP
  *          - [v1.3] _parse_cwlap 补全 bssid/channel 字段解析
- *          - [v1.3] 修正 auth_mode 枚举映射，移除不存在的 DAL_WIFI_AUTH_WEP/WPA_PSK
+ *          - [v1.3] 修正 auth_mode 枚举映射
  *          - [v1.3] get_scan_result 支持 scan_sem 阻塞等待
  *          - [v1.3] sta_connect/ap_start 增加 SSID/密码引号转义保护
- *          - [v1.2] +IPD 兼容多连接模式 <link_id>,<len>:<data>
- *          - [v1.2] 实现 set_rf_power (AT+RF)
- *          - [v1.1] AT 命令引擎与异步事件解析器分离，消除竞态
- *          - [v1.1] transmit 等待 "SEND OK" 避免数据内容误匹配
+ *          - [v1.2] +IPD 兼容多连接模式
+ *          - [v1.1] AT 命令引擎与异步事件解析器分离
  * @author  xserein
- * @version v1.3
+ * @version v1.4
  */
 
 #include "board_v1.h"
@@ -35,9 +37,17 @@
 #define ESP8266_CMD_TIMEOUT_MS      (3000U)
 #define ESP8266_SEND_TIMEOUT_MS     (1000U)
 #define ESP8266_SCAN_TIMEOUT_MS     (10000U)
-#define ESP8266_RX_BUF_SIZE         (2048U)
-#define ESP8266_MAX_SCAN_RESULTS    (20U)
+
+/* [v1.4] RAM 优化：115200 波特率下 512B 足够应对突发（~44ms 缓冲） */
+#define ESP8266_RX_BUF_SIZE         (512U)
+
+/* [v1.4] RAM 优化：扫描结果从 20 缩减至 8（节省 ~768B 静态 RAM） */
+#define ESP8266_MAX_SCAN_RESULTS    (8U)
+
 #define ESP8266_AT_LINE_MAX         (256U)
+
+/* [v1.4] IPD 最大单包接收限制，防止超大包导致堆分配失败 */
+#define ESP8266_IPD_MAX_PAYLOAD     (1460U)
 
 /* ========================================================================== */
 /*                         AT 指令字符串定义                                    */
@@ -51,7 +61,7 @@
 #define AT_CMD_CWSAP            "AT+CWSAP=\"%s\",\"%s\",%d,%d\r\n"
 #define AT_CMD_CWSAP_DEL        "AT+CWSAP_DEL\r\n"
 #define AT_CMD_CIPMUX           "AT+CIPMUX=%d\r\n"
-#define AT_CMD_CIPSEND          "AT+CIPSEND=%u\r\n"
+#define AT_CMD_CIPSEND          "AT+CIPSEND=%lu\r\n"
 #define AT_CMD_CIPCLOSE         "AT+CIPCLOSE\r\n"
 #define AT_CMD_RST              "AT+RST\r\n"
 #define AT_CMD_RF               "AT+RF=%d\r\n"
@@ -71,17 +81,12 @@ typedef enum {
     ESP_STATE_FAULT,
 } esp_state_t;
 
-/**
- * @brief AT 命令上下文
- * @note  [v1.3] 新增 scan_parsing 标志，指示命令引擎在持锁期间
- *        需要将 +CWLAP 行转发给解析器而非丢弃
- */
 typedef struct {
     SemaphoreHandle_t   sem;
     char                expect[32];
     volatile bool       matched;
     volatile bool       error;
-    volatile bool       scan_parsing;  /* [v1.3] 扫描期间启用 +CWLAP 行内解析 */
+    volatile bool       scan_parsing;
     char                line_buf[ESP8266_AT_LINE_MAX];
     uint16_t            line_len;
 } at_cmd_ctx_t;
@@ -184,12 +189,9 @@ static void _uart_rx_callback(bsp_uart_handle_t handle,
 }
 
 /* ========================================================================== */
-/*          [v1.3] +CWLAP 解析（补全 bssid/channel + 修正 auth 映射）           */
+/*          +CWLAP 解析                                                        */
 /* ========================================================================== */
 
-/**
- * @brief [v1.3] 解析 MAC 地址字符串 "aa:bb:cc:dd:ee:ff" → 6 字节数组
- */
 static void _parse_mac(const char *str, uint8_t mac[6])
 {
     unsigned int m[6];
@@ -199,16 +201,6 @@ static void _parse_mac(const char *str, uint8_t mac[6])
     }
 }
 
-/**
- * @brief [v1.3] 解析 +CWLAP 响应行
- *
- * @par ESP8266 +CWLAP 格式:
- *      +CWLAP:(<ecn>,"<ssid>",<rssi>,"<mac>",<ch>,<freq_offset>)
- *
- * @par [v1.3] auth_mode 映射修正:
- *      ESP8266 ecn 值与 DAL 枚举并非一一对应。
- *      仅映射确定的值，其余归为 UNKNOWN，避免编译错误。
- */
 static void _parse_cwlap(const char *line)
 {
     if (s_esp.scan_count >= ESP8266_MAX_SCAN_RESULTS) return;
@@ -220,19 +212,16 @@ static void _parse_cwlap(const char *line)
     dal_wifi_scan_record_t *rec = &s_esp.scan_records[s_esp.scan_count];
     memset(rec, 0, sizeof(*rec));
 
-    /* 1. 解析 ecn */
     int ecn = 0;
     if (sscanf(p, "(%d,", &ecn) == 1) {
-        /* [v1.3] 修正：仅映射 DAL 中实际存在的枚举值 */
         switch (ecn) {
             case 0: rec->auth_mode = DAL_WIFI_AUTH_OPEN; break;
             case 3: rec->auth_mode = DAL_WIFI_AUTH_WPA2_PSK; break;
-            case 4: rec->auth_mode = DAL_WIFI_AUTH_WPA2_WPA3; break;  /* WPA/WPA2 混合 */
-            default: rec->auth_mode = DAL_WIFI_AUTH_AUTO; break;      /* 自动协商作为降级 */
+            case 4: rec->auth_mode = DAL_WIFI_AUTH_WPA2_WPA3; break;
+            default: rec->auth_mode = DAL_WIFI_AUTH_AUTO; break;
         }
     }
 
-    /* 2. 解析 SSID */
     const char *ssid_start = strchr(p, '"');
     if (ssid_start) {
         ssid_start++;
@@ -245,7 +234,6 @@ static void _parse_cwlap(const char *line)
         }
     }
 
-    /* 3. 解析 RSSI */
     const char *after_ssid = strstr(line, "\",");
     if (after_ssid) {
         after_ssid += 2;
@@ -254,17 +242,14 @@ static void _parse_cwlap(const char *line)
             rec->rssi = (int8_t)rssi;
         }
 
-        /* 4. [v1.3] 解析 BSSID (MAC) */
         const char *mac_start = strchr(after_ssid, '"');
         if (mac_start) {
             mac_start++;
             _parse_mac(mac_start, rec->bssid.addr);
         }
 
-        /* 5. [v1.3] 解析 Channel */
         const char *mac_end = strchr(after_ssid, ',');
         if (mac_end) {
-            /* 跳过 MAC 字符串中的逗号，找到 MAC 后的逗号 */
             const char *ch_str = strchr(mac_end + 1, ',');
             if (ch_str) {
                 ch_str++;
@@ -280,21 +265,9 @@ static void _parse_cwlap(const char *line)
 }
 
 /* ========================================================================== */
-/*               [v1.3] AT 命令同步引擎（持锁期间解析 +CWLAP）                  */
+/*               AT 命令同步引擎                                               */
 /* ========================================================================== */
 
-/**
- * @brief [v1.3] 发送 AT 命令并等待响应
- *
- * @par v1.2 致命缺陷
- *      持锁期间独占消费 ringbuf，+CWLAP 行被当作普通文本丢弃，
- *      后台任务无法获取锁来解析它们 → 扫描结果全部丢失。
- *
- * @par v1.3 修正
- *      当 scan_parsing == true 时，命令引擎在组装每一行后，
- *      检查是否为 +CWLAP 前缀，若是则直接调用 _parse_cwlap 解析，
- *      无需释放锁或依赖后台任务。
- */
 static bool _at_send_cmd_wait(const char *cmd, const char *expect, uint32_t timeout_ms)
 {
     if (xSemaphoreTake(s_esp.at_mutex, pdMS_TO_TICKS(timeout_ms)) != pdTRUE) {
@@ -304,7 +277,7 @@ static bool _at_send_cmd_wait(const char *cmd, const char *expect, uint32_t time
     s_esp.cmd_ctx.matched = false;
     s_esp.cmd_ctx.error   = false;
     s_esp.cmd_ctx.line_len = 0;
-    /* scan_parsing 由调用者在进入前设置 */
+
     if (expect) {
         strncpy(s_esp.cmd_ctx.expect, expect, sizeof(s_esp.cmd_ctx.expect) - 1);
         s_esp.cmd_ctx.expect[sizeof(s_esp.cmd_ctx.expect) - 1] = '\0';
@@ -334,13 +307,11 @@ static bool _at_send_cmd_wait(const char *cmd, const char *expect, uint32_t time
                 if (len > 0 && s_esp.cmd_ctx.line_buf[len - 1] == '\r') len--;
                 s_esp.cmd_ctx.line_buf[len] = '\0';
 
-                /* [v1.3] 扫描期间，在命令引擎内同步解析 +CWLAP 行 */
                 if (s_esp.cmd_ctx.scan_parsing &&
                     strstr(s_esp.cmd_ctx.line_buf, "+CWLAP:") != NULL) {
                     _parse_cwlap(s_esp.cmd_ctx.line_buf);
                 }
 
-                /* 匹配期望响应 */
                 if (s_esp.cmd_ctx.expect[0] != '\0' &&
                     strstr(s_esp.cmd_ctx.line_buf, s_esp.cmd_ctx.expect) != NULL) {
                     s_esp.cmd_ctx.matched = true;
@@ -359,7 +330,6 @@ static bool _at_send_cmd_wait(const char *cmd, const char *expect, uint32_t time
         }
     }
 
-    /* 清除扫描标志 */
     s_esp.cmd_ctx.scan_parsing = false;
 
     bool result = s_esp.cmd_ctx.matched;
@@ -368,7 +338,7 @@ static bool _at_send_cmd_wait(const char *cmd, const char *expect, uint32_t time
 }
 
 /* ========================================================================== */
-/*          +IPD 解析（v1.2 多连接兼容，保持不变）                               */
+/*          [v1.4] +IPD 解析（移除 512B 栈缓冲，统一堆分配）                    */
 /* ========================================================================== */
 
 static void _handle_ipd(void)
@@ -376,6 +346,7 @@ static void _handle_ipd(void)
     char hdr[48];
     uint16_t hdr_len = 0;
 
+    /* 解析 +IPD 头部直到 ':' */
     while (hdr_len < sizeof(hdr) - 1) {
         int c = _rx_getc();
         if (c < 0) {
@@ -388,6 +359,7 @@ static void _handle_ipd(void)
     }
     hdr[hdr_len] = '\0';
 
+    /* 解析 payload 长度 */
     uint16_t payload_len = 0;
     char *last_comma = strrchr(hdr, ',');
     if (last_comma != NULL) {
@@ -398,36 +370,51 @@ static void _handle_ipd(void)
 
     if (payload_len == 0) return;
 
+    /* [v1.4] 安全限制：防止畸形 AT 响应导致巨量堆分配 */
+    if (payload_len > ESP8266_IPD_MAX_PAYLOAD) {
+        payload_len = ESP8266_IPD_MAX_PAYLOAD;
+    }
+
+    /* 等待数据到达 ring buffer */
     TickType_t start = xTaskGetTickCount();
     while (_rx_available() < payload_len &&
            (xTaskGetTickCount() - start) < pdMS_TO_TICKS(1000)) {
         vTaskDelay(pdMS_TO_TICKS(5));
     }
 
-    if (_rx_available() < payload_len) return;
-
-    if (s_esp.rx_cb && payload_len > 0) {
-        if (payload_len <= 512) {
-            uint8_t tmp[512];
-            _rx_read(tmp, payload_len);
-            s_esp.rx_cb((dal_wifi_dev_t *)&s_esp, tmp, payload_len, s_esp.rx_cb_arg);
-        } else {
-            uint8_t *tmp = pvPortMalloc(payload_len);
-            if (tmp) {
-                _rx_read(tmp, payload_len);
-                s_esp.rx_cb((dal_wifi_dev_t *)&s_esp, tmp, payload_len, s_esp.rx_cb_arg);
-                vPortFree(tmp);
-            } else {
-                uint8_t discard[64];
-                uint16_t remaining = payload_len;
-                while (remaining > 0) {
-                    uint16_t chunk = (remaining < sizeof(discard)) ? remaining : sizeof(discard);
-                    _rx_read(discard, chunk);
-                    remaining -= chunk;
-                }
-            }
+    if (_rx_available() < payload_len) {
+        /* 数据不足，丢弃已收到的部分以清空 ring buffer */
+        uint16_t avail = _rx_available();
+        uint8_t discard[64];
+        while (avail > 0) {
+            uint16_t chunk = (avail < sizeof(discard)) ? avail : sizeof(discard);
+            _rx_read(discard, chunk);
+            avail -= chunk;
         }
+        return;
     }
+
+    /* [v1.4] 统一堆分配，彻底消除 _esp_task 栈上的 512B 缓冲 */
+    uint8_t *tmp = (uint8_t *)pvPortMalloc(payload_len);
+    if (!tmp) {
+        /* 堆分配失败，丢弃数据 */
+        uint8_t discard[64];
+        uint16_t remaining = payload_len;
+        while (remaining > 0) {
+            uint16_t chunk = (remaining < sizeof(discard)) ? remaining : sizeof(discard);
+            _rx_read(discard, chunk);
+            remaining -= chunk;
+        }
+        return;
+    }
+
+    _rx_read(tmp, payload_len);
+
+    if (s_esp.rx_cb) {
+        s_esp.rx_cb((dal_wifi_dev_t *)&s_esp, tmp, payload_len, s_esp.rx_cb_arg);
+    }
+
+    vPortFree(tmp);
 }
 
 /* ========================================================================== */
@@ -444,7 +431,7 @@ static void _process_event_line(const char *line)
         const char *ip = strstr(line, "IP:");
         if (ip) {
             ip += 3;
-            uint32_t a, b, c, d;
+            unsigned int a, b, c, d;
             if (sscanf(ip, "%u.%u.%u.%u", &a, &b, &c, &d) == 4) {
                 s_esp.sta_ip.addr = (a << 24) | (b << 16) | (c << 8) | d;
                 s_esp.sta_ip_valid = true;
@@ -467,7 +454,6 @@ static void _process_event_line(const char *line)
         s_esp.state = ESP_STATE_IDLE;
         dal_wifi_notify_event((dal_wifi_dev_t *)&s_esp, DAL_WIFI_EVT_AP_STOPPED, NULL);
     }
-    /* 注意：+CWLAP 不再在此处理，已由命令引擎在持锁期间同步解析 */
 }
 
 /* ========================================================================== */
@@ -511,18 +497,9 @@ static void _esp_task(void *arg)
 }
 
 /* ========================================================================== */
-/*               [v1.3] SSID/密码引号转义辅助                                   */
+/*               SSID/密码引号转义辅助                                          */
 /* ========================================================================== */
 
-/**
- * @brief [v1.3] 将字符串中的 " 转义为 \"，防止 AT 命令构造失败
- * @param dst   目标缓冲区
- * @param src   源字符串
- * @param dst_size 目标缓冲区大小
- * @note  ESP8266 AT 固件不支持 SSID/密码包含引号，
- *        此函数提供基本防护，若转义后仍超长则截断。
- *        建议在文档中注明：SSID/密码不应包含双引号字符。
- */
 static void _escape_quotes(char *dst, const char *src, size_t dst_size)
 {
     size_t di = 0;
@@ -565,7 +542,8 @@ static dal_err_t bsp_esp_ops_init(dal_wifi_dev_t *dev)
         return DAL_ERR_NO_MEM;
     }
 
-    if (xTaskCreate(_esp_task, "esp8266", 1024, NULL, 3, &s_esp.task_handle) != pdPASS) {
+    /* [v1.4] 任务栈从 1024 降至 512 word = 2048B（堆分配后栈压力大幅降低） */
+    if (xTaskCreate(_esp_task, "esp8266", 512, NULL, 3, &s_esp.task_handle) != pdPASS) {
         vSemaphoreDelete(s_esp.evt_sem);
         vSemaphoreDelete(s_esp.at_mutex);
         vSemaphoreDelete(s_esp.conn_sem);
@@ -579,7 +557,7 @@ static dal_err_t bsp_esp_ops_init(dal_wifi_dev_t *dev)
 
     if (!_at_send_cmd_wait(AT_CMD_ATE0, "OK", 1000)) return DAL_ERR_FAIL;
 
-    char cmd[64];
+    char cmd[32];
     snprintf(cmd, sizeof(cmd), AT_CMD_CWMODE, 3);
     if (!_at_send_cmd_wait(cmd, "OK", 1000)) return DAL_ERR_FAIL;
 
@@ -621,7 +599,7 @@ static dal_err_t bsp_esp_ops_set_mode(dal_wifi_dev_t *dev, dal_wifi_mode_t mode)
 }
 
 /* ========================================================================== */
-/*               [v1.3] 扫描功能（修复结果丢失 + 阻塞等待）                     */
+/*               扫描功能                                                      */
 /* ========================================================================== */
 
 static dal_err_t bsp_esp_ops_scan_start(dal_wifi_dev_t *dev)
@@ -634,8 +612,6 @@ static dal_err_t bsp_esp_ops_scan_start(dal_wifi_dev_t *dev)
     memset(s_esp.scan_records, 0, sizeof(s_esp.scan_records));
 
     s_esp.state = ESP_STATE_SCANNING;
-
-    /* [v1.3] 启用扫描解析标志，命令引擎持锁期间同步解析 +CWLAP */
     s_esp.cmd_ctx.scan_parsing = true;
 
     if (!_at_send_cmd_wait(AT_CMD_CWLAP, "OK", ESP8266_SCAN_TIMEOUT_MS)) {
@@ -647,15 +623,10 @@ static dal_err_t bsp_esp_ops_scan_start(dal_wifi_dev_t *dev)
     s_esp.state = ESP_STATE_IDLE;
     s_esp.scan_done = true;
 
-    /* [v1.3] 通知等待者 */
     xSemaphoreGive(s_esp.scan_sem);
     return DAL_OK;
 }
 
-/**
- * @brief [v1.3] 获取扫描结果，支持阻塞等待
- * @note  若扫描尚未完成，最多等待 ESP8266_SCAN_TIMEOUT_MS
- */
 static dal_err_t bsp_esp_ops_get_scan_result(dal_wifi_dev_t *dev,
                                              dal_wifi_scan_record_t *records,
                                              uint16_t max_count, uint16_t *actual)
@@ -663,7 +634,6 @@ static dal_err_t bsp_esp_ops_get_scan_result(dal_wifi_dev_t *dev,
     (void)dev;
     if (records == NULL || actual == NULL) return DAL_ERR_PARAM_INVALID;
 
-    /* [v1.3] 若扫描未完成，阻塞等待 */
     if (!s_esp.scan_done) {
         if (xSemaphoreTake(s_esp.scan_sem,
                            pdMS_TO_TICKS(ESP8266_SCAN_TIMEOUT_MS)) != pdTRUE) {
@@ -679,7 +649,7 @@ static dal_err_t bsp_esp_ops_get_scan_result(dal_wifi_dev_t *dev,
 }
 
 /* ========================================================================== */
-/*               STA / AP / 透传 / 电源管理                                    */
+/*         [v1.4] STA / AP（缩减栈缓冲区）                                    */
 /* ========================================================================== */
 
 static dal_err_t bsp_esp_ops_sta_connect(dal_wifi_dev_t *dev,
@@ -687,12 +657,12 @@ static dal_err_t bsp_esp_ops_sta_connect(dal_wifi_dev_t *dev,
 {
     (void)dev;
 
-    /* [v1.3] 转义 SSID/密码中的引号 */
-    char safe_ssid[64], safe_pass[128];
+    /* [v1.4] 缩减栈缓冲：SSID 48B + PASS 80B + cmd 160B = 288B（原 448B） */
+    char safe_ssid[48], safe_pass[80];
     _escape_quotes(safe_ssid, config->ssid, sizeof(safe_ssid));
     _escape_quotes(safe_pass, config->password, sizeof(safe_pass));
 
-    char cmd[256];
+    char cmd[160];
     snprintf(cmd, sizeof(cmd), AT_CMD_CWJAP, safe_ssid, safe_pass);
 
     if (!_at_send_cmd_wait(cmd, "OK", 5000)) return DAL_ERR_FAIL;
@@ -728,12 +698,12 @@ static dal_err_t bsp_esp_ops_ap_start(dal_wifi_dev_t *dev,
 {
     (void)dev;
 
-    /* [v1.3] 转义 SSID/密码中的引号 */
-    char safe_ssid[64], safe_pass[128];
+    /* [v1.4] 缩减栈缓冲，与 sta_connect 一致 */
+    char safe_ssid[48], safe_pass[80];
     _escape_quotes(safe_ssid, config->ssid, sizeof(safe_ssid));
     _escape_quotes(safe_pass, config->password, sizeof(safe_pass));
 
-    char cmd[256];
+    char cmd[160];
     snprintf(cmd, sizeof(cmd), AT_CMD_CWSAP,
              safe_ssid, safe_pass, config->channel, 0);
     if (!_at_send_cmd_wait(cmd, "OK", 2000)) return DAL_ERR_FAIL;
@@ -846,7 +816,7 @@ static const dal_wifi_ops_t g_bsp_esp_ops = {
 };
 
 /* ========================================================================== */
-/*                     BSP 公共接口                                            */
+/*                     BSP 公共接口（仅注册，不初始化硬件）                      */
 /* ========================================================================== */
 
 bsp_err_t bsp_esp8266_init(void)
@@ -864,9 +834,6 @@ bsp_err_t bsp_esp8266_init(void)
     wifi_dev.config = &cfg;
 
     dal_err_t ret = dal_wifi_register(&wifi_dev);
-    if (ret != DAL_OK) return BSP_ERR_FAIL;
-
-    ret = dal_wifi_init(&wifi_dev);
     if (ret != DAL_OK) {
         (void)dal_wifi_unregister(&wifi_dev);
         return BSP_ERR_IO;

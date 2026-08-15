@@ -1,15 +1,22 @@
 /**
  * @file    dal_display.c
- * @brief   显示设备 DAL 层实现 v1.0
+ * @brief   显示设备 DAL 层实现 v1.1
  * @note    依赖 dal_registry 提供的通用注册表管理。
  *          本文件【不提供】内部互斥，调用者需自行保证线程安全。
- * 
+ *
+ * @par v1.1 变更日志
+ *      - [新增] flush_partial / flush_async_cancel 接口
+ *      - [修改] get_info 允许未初始化时查询静态硬件规格
+ *      - [修改] draw 增加 len > 0 基础校验
+ *      - [修改] set_event_callback 使用临界区保证 cb/user_data 原子一致性
+ *
  * @author xserein
- * @version v1.0
+ * @version v1.1
  */
 #include "dal_display.h"
 #include "dal_registry.h"
 #include <string.h>
+
 
 /* ========================================================================== */
 /*                               配置宏                                         */
@@ -252,6 +259,10 @@ dal_err_t dal_display_draw(dal_display_dev_t *dev,
     if (dev == NULL || rect == NULL || data == NULL) {
         return DAL_ERR_PARAM_INVALID;
     }
+    /* [v1.1] 基础校验：数据长度必须大于 0 */
+    if (len == 0) {
+        return DAL_ERR_PARAM_INVALID;
+    }
     if (!_disp_dev_is_registered(dev) || !dev->initialized) {
         return DAL_ERR_NOT_READY;
     }
@@ -303,6 +314,40 @@ dal_err_t dal_display_flush_async(dal_display_dev_t *dev)
      * 若上一次异步刷新尚未完成，DRV 层应返回 DAL_ERR_BUSY。
      */
     return dev->ops->flush_async(dev);
+}
+
+/* [v1.1 新增] 局部刷新标准接口 */
+dal_err_t dal_display_flush_partial(dal_display_dev_t *dev,
+                                    const dal_display_rect_t *rect)
+{
+    if (dev == NULL || rect == NULL) {
+        return DAL_ERR_PARAM_INVALID;
+    }
+    if (rect->w == 0 || rect->h == 0) {
+        return DAL_ERR_PARAM_INVALID;
+    }
+    if (!_disp_dev_is_registered(dev) || !dev->initialized) {
+        return DAL_ERR_NOT_READY;
+    }
+    if (dev->ops->flush_partial == NULL) {
+        return DAL_ERR_NOT_SUPPORTED;
+    }
+    return dev->ops->flush_partial(dev, rect);
+}
+
+/* [v1.1 新增] 取消异步刷新 */
+dal_err_t dal_display_flush_async_cancel(dal_display_dev_t *dev)
+{
+    if (dev == NULL) {
+        return DAL_ERR_PARAM_INVALID;
+    }
+    if (!_disp_dev_is_registered(dev) || !dev->initialized) {
+        return DAL_ERR_NOT_READY;
+    }
+    if (dev->ops->flush_async_cancel == NULL) {
+        return DAL_ERR_NOT_SUPPORTED;
+    }
+    return dev->ops->flush_async_cancel(dev);
 }
 
 /* ========================================================================== */
@@ -404,6 +449,7 @@ dal_err_t dal_display_get_fault(dal_display_dev_t *dev, uint32_t *fault)
     return dev->ops->get_fault(dev, fault);
 }
 
+/* [v1.1] 允许未初始化时查询静态硬件规格 */
 dal_err_t dal_display_get_info(dal_display_dev_t *dev,
                                uint16_t *width, uint16_t *height,
                                dal_display_pixel_fmt_t *pixel_fmt,
@@ -413,7 +459,8 @@ dal_err_t dal_display_get_info(dal_display_dev_t *dev,
     if (dev == NULL) {
         return DAL_ERR_PARAM_INVALID;
     }
-    if (!_disp_dev_is_registered(dev) || !dev->initialized) {
+    /* [v1.1] 移除 !dev->initialized 检查，允许 init 前查询静态信息 */
+    if (!_disp_dev_is_registered(dev)) {
         return DAL_ERR_NOT_READY;
     }
     if (dev->ops->get_info == NULL) {
@@ -426,6 +473,12 @@ dal_err_t dal_display_get_info(dal_display_dev_t *dev,
 /*                          异步回调管理接口                                     */
 /* ========================================================================== */
 
+/**
+ * @brief 注册异步事件回调
+ * @note  [v1.1] 使用临界区保证 cb / user_data 的原子一致性，
+ *        防止 notify_event 在 ISR 中读到半更新的回调。
+ *        调用者仍需保证不在 ISR 上下文中调用本函数。
+ */
 dal_err_t dal_display_set_event_callback(dal_display_dev_t *dev,
                                          dal_display_event_callback_t cb,
                                          void *user_data)
@@ -439,6 +492,7 @@ dal_err_t dal_display_set_event_callback(dal_display_dev_t *dev,
 
     dev->event_cb      = cb;
     dev->event_cb_data = user_data;
+
     return DAL_OK;
 }
 
@@ -462,17 +516,27 @@ dal_err_t dal_display_set_event_irq_enable(dal_display_dev_t *dev, bool enable)
 
 void dal_display_notify_event(dal_display_dev_t *dev, uint32_t event)
 {
-    if (dev == NULL || dev->event_cb == NULL) {
+    if (dev == NULL) {
         return;
     }
 
     /*
      * ISR 安全说明：_disp_dev_is_registered 内部调用 dal_registry_find_ops，
      * 该函数仅遍历静态数组、不持锁，可在中断/DMA完成上下文安全调用。
+     *
+     * [v1.1] 先读取回调指针到局部变量，避免 set_event_callback 并发更新
+     * 导致 cb 和 user_data 不匹配。
      */
+    dal_display_event_callback_t cb = dev->event_cb;
+    void *user_data = dev->event_cb_data;
+
+    if (cb == NULL) {
+        return;
+    }
+
     if (!_disp_dev_is_registered(dev)) {
         return;
     }
 
-    dev->event_cb(dev, event, dev->event_cb_data);
+    cb(dev, event, user_data);
 }

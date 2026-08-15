@@ -23,9 +23,12 @@ app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj: /home/xiamu/git/stm3
 app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/app/main.c \
   /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/board_v1.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_display.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_encoder.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_err.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_key.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_led.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_motor.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/deprecated_definitions.h \
@@ -33,65 +36,122 @@ app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: /home/xiamu/git/stm32_project/
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/mpu_wrappers.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/portable.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/projdefs.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/queue.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/task.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h \
+  /opt/xpack-gcc/arm-none-eabi/include/_ansi.h \
   /opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h \
   /opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h \
+  /opt/xpack-gcc/arm-none-eabi/include/machine/_types.h \
+  /opt/xpack-gcc/arm-none-eabi/include/machine/ieeefp.h \
+  /opt/xpack-gcc/arm-none-eabi/include/newlib.h \
   /opt/xpack-gcc/arm-none-eabi/include/stdint.h \
+  /opt/xpack-gcc/arm-none-eabi/include/stdio.h \
+  /opt/xpack-gcc/arm-none-eabi/include/string.h \
+  /opt/xpack-gcc/arm-none-eabi/include/strings.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/_locale.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/_types.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/cdefs.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/config.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/features.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/lock.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/reent.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/stdio.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/string.h \
+  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
 
-/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_led.h:
+/opt/xpack-gcc/arm-none-eabi/include/sys/string.h:
 
-/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/board_v1.h:
+/opt/xpack-gcc/arm-none-eabi/include/sys/stdio.h:
 
-/home/xiamu/git/stm32_project/project/01-environment_build/app/main.c:
+/opt/xpack-gcc/arm-none-eabi/include/sys/reent.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/lock.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/config.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/machine/ieeefp.h:
 
 /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h:
 
-/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h:
-
-/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/sys/features.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/app/freertos_hooks.c:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_key.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/deprecated_definitions.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/mpu_wrappers.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/portable.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/projdefs.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/task.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_err.h:
+/opt/xpack-gcc/arm-none-eabi/include/stdint.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h:
 
-/opt/xpack-gcc/arm-none-eabi/include/stdint.h:
+/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_err.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/projdefs.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/portable.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/task.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/mpu_wrappers.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/strings.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_key.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/_types.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/string.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/newlib.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/app/freertos_hooks.c:
+
+/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/stdio.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/features.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/_locale.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/deprecated_definitions.h:
+
+/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h:
+
+/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/app/main.c:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/cdefs.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/machine/_types.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_motor.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/board_v1.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_display.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/_ansi.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_encoder.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/queue.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_led.h:

@@ -15,6 +15,7 @@ target_link_libraries(${PROJECT_NAME}.elf PRIVATE
 
 # 链接选项 (从 BSP 获取链接脚本)
 target_link_options(${PROJECT_NAME}.elf PRIVATE
+    -Wl,--gc-sections  
     --specs=nano.specs      # newlib-nano (20KB RAM 必须)
     --specs=nosys.specs     # 无系统调用
     -Wl,--print-memory-usage

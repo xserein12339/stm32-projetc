@@ -101,7 +101,7 @@ static bool _handle_valid(bsp_timer_handle_t h)
 {
     if (h == NULL) return false;
     ptrdiff_t idx = (bsp_timer_inst_t *)h - s_timers;
-    return (idx >= 0 && idx < BSP_TIMER_MAX_INSTANCES && ((bsp_timer_inst_t *)h)->in_use);
+    return (idx >= 0 && (unsigned)idx < BSP_TIMER_MAX_INSTANCES && ((bsp_timer_inst_t *)h)->in_use);
 }
 
 static void _enable_periph_clock(uint8_t id)
@@ -342,7 +342,7 @@ static void _timer_irq_handler(bsp_timer_inst_t *inst)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    for (int i = 0; i < BSP_TIMER_MAX_INSTANCES; i++) {
+    for (unsigned i = 0; i < BSP_TIMER_MAX_INSTANCES; i++) {
         if (s_timers[i].in_use && s_timers[i].tim_periph == htim->Instance) {
             _timer_irq_handler(&s_timers[i]);
             return;
@@ -676,4 +676,24 @@ bsp_err_t bsp_timer_encoder_get_bit_width(bsp_timer_handle_t handle, uint8_t *bi
     if (inst->config.mode != BSP_TIMER_MODE_ENCODER) return BSP_ERR_UNSUPPORT;
     *bits = 16;
     return BSP_OK;
+}
+
+/* ====================================================================== */
+/*  STM32F1 HAL TIM 扩展回调桩函数                                          */
+/*  HAL_TIM_ResetCallback() 内部无条件调用这些弱符号，必须提供定义             */
+/* ====================================================================== */
+
+void HAL_TIMEx_CommutCallback(TIM_HandleTypeDef *htim)
+{
+    (void)htim;
+}
+
+void HAL_TIMEx_CommutHalfCpltCallback(TIM_HandleTypeDef *htim)
+{
+    (void)htim;
+}
+
+void HAL_TIMEx_BreakCallback(TIM_HandleTypeDef *htim)
+{
+    (void)htim;
 }

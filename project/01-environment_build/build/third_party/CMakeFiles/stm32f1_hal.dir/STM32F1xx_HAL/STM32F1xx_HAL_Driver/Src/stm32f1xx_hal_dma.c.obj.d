@@ -33,6 +33,4 @@ third_party/CMakeFiles/stm32f1_hal.dir/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Src/st
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h

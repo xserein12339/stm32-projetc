@@ -6,8 +6,9 @@
  *          - 依赖 bsp_timer 提供的编码器模式接口（精简版 v3.0）
  *          - GPIO 配置由 bsp_timer.c 中的 HAL_TIM_Encoder_MspInit 负责
  *          - 实现 dal_encoder_ops_t 并注册到 dal_encoder 框架
+ *          - v1.1: get_velocity 软件差分实现（0.1 RPM），替代原 NOT_SUPPORTED 桩
  * @author  xserein
- * @version v1.0
+ * @version v1.1
  */
 
 #include "board_v1.h"
@@ -15,14 +16,29 @@
 #include "bsp_encoder.h"
 #include "dal_encoder.h"
 #include "bsp_timer.h"
+#include "FreeRTOS.h"
+#include "task.h"
 #include <string.h>
 
 /* ========================================================================== */
 /*                          内部配置                                            */
 /* ========================================================================== */
 
-/** @brief 编码器每转脉冲数（根据实际硬件参数调整） */
-#define ENCODER_PPR          (400U)  /**< 400 线编码器，4倍频后 1600 CPR */
+/** @brief 编码器每转脉冲数（电机轴）
+ *  @note  JGB37-520 霍尔磁编码器：11 PPR/相/电机轴转，
+ *         4 倍频后 44 计数/电机轴转（参考：厂商手册/ATmega16 数据）
+ */
+#define ENCODER_PPR          (11U)
+
+/** @brief 减速比（减速箱输出轴 : 电机轴）
+ *  @note  1 = 速度/位置按电机轴计算。
+ *         填实际减速比（如 30 表示 1:30）后，get_velocity 输出
+ *         减速箱输出轴 RPM；get_position 仍为原始计数，不做换算。
+ *         减速比可实测校准：见 bsp_enc_ops_get_velocity 注释。
+ */
+#ifndef ENCODER_GEAR_RATIO
+#define ENCODER_GEAR_RATIO   (30U)
+#endif
 
 /* ========================================================================== */
 /*                     硬件描述符与私有上下文                                   */
@@ -50,6 +66,12 @@ typedef struct {
     bsp_timer_enc_mode_t enc_mode;   ///< 缓存倍频模式
     bool               zeroed;       ///< 是否已归零（用于 CAP_ZEROED 标志）
     bool               is_initialized; ///< 硬件是否已初始化
+
+    /* 软件差分测速状态（get_velocity 专用，约定单任务调用） */
+    int32_t            vel_last_count;   /**< 上次采样计数 */
+    uint32_t           vel_last_tick;    /**< 上次采样 tick */
+    int32_t            vel_last_result;  /**< 上次计算结果（dt=0 时返回） */
+    bool               vel_seeded;       /**< 已完成首次采样 */
 } bsp_encoder_priv_t;
 
 /* ========================================================================== */
@@ -212,11 +234,52 @@ static dal_err_t bsp_enc_ops_get_angle(dal_encoder_dev_t *dev, uint32_t *angle)
     return DAL_OK;
 }
 
+/**
+ * @brief 软件差分测速：v = Δcount / Δt
+ * @note  - 单位契约（dal_encoder.h）：0.1 RPM，正 CW / 负 CCW
+ *          - 依赖上层周期性轮询（如 20Hz 显示任务），两次调用间隔
+ *            即为测速窗口；采样间隔过短（<1 tick）时返回上次结果
+ *          - 计算式：vel[0.1RPM] = Δcount * 600000 / (Δms * CPR)
+ *            其中 CPR = ppr * 倍频系数 * 减速比（ENCODER_GEAR_RATIO），
+ *            表示减速箱输出轴每转的总计数
+ *          - 减速比实测校准：复位计数后手转输出轴整整 1 圈，
+ *            读 get_position，减速比 = 读数 / (ppr * 倍频系数)
+ * @warning 差分状态无锁保护，约定仅从单一任务上下文调用；
+ *          中断回调中严禁调用（DAL 事件契约）
+ */
 static dal_err_t bsp_enc_ops_get_velocity(dal_encoder_dev_t *dev, int32_t *velocity)
 {
-    (void)dev;
-    (void)velocity;
-    return DAL_ERR_NOT_SUPPORTED;
+    bsp_encoder_priv_t *priv = (bsp_encoder_priv_t *)dev->drv_priv;
+    if (!priv || !priv->timer_handle || !priv->is_initialized)
+        return DAL_ERR_NOT_READY;
+
+    int32_t current;
+    bsp_err_t err = bsp_timer_encoder_get_count(priv->timer_handle, &current);
+    if (err != BSP_OK) return DAL_ERR_DEPENDENCY;
+
+    uint32_t now = xTaskGetTickCount();
+    int32_t result = 0;
+
+    if (priv->vel_seeded) {
+        uint32_t dt_ms = (now - priv->vel_last_tick) * portTICK_PERIOD_MS;
+        if (dt_ms == 0) {
+            result = priv->vel_last_result;
+        } else {
+            int32_t  dc  = current - priv->vel_last_count;
+            uint32_t cpr = priv->ppr * _get_multiplier(priv->enc_mode)
+                           * ENCODER_GEAR_RATIO;
+            result = (int32_t)((int64_t)dc * 600000LL /
+                               ((int64_t)dt_ms * (int64_t)cpr));
+        }
+    }
+
+    priv->vel_last_count  = current;
+    priv->vel_last_tick   = now;
+    priv->vel_last_result = result;
+    priv->vel_seeded      = true;
+
+    *velocity = result;
+    return DAL_OK;
 }
 
 static dal_err_t bsp_enc_ops_get_direction(dal_encoder_dev_t *dev,
@@ -251,6 +314,9 @@ static dal_err_t bsp_enc_ops_reset(dal_encoder_dev_t *dev)
 
     priv->last_dir_count   = 0;
     priv->last_state_count = 0;
+    /* 计数已清零，测速差分基准必须同步失效，
+     * 否则下次 get_velocity 会用旧基准算出巨大假速度 */
+    priv->vel_seeded = false;
     priv->zeroed           = true;
     return DAL_OK;
 }

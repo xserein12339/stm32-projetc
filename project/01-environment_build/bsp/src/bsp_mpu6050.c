@@ -530,9 +530,6 @@ bsp_err_t bsp_mpu6050_init(void)
     s_imu_dev.drv_priv = &s_mpu_priv;
 
     dal_err_t ret = dal_imu_register(&s_imu_dev);
-    if (ret != DAL_OK) return BSP_ERR_FAIL;
-
-    ret = dal_imu_init(&s_imu_dev);
     if (ret != DAL_OK) {
         (void)dal_imu_unregister(&s_imu_dev);
         return BSP_ERR_IO;

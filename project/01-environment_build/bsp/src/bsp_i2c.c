@@ -1,7 +1,11 @@
 /**
  * @file    bsp_i2c.c
- * @brief   板级 I2C BSP 层实现 v1.5
- * @note    - [v1.5] read_reg 改用 HAL_I2C_Mem_Read，保证 RESTART 原子事务
+ * @brief   板级 I2C BSP 层实现 v1.6
+ * @note    - [v1.6] 修正 deinit 时序：先 HAL_DeInit 再 GPIO 恢复
+ *          - [v1.6] init 总线恢复返回值检查，防止带病运行
+ *          - [v1.6] probe 增加互斥锁保护
+ *          - [v1.6] 新增 bsp_i2c_master_tx_dma 及 HAL 回调
+ *          - [v1.5] read_reg 改用 HAL_I2C_Mem_Read，保证 RESTART 原子事务
  *          - [v1.5] write_reg 改用 HAL_I2C_Mem_Write，消除栈缓冲区拷贝
  *          - [v1.5] 总线恢复增加 SCL 钳位检测，防止误判恢复成功
  *          - [v1.4] 采用静态 MspInit/MspDeInit 注入，避免全局符号冲突
@@ -9,7 +13,7 @@
  *          - [v1.3] FreeRTOS 互斥锁（init 时创建）
  *          - [v1.3] 所有读写接口内部自动加锁，保证事务原子性
  * @author  xserein
- * @version v1.5
+ * @version v1.6
  */
 
 #include "board_v1.h"
@@ -35,6 +39,10 @@
 static I2C_HandleTypeDef s_hi2c;
 static bool              s_initialized = false;
 static SemaphoreHandle_t s_i2c_mutex   = NULL;
+
+/* DMA 扩展 */
+static volatile bool      s_i2c_dma_busy = false;
+static bsp_i2c_dma_cb_t   s_i2c_dma_cb   = NULL;
 
 /* ========================================================================== */
 /*              Static MspInit / MspDeInit（避免全局符号冲突）                   */
@@ -88,6 +96,13 @@ static void _config_gpio(void)
 
 static void _gpio_recovery_mode(void)
 {
+    /* WHY: 切换为输出开漏前必须先置高 ODR。STM32F1 复位后 ODR=0，
+     * 若直接切模式，引脚会立即被主动拉低（开漏下拉导通），
+     * 导致后续 _bus_recovery_gpio_only() 的 SCL 电平检测恒为低，
+     * 总线恢复序列永远提前失败 */
+    HAL_GPIO_WritePin(BSP_I2C1_GPIO_PORT,
+                      BSP_I2C1_SCL_PIN | BSP_I2C1_SDA_PIN, GPIO_PIN_SET);
+
     GPIO_InitTypeDef gpio = {
         .Mode  = GPIO_MODE_OUTPUT_OD,
         .Pull  = GPIO_PULLUP,
@@ -267,6 +282,24 @@ bsp_err_t bsp_i2c_init(uint32_t freq_hz)
         return BSP_ERR_NOMEM;
     }
 
+    /* [v1.6] 检查总线恢复结果，防止 SDA/SCL 被硬件钳位时带病运行 */
+    bsp_err_t recovery_ret = _bus_recovery_gpio_only();
+    if (recovery_ret != BSP_OK) {
+        HAL_I2C_DeInit(&s_hi2c);
+        vSemaphoreDelete(s_i2c_mutex);
+        s_i2c_mutex = NULL;
+        return recovery_ret;
+    }
+
+    /* 恢复后重新初始化外设 */
+    __HAL_RCC_I2C1_CLK_ENABLE();
+    _config_gpio();
+    if (HAL_I2C_Init(&s_hi2c) != HAL_OK) {
+        vSemaphoreDelete(s_i2c_mutex);
+        s_i2c_mutex = NULL;
+        return BSP_ERR_IO;
+    }
+
     s_initialized = true;
     return BSP_OK;
 }
@@ -275,6 +308,10 @@ bsp_err_t bsp_i2c_deinit(void)
 {
     if (!s_initialized) return BSP_ERR_NOT_INIT;
 
+    /* [v1.6] 时序修正：先关闭外设，释放引脚控制权，再做 GPIO 操作 */
+    HAL_I2C_DeInit(&s_hi2c);
+
+    /* 检查 SDA 是否被拉低；此时引脚已归 GPIO 控制，安全 */
     GPIO_InitTypeDef gpio_sda_check = {
         .Pin  = BSP_I2C1_SDA_PIN,
         .Mode = GPIO_MODE_INPUT,
@@ -286,8 +323,7 @@ bsp_err_t bsp_i2c_deinit(void)
         (void)_bus_recovery_gpio_only();
     }
 
-    HAL_I2C_DeInit(&s_hi2c);
-
+    /* 置为默认输入浮空状态 */
     GPIO_InitTypeDef gpio_default = {
         .Pin   = BSP_I2C1_SCL_PIN | BSP_I2C1_SDA_PIN,
         .Mode  = GPIO_MODE_INPUT,
@@ -445,6 +481,99 @@ bsp_err_t bsp_i2c_read_raw(uint8_t dev_addr,
 }
 
 /* ========================================================================== */
+/*                        DMA 传输扩展                                         */
+/* ========================================================================== */
+
+bsp_err_t bsp_i2c_master_tx_dma(uint8_t dev_addr,
+                                const uint8_t *data, uint16_t len,
+                                bsp_i2c_dma_cb_t cb,
+                                uint32_t timeout_ms)
+{
+    if (!s_initialized) return BSP_ERR_NOT_INIT;
+    if (data == NULL || len == 0 || cb == NULL) return BSP_ERR_PARAM;
+
+    uint32_t timeout = _get_timeout(timeout_ms);
+    uint16_t addr    = (uint16_t)(dev_addr << 1);
+
+    /* 获取总线锁；DMA 完成中断中释放 */
+    if (bsp_i2c_lock(timeout_ms) != BSP_OK) {
+        return BSP_ERR_BUSY;
+    }
+
+    /* 二次检查：防止极端竞态 */
+    if (s_i2c_dma_busy) {
+        bsp_i2c_unlock();
+        return BSP_ERR_BUSY;
+    }
+
+    s_i2c_dma_busy = true;
+    s_i2c_dma_cb   = cb;
+
+    HAL_StatusTypeDef status = HAL_I2C_Master_Transmit_DMA(
+        &s_hi2c, addr, (uint8_t *)data, len);
+
+    if (status != HAL_OK) {
+        s_i2c_dma_busy = false;
+        s_i2c_dma_cb   = NULL;
+        bsp_i2c_unlock();
+        return BSP_ERR_IO;
+    }
+    return BSP_OK;
+}
+
+/* -------------------------------------------------------------------------- */
+/* HAL 弱函数覆盖（I2C1 专用，若项目使用 I2C2 需增加 Instance 判断）          */
+/* -------------------------------------------------------------------------- */
+
+void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+    if (hi2c->Instance == I2C1) {
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+        s_i2c_dma_busy = false;
+        bsp_i2c_dma_cb_t cb = s_i2c_dma_cb;
+        s_i2c_dma_cb = NULL;
+
+        if (s_i2c_mutex != NULL) {
+            xSemaphoreGiveFromISR(s_i2c_mutex, &xHigherPriorityTaskWoken);
+        }
+
+        if (cb != NULL) {
+            cb(BSP_OK);
+        }
+
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    }
+}
+
+void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
+{
+    if (hi2c->Instance == I2C1) {
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+        s_i2c_dma_busy = false;
+        bsp_i2c_dma_cb_t cb = s_i2c_dma_cb;
+        s_i2c_dma_cb = NULL;
+
+        if (s_i2c_mutex != NULL) {
+            xSemaphoreGiveFromISR(s_i2c_mutex, &xHigherPriorityTaskWoken);
+        }
+
+        if (cb != NULL) {
+            cb(BSP_ERR_IO);
+        }
+
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    }
+}
+
+void HAL_I2C_AbortCpltCallback(I2C_HandleTypeDef *hi2c)
+{
+    /* 统一按错误处理 */
+    HAL_I2C_ErrorCallback(hi2c);
+}
+
+/* ========================================================================== */
 /*                          诊断接口                                            */
 /* ========================================================================== */
 
@@ -453,8 +582,13 @@ bsp_err_t bsp_i2c_probe(uint8_t dev_addr, uint32_t timeout_ms)
     if (!s_initialized) return BSP_ERR_NOT_INIT;
 
     uint32_t timeout = _get_timeout(timeout_ms);
+
+    /* [v1.6] 增加互斥保护，防止多任务插入 */
+    if (bsp_i2c_lock(timeout_ms) != BSP_OK) return BSP_ERR_BUSY;
+
     HAL_StatusTypeDef status = HAL_I2C_IsDeviceReady(
         &s_hi2c, (uint16_t)(dev_addr << 1), 1, timeout);
 
+    bsp_i2c_unlock();
     return (status == HAL_OK) ? BSP_OK : BSP_ERR_IO;
 }

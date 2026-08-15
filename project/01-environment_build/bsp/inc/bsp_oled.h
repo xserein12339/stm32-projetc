@@ -1,31 +1,33 @@
 /**
  * @file    bsp_oled.h
- * @brief   板级 OLED BSP 层接口（SSD1306，128x64，I2C）
- * @note    - 硬件映射引用 board_v1_config.h
- *          - 依赖 bsp_i2c 进行通信
- *          - 实现 dal_display_ops_t 并注册到 dal_display 框架
+ * @brief   OLED BSP 公共接口（SSD1306 128x64 I2C）v2.1
  * @author  xserein
- * @version v1.0
+ * @version v2.1
  */
-
 #ifndef __BSP_OLED_H__
 #define __BSP_OLED_H__
 
-#include <stdint.h>
-#include <stdbool.h>
 #include "bsp_err.h"
+#include "dal_err.h"
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/**
- * @brief OLED 初始化并注册到 DAL 框架
- * @retval BSP_OK          成功
- * @retval BSP_ERR_IO      I2C 通信失败或设备无响应
- * @retval BSP_ERR_FAIL    注册失败
- */
+/** @brief 注册 OLED 到 DAL 框架（幂等） */
 bsp_err_t bsp_oled_init(void);
+
+/**
+ * @brief 局部刷新（非标准 DAL 扩展，脏矩形优化）
+ * @param x 起始列（必须为 8 的倍数）
+ * @param y 起始行
+ * @param w 宽度（必须为 8 的倍数，且 > 0）
+ * @param h 高度（且 > 0）
+ * @note  供上层直接调用以实现脏矩形优化。
+ *        标准 DAL 接口仍通过 flush() 全屏刷新。
+ */
+dal_err_t bsp_oled_flush_region(uint8_t x, uint8_t y, uint8_t w, uint8_t h);
 
 #ifdef __cplusplus
 }

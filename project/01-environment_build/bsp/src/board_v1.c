@@ -6,6 +6,7 @@
 #include "bsp_timer.h"
 #include "bsp_key.h"
 #include "bsp_led.h"
+#include "bsp_encoder.h"
 #include "bsp_motor.h"
 #include "bsp_oled.h"
 #include "bsp_mpu6050.h"
@@ -53,7 +54,6 @@ static bsp_err_t bsp_system_clock_config(void)
 /*                         BSP 统一初始化入口                                   */
 /* ========================================================================== */
 
-
 bsp_err_t bsp_init(void)
 {
     HAL_Init();
@@ -65,25 +65,59 @@ bsp_err_t bsp_init(void)
         Error_Handler();
         return ret;
     }
-
-    bsp_key_init();      
-    bsp_led_init();
+    /* 400kHz fast mode：SSD1306/MPU6050 均支持，全屏刷新耗时降为 1/4 */
+    ret = bsp_i2c_init(400000);
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    }
+    ret = bsp_key_init();    
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    }  
+    ret = bsp_led_init();
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    } 
+    ret = bsp_encoder_init();
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    } 
+    ret = bsp_motor_init();
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    } 
+    ret = bsp_oled_init();
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    } 
+    // ret = bsp_mpu6050_init();
+    // if (ret != BSP_OK) {
+    //     Error_Handler();
+    //     return ret;
+    // } 
+    // ret = bsp_esp8266_init();
+    // if (ret != BSP_OK) {
+    //     Error_Handler();
+    //     return ret;
+    // } 
 
 
     return BSP_OK;
 }
 
-
 void Error_Handler(void)
 {
-    /* 关闭全局中断，防止 ISR 干扰故障现场 */
     __disable_irq();
+    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
+    GPIOC->CRH &= ~(0xFU << 20);
+    GPIOC->CRH |= (0x2U << 20);  
+    GPIOC->ODR &= ~(1U << 13);   
 
-    /* 可选：翻转错误指示 LED / 记录故障码到备份寄存器 */
-    // HAL_GPIO_WritePin(ERR_LED_PORT, ERR_LED_PIN, GPIO_PIN_SET);
-
-    /* 永久停驻，等待调试器附加或硬件看门狗复位 */
-    while (1) {
-        __NOP();
-    }
+    while (1) { __NOP(); }
 }
