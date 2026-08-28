@@ -8,4 +8,8 @@ target_include_directories(mw_pid PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/inc    
 )
 
-# 添加依赖，无依赖
+# 添加 MW_COMMON 依赖
+target_link_libraries(mw_pid
+    PUBLIC
+        mw_common
+)

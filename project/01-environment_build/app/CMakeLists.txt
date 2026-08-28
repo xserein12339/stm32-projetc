@@ -10,6 +10,8 @@ add_executable(${PROJECT_NAME}.elf
 # 链接应用模块与BSP,MilldeWare,svc库
 target_link_libraries(${PROJECT_NAME}.elf PRIVATE
     app_hmi
+    svc_att_algo              # 姿态解算服务
+    svc_mot_ctrl              # 电机控制服务
     bsp                     # 提供驱动、HAL、SystemInit、启动文件、链接脚本
 )
 

@@ -12,5 +12,7 @@ target_include_directories(svc_att_algo PUBLIC
 target_link_libraries(svc_att_algo 
     PRIVATE
         freertos_kernel
-        mw_pid
+        mw_common
+        mw_filter
+        dal
 )

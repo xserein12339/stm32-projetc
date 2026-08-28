@@ -12,5 +12,8 @@ target_include_directories(svc_mot_ctrl PUBLIC
 target_link_libraries(svc_mot_ctrl 
     PRIVATE
         freertos_kernel
-
+        mw_common
+        mw_pid
+        mw_filter
+        dal
 )
