@@ -295,6 +295,8 @@ static dal_err_t _oled_flush_region(uint8_t x, uint8_t y, uint8_t w, uint8_t h)
 /*                      DMA 异步刷新回调                                         */
 /* ========================================================================== */
 
+#if defined(BSP_I2C_DMA_ENABLED)   /* 仅 DMA 刷新路径引用，未启用时裁剪 */
+
 /**
  * @brief I2C DMA 传输完成回调（由 bsp_i2c DMA 中断上下文调用）
  * @note  仅释放信号量并通知 DAL 框架，不做任何耗时操作
@@ -312,6 +314,8 @@ static void _oled_dma_complete_cb(bsp_err_t result)
 
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
+
+#endif /* BSP_I2C_DMA_ENABLED */
 
 /* ========================================================================== */
 /*                         DAL ops 实现                                         */

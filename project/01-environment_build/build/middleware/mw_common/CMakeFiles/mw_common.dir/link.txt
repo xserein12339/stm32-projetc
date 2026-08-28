@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libmw_common.a CMakeFiles/mw_common.dir/src/mw_common.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libmw_common.a

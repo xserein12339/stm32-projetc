@@ -101,11 +101,11 @@ bsp_err_t bsp_init(void)
         Error_Handler();
         return ret;
     } 
-    // ret = bsp_esp8266_init();
-    // if (ret != BSP_OK) {
-    //     Error_Handler();
-    //     return ret;
-    // } 
+    ret = bsp_esp8266_init();
+    if (ret != BSP_OK) {
+        Error_Handler();
+        return ret;
+    }
 
 
     return BSP_OK;

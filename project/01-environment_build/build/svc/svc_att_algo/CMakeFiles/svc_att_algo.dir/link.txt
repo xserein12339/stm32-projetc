@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libsvc_att_algo.a CMakeFiles/svc_att_algo.dir/src/svc_att_algo.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libsvc_att_algo.a

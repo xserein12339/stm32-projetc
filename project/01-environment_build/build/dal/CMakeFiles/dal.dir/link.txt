@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libdal.a CMakeFiles/dal.dir/src/dal_registry.c.obj CMakeFiles/dal.dir/src/dal_key.c.obj CMakeFiles/dal.dir/src/dal_led.c.obj CMakeFiles/dal.dir/src/dal_motor.c.obj CMakeFiles/dal.dir/src/dal_encoder.c.obj CMakeFiles/dal.dir/src/dal_display.c.obj CMakeFiles/dal.dir/src/dal_imu.c.obj CMakeFiles/dal.dir/src/dal_wifi.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libdal.a

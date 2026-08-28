@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libmw_pid.a CMakeFiles/mw_pid.dir/src/mw_pid.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libmw_pid.a

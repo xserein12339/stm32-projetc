@@ -31,7 +31,13 @@
 #define MPU6050_DEFAULT_ACCEL_RANGE   DAL_IMU_ACCEL_RANGE_2G
 #define MPU6050_DEFAULT_GYRO_RANGE    DAL_IMU_GYRO_RANGE_250DPS
 #define MPU6050_DEFAULT_ODR           DAL_IMU_ODR_100
-#define MPU6050_DEFAULT_DLPF          (0x06U)
+/*
+ * DLPF=4：加速度计带宽 21Hz / 陀螺仪带宽 20Hz，延迟 8.3ms
+ * [v1.2] WHY: 原 DLPF=6（5Hz 带宽）对 200Hz 采样的平衡控制过低，
+ * 角速度相位滞后过大；DLPF=3（44Hz）在电机振动环境下噪声偏高，
+ * 折中取 4（参见《需求分析》FR-ATT-001）
+ */
+#define MPU6050_DEFAULT_DLPF          (0x04U)
 
 /* ========================================================================== */
 /*                         MPU6050 寄存器定义                                    */

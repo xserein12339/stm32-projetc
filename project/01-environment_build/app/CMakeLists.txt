@@ -1,5 +1,6 @@
 # 添加子模块
 add_subdirectory(app_hmi)
+add_subdirectory(app_ctrl)
 
 # 生成最终可执行文件
 add_executable(${PROJECT_NAME}.elf
@@ -10,8 +11,11 @@ add_executable(${PROJECT_NAME}.elf
 # 链接应用模块与BSP,MilldeWare,svc库
 target_link_libraries(${PROJECT_NAME}.elf PRIVATE
     app_hmi
+    app_ctrl                  # 模式状态机 + 服务装配
     svc_att_algo              # 姿态解算服务
     svc_mot_ctrl              # 电机控制服务
+    svc_monitor               # 系统监控服务
+    svc_comm                  # 通信服务
     bsp                     # 提供驱动、HAL、SystemInit、启动文件、链接脚本
 )
 

@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libsvc_comm.a CMakeFiles/svc_comm.dir/src/svc_comm.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libsvc_comm.a

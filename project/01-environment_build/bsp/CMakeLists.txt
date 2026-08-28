@@ -12,6 +12,7 @@ add_library(bsp STATIC
     src/bsp_encoder.c
     src/bsp_key.c
     src/bsp_led.c
+    src/bsp_wdg.c
 )
 
 target_include_directories(bsp PUBLIC

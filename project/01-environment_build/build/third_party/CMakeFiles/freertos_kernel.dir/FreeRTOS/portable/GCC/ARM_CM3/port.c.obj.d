@@ -1,0 +1,19 @@
+third_party/CMakeFiles/freertos_kernel.dir/FreeRTOS/portable/GCC/ARM_CM3/port.c.obj: \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/portable/GCC/ARM_CM3/port.c \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h \
+ /opt/xpack-gcc/arm-none-eabi/include/stdint.h \
+ /opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/features.h \
+ /opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/projdefs.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/portable.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/deprecated_definitions.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/mpu_wrappers.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/task.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h

@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libbsp.a CMakeFiles/bsp.dir/src/board_v1.c.obj CMakeFiles/bsp.dir/src/bsp_i2c.c.obj CMakeFiles/bsp.dir/src/bsp_timer.c.obj CMakeFiles/bsp.dir/src/bsp_uart.c.obj CMakeFiles/bsp.dir/src/bsp_mpu6050.c.obj CMakeFiles/bsp.dir/src/bsp_oled.c.obj CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj CMakeFiles/bsp.dir/src/bsp_motor.c.obj CMakeFiles/bsp.dir/src/bsp_encoder.c.obj CMakeFiles/bsp.dir/src/bsp_key.c.obj CMakeFiles/bsp.dir/src/bsp_led.c.obj CMakeFiles/bsp.dir/src/bsp_wdg.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libbsp.a

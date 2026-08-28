@@ -492,7 +492,7 @@ bsp_err_t bsp_i2c_master_tx_dma(uint8_t dev_addr,
     if (!s_initialized) return BSP_ERR_NOT_INIT;
     if (data == NULL || len == 0 || cb == NULL) return BSP_ERR_PARAM;
 
-    uint32_t timeout = _get_timeout(timeout_ms);
+    /* timeout_ms 仅用于总线锁获取（锁在 DMA 完成中断中释放） */
     uint16_t addr    = (uint16_t)(dev_addr << 1);
 
     /* 获取总线锁；DMA 完成中断中释放 */

@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libapp_ctrl.a CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libapp_ctrl.a

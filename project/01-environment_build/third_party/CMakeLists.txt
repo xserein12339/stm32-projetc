@@ -45,6 +45,7 @@ add_library(stm32f1_hal STATIC
     ${HAL_DRIVER_DIR}/Src/stm32f1xx_hal_adc.c
     ${HAL_DRIVER_DIR}/Src/stm32f1xx_hal_tim.c
     ${HAL_DRIVER_DIR}/Src/stm32f1xx_hal_rtc.c
+    ${HAL_DRIVER_DIR}/Src/stm32f1xx_hal_iwdg.c
 )
 
 # 添加芯片依赖宏

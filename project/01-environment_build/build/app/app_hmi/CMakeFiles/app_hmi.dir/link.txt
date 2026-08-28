@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libapp_hmi.a CMakeFiles/app_hmi.dir/src/app_hmi.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libapp_hmi.a

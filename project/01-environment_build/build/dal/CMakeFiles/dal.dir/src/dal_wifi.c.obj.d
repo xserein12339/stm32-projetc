@@ -1,0 +1,28 @@
+dal/CMakeFiles/dal.dir/src/dal_wifi.c.obj: \
+ /home/xiamu/git/stm32_project/project/01-environment_build/dal/src/dal_wifi.c \
+ /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_wifi.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h \
+ /opt/xpack-gcc/arm-none-eabi/include/stdint.h \
+ /opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/features.h \
+ /opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_err.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_registry.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+ /opt/xpack-gcc/arm-none-eabi/include/string.h \
+ /opt/xpack-gcc/arm-none-eabi/include/_ansi.h \
+ /opt/xpack-gcc/arm-none-eabi/include/newlib.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/config.h \
+ /opt/xpack-gcc/arm-none-eabi/include/machine/ieeefp.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/reent.h \
+ /opt/xpack-gcc/arm-none-eabi/include/_ansi.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/cdefs.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/_types.h \
+ /opt/xpack-gcc/arm-none-eabi/include/machine/_types.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/lock.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/_locale.h \
+ /opt/xpack-gcc/arm-none-eabi/include/strings.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/string.h

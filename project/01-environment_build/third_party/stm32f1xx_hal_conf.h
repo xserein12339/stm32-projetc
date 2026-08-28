@@ -22,7 +22,7 @@ extern "C" {
 #define HAL_TIM_MODULE_ENABLED
 // #define HAL_RTC_MODULE_ENABLED
 // #define HAL_WWDG_MODULE_ENABLED
-// #define HAL_IWDG_MODULE_ENABLED
+#define HAL_IWDG_MODULE_ENABLED
 // #define HAL_CAN_MODULE_ENABLED
 // #define HAL_USB_MODULE_ENABLED
 
@@ -112,6 +112,9 @@ extern "C" {
 #endif
 #ifdef HAL_RTC_MODULE_ENABLED
   #include "stm32f1xx_hal_rtc.h"
+#endif
+#ifdef HAL_IWDG_MODULE_ENABLED
+  #include "stm32f1xx_hal_iwdg.h"
 #endif
 
 /* ======================== Assert 实现 ======================== */

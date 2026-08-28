@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libchip_runtime.a CMakeFiles/chip_runtime.dir/startup_stm32f103xb.s.obj CMakeFiles/chip_runtime.dir/system_stm32f1xx.c.obj CMakeFiles/chip_runtime.dir/fault_handlers.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libchip_runtime.a

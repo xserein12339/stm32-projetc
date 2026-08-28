@@ -1,0 +1,2 @@
+/opt/xpack-gcc/bin/arm-none-eabi-ar qc libmw_filter.a CMakeFiles/mw_filter.dir/src/mw_filter.c.obj
+/opt/xpack-gcc/bin/arm-none-eabi-ranlib libmw_filter.a
