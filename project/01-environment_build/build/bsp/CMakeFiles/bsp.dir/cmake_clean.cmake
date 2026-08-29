@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/bsp.dir/src/board_v1.c.obj"
   "CMakeFiles/bsp.dir/src/board_v1.c.obj.d"
+  "CMakeFiles/bsp.dir/src/bsp_dbg.c.obj"
+  "CMakeFiles/bsp.dir/src/bsp_dbg.c.obj.d"
   "CMakeFiles/bsp.dir/src/bsp_encoder.c.obj"
   "CMakeFiles/bsp.dir/src/bsp_encoder.c.obj.d"
   "CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj"

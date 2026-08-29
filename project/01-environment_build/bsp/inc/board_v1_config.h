@@ -9,8 +9,8 @@
 #define BSP_GPIOA_PORT              GPIOA
 #define BSP_GPIOA_PIN0              GPIO_PIN_0      ///< TIM2_ENC_A_CH1
 #define BSP_GPIOA_PIN1              GPIO_PIN_1      ///< TIM2_ENC_A_CH2
-#define BSP_GPIOA_PIN2              GPIO_PIN_2      ///< LED2
-#define BSP_GPIOA_PIN3              GPIO_PIN_3      ///< KEY3
+#define BSP_GPIOA_PIN2              GPIO_PIN_2      ///< USART2_TX (LOG)
+#define BSP_GPIOA_PIN3              GPIO_PIN_3      ///< USART2_RX (LOG)
 #define BSP_GPIOA_PIN4              GPIO_PIN_4      ///< KEY1
 #define BSP_GPIOA_PIN5              GPIO_PIN_5      ///< KEY2
 #define BSP_GPIOA_PIN6              GPIO_PIN_6      ///< TIM3_ENC_B_CH1
@@ -49,6 +49,16 @@
 #define BSP_USART3_TX_PORT          BSP_GPIOB_PORT
 #define BSP_USART3_RX_PIN           BSP_GPIOB_PIN11
 #define BSP_USART3_RX_PORT          BSP_GPIOB_PORT
+
+/* ========================================================================== */
+/*                      USART2 资源定义 (默认引脚 PA2/PA3 )                   */
+/* ========================================================================== */
+#define BSP_USART2_PORT             USART2
+#define BSP_USART2_TX_PIN           BSP_GPIOA_PIN2
+#define BSP_USART2_TX_PORT          BSP_GPIOA_PORT
+#define BSP_USART2_RX_PIN           BSP_GPIOA_PIN3
+#define BSP_USART2_RX_PORT          BSP_GPIOA_PORT
+
 
 /* ========================================================================== */
 /*                         TIM1 双电机 PWM (仅PWMA/PWMB )                      */
@@ -106,6 +116,17 @@
 #define BSP_ESP8266_USART_RX_PIN    BSP_USART3_RX_PIN
 
 /* ========================================================================== */
+/*                                LOG 资源定义                                 */
+/* ========================================================================== */
+/* WHY 独立宏名：早期误用 BSP_ESP8266_* 命名导致宏重定义，ESP8266 被静默改到
+ * USART2（硬件实际接 USART3），日志与 ESP8266 通道互相冲突。现拆分为
+ * BSP_LOG_*（USART2 日志专用，bsp_dbg 寄存器级占用，勿经 bsp_uart 框架打开） */
+#define BSP_LOG_USART_PORT         BSP_USART2_PORT
+#define BSP_LOG_USART_TX_PIN       BSP_USART2_TX_PIN
+#define BSP_LOG_USART_TX_PORT      BSP_USART2_TX_PORT
+#define BSP_LOG_USART_BAUDRATE     115200U
+
+/* ========================================================================== */
 /*                          TB6612 双电机驱动资源定义                            */
 /* ========================================================================== */
 #define BSP_TB6612_TIM              BSP_TIM1_PORT
@@ -137,24 +158,20 @@
 /* ========================================================================== */
 #define BSP_LED1_PORT               BSP_GPIOC_PORT      
 #define BSP_LED1_PIN                BSP_GPIOC_PIN13
-#define BSP_LED2_PORT               BSP_GPIOA_PORT
-#define BSP_LED2_PIN                BSP_GPIOA_PIN2
-#define BSP_LED3_PORT               BSP_GPIOB_PORT       
-#define BSP_LED3_PIN                BSP_GPIOB_PIN13
+#define BSP_LED2_PORT               BSP_GPIOB_PORT       
+#define BSP_LED2_PIN                BSP_GPIOB_PIN13
 
 #define BSP_KEY1_PORT               BSP_GPIOA_PORT
-#define BSP_KEY1_PIN                BSP_GPIOA_PIN3
+#define BSP_KEY1_PIN                BSP_GPIOA_PIN4
 #define BSP_KEY2_PORT               BSP_GPIOA_PORT
-#define BSP_KEY2_PIN                BSP_GPIOA_PIN4
-#define BSP_KEY3_PORT               BSP_GPIOA_PORT
-#define BSP_KEY3_PIN                BSP_GPIOA_PIN5
+#define BSP_KEY2_PIN                BSP_GPIOA_PIN5
 
-/* ---- KEY 中断资源（新增） ---- */
+/* ---- KEY 中断资源 ----
+ * WHY：KEY1=PA4 走 EXTI4（专用向量）；KEY2=PA5 走 EXTI 线 5，属 EXTI9_5
+ *      共享向量（bsp_key.c 已实现按 PR 寄存器分发的共享 handler） */
 #define BSP_KEY1_EXTI_LINE          EXTI_LINE_4
 #define BSP_KEY1_IRQN               EXTI4_IRQn
 #define BSP_KEY2_EXTI_LINE          EXTI_LINE_5
 #define BSP_KEY2_IRQN               EXTI9_5_IRQn
-#define BSP_KEY3_EXTI_LINE          EXTI_LINE_3
-#define BSP_KEY3_IRQN               EXTI3_IRQn
 
 #endif /* BOARD_V1_CONFIG_H */

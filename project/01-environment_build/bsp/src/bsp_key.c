@@ -1,12 +1,13 @@
 /**
  * @file    bsp_key.c
  * @brief   板级按键 BSP 层实现（基于 STM32F1 HAL + FreeRTOS）
- * @note    - 硬件映射完全引用 board_v1_config.h 
+ * @note    - 硬件映射完全引用 board_v1_config.h
  *          - 对外仅暴露 bsp_key_init()，内部静态管理所有实例
- *          - 消抖采用中断 + 时间戳法，支持异步回调与同步轮询双模式
+ *          - 消抖 v2.0：EXTI 仅记录边沿时间戳，稳定确认由 1ms tick 扫描
+ *            （bsp_key_tick_scan，经 FreeRTOS tick hook 调用）完成
  *          - 中断优先级默认与 FreeRTOS configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY 一致
  * @author xserein
- * @version v2.1
+ * @version v2.2
  */
 
 #include "board_v1.h"
@@ -47,13 +48,11 @@ typedef struct {
     IRQn_Type         irqn;
     uint8_t           active_level;
 
-    /* 消抖状态（ISR 与轮询共享，需注意并发安全） */
+    /* 消抖状态（EXTI ISR 与 tick 扫描共享，需注意并发安全） */
     volatile uint8_t  stable_level;      ///< 稳定后的电平 (0/1)
     volatile uint8_t  last_raw;          ///< 上一次采样的原始电平
     volatile TickType_t last_change_tick;///< 最后一次边沿变化的时间戳
 
-    /* 事件通知：ISR 置位，由 notify 消费 */
-    volatile uint8_t  pending_event;     ///< 0=无, DAL_KEY_EVT_DOWN, DAL_KEY_EVT_UP
     volatile bool     irq_enabled;       ///< 中断是否已使能
 } bsp_key_priv_t;
 
@@ -76,14 +75,6 @@ static const key_hw_desc_t s_key_table[] = {
         .pin           = BSP_KEY2_PIN,
         .exti_line     = BSP_KEY2_EXTI_LINE,
         .irqn          = BSP_KEY2_IRQN,
-        .active_level  = GPIO_PIN_RESET,
-    },
-    {
-        .name          = "key3",
-        .port          = BSP_KEY3_PORT,
-        .pin           = BSP_KEY3_PIN,
-        .exti_line     = BSP_KEY3_EXTI_LINE,
-        .irqn          = BSP_KEY3_IRQN,
         .active_level  = GPIO_PIN_RESET,
     },
 };
@@ -157,7 +148,6 @@ static dal_err_t bsp_key_ops_init(dal_key_dev_t *dev)
     priv->stable_level     = raw;
     priv->last_raw         = raw;
     priv->last_change_tick = xTaskGetTickCount();
-    priv->pending_event    = 0;
     priv->irq_enabled      = false;
 
     return DAL_OK;
@@ -245,7 +235,6 @@ static dal_err_t bsp_key_ops_set_irq_enable(dal_key_dev_t *dev, bool enable)
         priv->stable_level     = raw;
         priv->last_raw         = raw;
         priv->last_change_tick = xTaskGetTickCount();
-        priv->pending_event    = 0;
 
         _config_exti(priv);
         priv->irq_enabled = true;
@@ -265,11 +254,13 @@ static dal_err_t bsp_key_ops_set_irq_enable(dal_key_dev_t *dev, bool enable)
 }
 
 /**
- * @brief 消抖更新（中断专用）
- * @note  仅更新状态和置位 pending_event，【不】在此处调用 dal_key_notify_event。
- *        事件通知延迟到 IRQ handler 末尾统一处理，避免消抖窗口内重复触发。
+ * @brief 边沿记录（EXTI ISR 专用）
+ * @note  v2.2：只更新电平与时间戳，不做稳定确认、不发事件。
+ *        WHY：EXTI 为边沿触发，按键稳定后不再产生中断，"下一次中断
+ *        时确认"的逻辑永远执行不到（干净按键无事件，见 v2.1 缺陷）。
+ *        稳定确认移至 bsp_key_tick_scan（1ms 周期采样）。
  */
-static inline void _update_debounce_from_isr(bsp_key_priv_t *priv)
+static inline void _record_edge_from_isr(bsp_key_priv_t *priv)
 {
     uint8_t raw = _read_raw(priv);
     TickType_t now = xTaskGetTickCountFromISR();
@@ -277,13 +268,8 @@ static inline void _update_debounce_from_isr(bsp_key_priv_t *priv)
     if (raw != priv->last_raw) {
         priv->last_raw = raw;
         priv->last_change_tick = now;
-    } else if ((now - priv->last_change_tick) >= KEY_DEBOUNCE_TICKS) {
-        if (raw != priv->stable_level) {
-            priv->stable_level = raw;
-            /* 仅置位，不消费；IRQ handler 统一通知 */
-            priv->pending_event = (raw == 1U) ? DAL_KEY_EVT_DOWN : DAL_KEY_EVT_UP;
-        }
     }
+    /* raw == last_raw 的重触发（EMI 毛刺）：忽略，等待 tick 扫描仲裁 */
 }
 
 /* ========================================================================== */
@@ -318,24 +304,12 @@ static void _bsp_key_irq_handler(uint32_t pin)
         return;
     }
 
-    dal_key_dev_t *dev = &s_dev_pool[idx];
-    bsp_key_priv_t *priv = (bsp_key_priv_t *)dev->drv_priv;
+    bsp_key_priv_t *priv = (bsp_key_priv_t *)s_dev_pool[idx].drv_priv;
 
     __HAL_GPIO_EXTI_CLEAR_IT(pin);
 
-    /* 更新消抖状态（仅置位 pending_event） */
-    _update_debounce_from_isr(priv);
-
-    /*
-     * 统一在 IRQ handler 末尾通知事件。
-     * 读取并清除 pending_event 使用局部变量快照，
-     * 避免通知期间新中断覆盖未处理的事件。
-     */
-    uint8_t evt = priv->pending_event;
-    if (evt != 0) {
-        priv->pending_event = 0;
-        dal_key_notify_event(dev, (dal_key_event_t)evt);
-    }
+    /* v2.2：仅记录边沿，事件确认在 tick 扫描（见 _record_edge_from_isr） */
+    _record_edge_from_isr(priv);
 }
 
 /* ========================================================================== */
@@ -343,34 +317,102 @@ static void _bsp_key_irq_handler(uint32_t pin)
 /* ========================================================================== */
 
 /**
- * @note  使用运行时 pin 匹配替代编译期索引绑定。
- *        即使 board_v1_config.h 中 KEY 映射到非连续 EXTI 线，也能正确路由。
+ * @note  向量守卫按 IRQn **实际值**判断（而非 KEY 槽位序号）：
+ *        引脚可映射到任意 EXTI 线，按槽位匹配会把 KEYn 与 EXTIn 错绑。
+ *        EXTI9_5 / EXTI15_10 为共享向量，handler 内部按 PR 寄存器分发。
  */
-#if defined(BSP_KEY1_IRQN)
+/* ---- 专用向量（EXTI0~4，一线一向量） ---- */
+#if (defined(BSP_KEY1_IRQN) && BSP_KEY1_IRQN == EXTI0_IRQn) \
+    || (defined(BSP_KEY2_IRQN) && BSP_KEY2_IRQN == EXTI0_IRQn)
 void EXTI0_IRQHandler(void) { _bsp_key_irq_handler(GPIO_PIN_0); }
 #endif
 
-#if defined(BSP_KEY2_IRQN)
+#if (defined(BSP_KEY1_IRQN) && BSP_KEY1_IRQN == EXTI1_IRQn) \
+    || (defined(BSP_KEY2_IRQN) && BSP_KEY2_IRQN == EXTI1_IRQn)
 void EXTI1_IRQHandler(void) { _bsp_key_irq_handler(GPIO_PIN_1); }
 #endif
 
-#if defined(BSP_KEY3_IRQN)
+#if (defined(BSP_KEY1_IRQN) && BSP_KEY1_IRQN == EXTI2_IRQn) \
+    || (defined(BSP_KEY2_IRQN) && BSP_KEY2_IRQN == EXTI2_IRQn)
 void EXTI2_IRQHandler(void) { _bsp_key_irq_handler(GPIO_PIN_2); }
 #endif
 
-#if defined(BSP_KEY4_IRQN)
+#if (defined(BSP_KEY1_IRQN) && BSP_KEY1_IRQN == EXTI3_IRQn) \
+    || (defined(BSP_KEY2_IRQN) && BSP_KEY2_IRQN == EXTI3_IRQn)
 void EXTI3_IRQHandler(void) { _bsp_key_irq_handler(GPIO_PIN_3); }
 #endif
 
-#if defined(BSP_KEY5_IRQN)
+#if (defined(BSP_KEY1_IRQN) && BSP_KEY1_IRQN == EXTI4_IRQn) \
+    || (defined(BSP_KEY2_IRQN) && BSP_KEY2_IRQN == EXTI4_IRQn)
 void EXTI4_IRQHandler(void) { _bsp_key_irq_handler(GPIO_PIN_4); }
 #endif
 
-/* EXTI9_5 / EXTI15_10 共享中断需额外判断 PIN，此处省略模板 */
+/* ---- 共享向量（EXTI9_5 / EXTI15_10：多线共享，按 PR 分发） ---- */
+#if (defined(BSP_KEY1_IRQN) && (BSP_KEY1_IRQN == EXTI9_5_IRQn  || BSP_KEY1_IRQN == EXTI15_10_IRQn)) \
+    || (defined(BSP_KEY2_IRQN) && (BSP_KEY2_IRQN == EXTI9_5_IRQn  || BSP_KEY2_IRQN == EXTI15_10_IRQn))
+/**
+ * @brief EXTI 线 5~9 共享中断：逐线查 PR，命中才进消抖处理
+ */
+void EXTI9_5_IRQHandler(void)
+{
+    for (uint32_t pin = GPIO_PIN_5; pin <= GPIO_PIN_9; pin <<= 1) {
+        if (__HAL_GPIO_EXTI_GET_IT(pin) != RESET) {
+            _bsp_key_irq_handler(pin);
+        }
+    }
+}
+
+/**
+ * @brief EXTI 线 10~15 共享中断：同上
+ */
+void EXTI15_10_IRQHandler(void)
+{
+    for (uint32_t pin = GPIO_PIN_10; pin <= GPIO_PIN_15; pin <<= 1) {
+        if (__HAL_GPIO_EXTI_GET_IT(pin) != RESET) {
+            _bsp_key_irq_handler(pin);
+        }
+    }
+}
+#endif
 
 /* ========================================================================== */
 /*                     BSP 公共接口                                              */
 /* ========================================================================== */
+
+/**
+ * @brief   按键消抖扫描（1ms 周期，SysTick hook 上下文调用）
+ * @note    v2.2 核心修复：电平稳定超过 KEY_DEBOUNCE_MS 且与上次确认值
+ *          不同时，产生 DOWN/UP 事件（经 dal_key_notify_event -> 用户
+ *          回调，回调须为 ISR 安全：本项目 key_cb 仅 FromISR 队列投递）。
+ *          EXTI 边沿只重置时间戳，本扫描完成最终确认，干净按键也能出事件。
+ *
+ * @warning 仅可在 ISR 上下文（tick hook）调用；单次开销 2 键 × 数条指令。
+ */
+void bsp_key_tick_scan(void)
+{
+    TickType_t now = xTaskGetTickCountFromISR();
+
+    for (uint32_t i = 0; i < KEY_COUNT; i++) {
+        bsp_key_priv_t *priv = (bsp_key_priv_t *)s_dev_pool[i].drv_priv;
+        if (!priv->irq_enabled || priv->port == NULL) {
+            continue;
+        }
+
+        uint8_t raw = _read_raw(priv);
+
+        if (raw != priv->last_raw) {
+            /* EXTI 丢失的边沿（如中断被长临界区延迟）：补记时间戳 */
+            priv->last_raw = raw;
+            priv->last_change_tick = now;
+        } else if ((now - priv->last_change_tick) >= KEY_DEBOUNCE_TICKS
+                   && raw != priv->stable_level) {
+            priv->stable_level = raw;
+            dal_key_notify_event(&s_dev_pool[i],
+                                 (raw == 1U) ? DAL_KEY_EVT_DOWN
+                                             : DAL_KEY_EVT_UP);
+        }
+    }
+}
 
 static const dal_key_ops_t g_bsp_key_ops = {
     .init             = bsp_key_ops_init,
@@ -403,6 +445,14 @@ bsp_err_t bsp_key_init(void)
             for (uint32_t j = 0; j < i; j++) {
                 (void)dal_key_unregister(&s_dev_pool[j]);
             }
+            return BSP_ERR_FAIL;
+        }
+
+        /* 设备级 init（GPIO 输入 + 初始状态同步，置 initialized=true）。
+         * WHY：不调用则 dal_key_set_irq_enable 因 !initialized 静默返回
+         * NOT_READY，EXTI 永远配不上（按键无中断的根因，v2.3 修复） */
+        ret = dal_key_init(dev);
+        if (ret != DAL_OK) {
             return BSP_ERR_FAIL;
         }
     }

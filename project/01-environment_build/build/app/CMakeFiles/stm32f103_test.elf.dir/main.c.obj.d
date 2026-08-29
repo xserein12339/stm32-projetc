@@ -3,8 +3,7 @@ app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/board_v1.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h \
  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h \
- /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_dbg.h \
  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h \
  /opt/xpack-gcc/arm-none-eabi/include/stdint.h \
  /opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h \
@@ -12,6 +11,9 @@ app/CMakeFiles/stm32f103_test.elf.dir/main.c.obj: \
  /opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h \
  /opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h \
  /opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_log/inc/mw_log.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/projdefs.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/portable.h \

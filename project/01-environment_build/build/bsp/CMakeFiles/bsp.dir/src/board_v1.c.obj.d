@@ -42,6 +42,7 @@ bsp/CMakeFiles/bsp.dir/src/board_v1.c.obj: \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_i2c.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_uart.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_timer.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_dbg.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_key.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/board_v1_config.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_led.h \

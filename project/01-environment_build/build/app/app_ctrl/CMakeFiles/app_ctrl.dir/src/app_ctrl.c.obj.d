@@ -10,6 +10,8 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: \
  /opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h \
  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_att_algo/../inc/svc_err.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/app/app_ctrl/inc/fw_version.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/app/app_hmi/inc/app_hmi.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_att_algo/inc/svc_att_algo.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_common/inc/q15_math.h \
  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/limits.h \
@@ -28,6 +30,8 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: \
  /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_led.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_wdg.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_dbg.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_log/inc/mw_log.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/projdefs.h \
@@ -50,4 +54,7 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: \
  /opt/xpack-gcc/arm-none-eabi/include/sys/lock.h \
  /opt/xpack-gcc/arm-none-eabi/include/sys/_locale.h \
  /opt/xpack-gcc/arm-none-eabi/include/strings.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/string.h
+ /opt/xpack-gcc/arm-none-eabi/include/sys/string.h \
+ /opt/xpack-gcc/arm-none-eabi/include/stdio.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
+ /opt/xpack-gcc/arm-none-eabi/include/sys/stdio.h

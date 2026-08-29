@@ -24,6 +24,14 @@ extern "C" {
  */
 bsp_err_t bsp_key_init(void);
 
+/**
+ * @brief   消抖周期扫描（1ms，SysTick hook / ISR 上下文调用）
+ * @note    v2.2：按键事件的唯一产生点（EXTI 仅记边沿时间戳）。
+ *          必须周期调用，否则按键无事件（vApplicationTickHook 挂接）。
+ * @warning ISR 上下文；调用链上的用户回调须 ISR 安全（FromISR 语义）。
+ */
+void bsp_key_tick_scan(void);
+
 #ifdef __cplusplus
 }
 #endif

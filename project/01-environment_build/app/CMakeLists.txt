@@ -16,7 +16,10 @@ target_link_libraries(${PROJECT_NAME}.elf PRIVATE
     svc_mot_ctrl              # 电机控制服务
     svc_monitor               # 系统监控服务
     svc_comm                  # 通信服务
-    bsp                     # 提供驱动、HAL、SystemInit、启动文件、链接脚本
+    bsp                       # 提供驱动、HAL、SystemInit、启动文件、链接脚本
+    stm32f1_hal               # freertos_hooks.c 直接包含 HAL 头（tick hook 里 HAL_IncTick）
+    # main.c 直接引用（mw_log 里程碑日志 / bsp_dbg sink）
+    mw_log
 )
 
 # 链接选项 (从 BSP 获取链接脚本)

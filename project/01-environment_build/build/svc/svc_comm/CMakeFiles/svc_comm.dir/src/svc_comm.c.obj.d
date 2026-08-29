@@ -12,6 +12,7 @@ svc/svc_comm/CMakeFiles/svc_comm.dir/src/svc_comm.c.obj: \
  /home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_comm/../inc/svc_err.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_wifi.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_err.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_log/inc/mw_log.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/FreeRTOS.h \
  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/Config/FreeRTOSConfig.h \

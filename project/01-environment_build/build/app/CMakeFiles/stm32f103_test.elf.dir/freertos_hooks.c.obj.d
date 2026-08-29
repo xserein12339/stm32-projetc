@@ -16,4 +16,35 @@ app/CMakeFiles/stm32f103_test.elf.dir/freertos_hooks.c.obj: \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/mpu_wrappers.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/task.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/stm32f1xx_hal_conf.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/core_cm3.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_version.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_compiler.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_gcc.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_iwdg.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_key.h \
+ /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/board_v1_config.h \
+ /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h

@@ -522,6 +522,29 @@ svc_err_t svc_mot_ctrl_set_pid_params(svc_mot_ctrl_pid_loop_t loop,
     return SVC_OK;
 }
 
+svc_err_t svc_mot_ctrl_get_pid_params(svc_mot_ctrl_pid_loop_t loop,
+                                      mw_pid_params_t *params)
+{
+    if (params == NULL || loop > SVC_MOT_CTRL_PID_SPEED) {
+        return SVC_ERR_PARAM;
+    }
+    if (s_ctx.state == SVC_MOT_CTRL_STATE_UNINIT) {
+        return SVC_ERR_NOT_INIT;
+    }
+
+    const mw_pid_t *pid = (loop == SVC_MOT_CTRL_PID_UPRIGHT) ? &s_ctx.upright_pid
+                                                             : &s_ctx.speed_pid;
+    params->Kp             = pid->Kp;
+    params->Ki             = pid->Ki;
+    params->Kd             = pid->Kd;
+    params->out_min        = pid->out_min;
+    params->out_max        = pid->out_max;
+    params->integral_min   = pid->integral_min;
+    params->integral_max   = pid->integral_max;
+    params->d_filter_coef  = pid->d_filter_coef;
+    return SVC_OK;
+}
+
 svc_err_t svc_mot_ctrl_get_telemetry(svc_mot_ctrl_telemetry_t *out)
 {
     if (out == NULL) {

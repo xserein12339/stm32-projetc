@@ -13,18 +13,4 @@ target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/fault_handlers.c.obj: \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_version.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_compiler.h \
  /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Core/Include/cmsis_gcc.h \
- /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
- /opt/xpack-gcc/arm-none-eabi/include/stdio.h \
- /opt/xpack-gcc/arm-none-eabi/include/_ansi.h \
- /opt/xpack-gcc/arm-none-eabi/include/newlib.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/config.h \
- /opt/xpack-gcc/arm-none-eabi/include/machine/ieeefp.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/cdefs.h \
- /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
- /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/reent.h \
- /opt/xpack-gcc/arm-none-eabi/include/_ansi.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/_types.h \
- /opt/xpack-gcc/arm-none-eabi/include/machine/_types.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/lock.h \
- /opt/xpack-gcc/arm-none-eabi/include/sys/stdio.h
+ /home/xiamu/git/stm32_project/project/01-environment_build/third_party/STM32F1xx_HAL/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h

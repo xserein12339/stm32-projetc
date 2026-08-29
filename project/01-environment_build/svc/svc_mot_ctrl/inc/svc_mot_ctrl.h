@@ -218,6 +218,19 @@ svc_err_t svc_mot_ctrl_set_pid_params(svc_mot_ctrl_pid_loop_t loop,
                                       const mw_pid_params_t *params);
 
 /**
+ * @brief   读取当前 PID 参数（PID 调节模式参数回显 / 上位机查询用）
+ *
+ * @param[in]  loop    控制环选择
+ * @param[out] params  输出当前参数（含限幅与滤波系数）
+ * @return  SVC_OK 成功；SVC_ERR_PARAM / SVC_ERR_NOT_INIT
+ *
+ * @note  仅任务上下文调用；读取控制任务内联更新的字段，单字长访问
+ *        撕裂风险可忽略（诊断/回显用途）。
+ */
+svc_err_t svc_mot_ctrl_get_pid_params(svc_mot_ctrl_pid_loop_t loop,
+                                      mw_pid_params_t *params);
+
+/**
  * @brief   获取遥测快照（线程安全）
  * @param[out] out  输出快照
  * @return  SVC_OK 成功；SVC_ERR_PARAM / SVC_ERR_NOT_INIT

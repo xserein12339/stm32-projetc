@@ -57,9 +57,23 @@ target_link_libraries(stm32f1_cmsis_device INTERFACE cmsis_core)
 # 模块添加 (严格按依赖顺序，自底向上)
 # =============================================================================
 add_subdirectory(target/stm32_f103c8t6) # 目标库 (启动文件、链接脚本)
-add_subdirectory(third_party)           # HAL 驱动 + FreeRTOS  
+add_subdirectory(third_party)           # HAL 驱动 + FreeRTOS
 add_subdirectory(bsp)           # 板级支持包 (依赖 third_party)
 add_subdirectory(dal)           # 设备抽象层
 add_subdirectory(middleware)    # 中间件
 add_subdirectory(svc)           # 服务层 (依赖 middleware/dal)
 add_subdirectory(app)           # 应用入口 (定义最终 ELF + hex/bin)
+
+# =============================================================================
+# 宿主机单元测试（独立工程，使用系统 gcc 而非交叉工具链）
+#   cmake --build build --target mw-test
+# =============================================================================
+add_custom_target(mw-test
+    COMMAND ${CMAKE_COMMAND} -S ${CMAKE_CURRENT_SOURCE_DIR}/tests
+            -B ${CMAKE_CURRENT_SOURCE_DIR}/tests/build
+    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_CURRENT_SOURCE_DIR}/tests/build
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/build/mw_tests
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    COMMENT "Building and running middleware host unit tests..."
+    USES_TERMINAL
+)

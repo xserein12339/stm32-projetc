@@ -36,6 +36,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/xiamu/git/stm32_project/project/01-environment_build/middleware/CMakeLists.txt"
   "/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_common/CMakeLists.txt"
   "/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_filter/CMakeLists.txt"
+  "/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_log/CMakeLists.txt"
   "/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_pid/CMakeLists.txt"
   "/home/xiamu/git/stm32_project/project/01-environment_build/svc/CMakeLists.txt"
   "/home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_att_algo/CMakeLists.txt"
@@ -63,6 +64,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "middleware/mw_common/CMakeFiles/CMakeDirectoryInformation.cmake"
   "middleware/mw_pid/CMakeFiles/CMakeDirectoryInformation.cmake"
   "middleware/mw_filter/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "middleware/mw_log/CMakeFiles/CMakeDirectoryInformation.cmake"
   "svc/CMakeFiles/CMakeDirectoryInformation.cmake"
   "svc/svc_mot_ctrl/CMakeFiles/CMakeDirectoryInformation.cmake"
   "svc/svc_att_algo/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -75,6 +77,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/mw-test.dir/DependInfo.cmake"
   "target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir/DependInfo.cmake"
   "third_party/CMakeFiles/freertos_kernel.dir/DependInfo.cmake"
   "third_party/CMakeFiles/stm32f1_hal.dir/DependInfo.cmake"
@@ -83,6 +86,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "middleware/mw_common/CMakeFiles/mw_common.dir/DependInfo.cmake"
   "middleware/mw_pid/CMakeFiles/mw_pid.dir/DependInfo.cmake"
   "middleware/mw_filter/CMakeFiles/mw_filter.dir/DependInfo.cmake"
+  "middleware/mw_log/CMakeFiles/mw_log.dir/DependInfo.cmake"
   "svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir/DependInfo.cmake"
   "svc/svc_att_algo/CMakeFiles/svc_att_algo.dir/DependInfo.cmake"
   "svc/svc_monitor/CMakeFiles/svc_monitor.dir/DependInfo.cmake"

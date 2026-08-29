@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named mw-test
+
+# Build rule for target.
+mw-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mw-test
+.PHONY : mw-test
+
+# fast build rule for target.
+mw-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mw-test.dir/build.make CMakeFiles/mw-test.dir/build
+.PHONY : mw-test/fast
+
+#=============================================================================
 # Target rules for targets named chip_runtime
 
 # Build rule for target.
@@ -219,6 +232,19 @@ mw_filter: cmake_check_build_system
 mw_filter/fast:
 	$(MAKE) $(MAKESILENT) -f middleware/mw_filter/CMakeFiles/mw_filter.dir/build.make middleware/mw_filter/CMakeFiles/mw_filter.dir/build
 .PHONY : mw_filter/fast
+
+#=============================================================================
+# Target rules for targets named mw_log
+
+# Build rule for target.
+mw_log: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mw_log
+.PHONY : mw_log
+
+# fast build rule for target.
+mw_log/fast:
+	$(MAKE) $(MAKESILENT) -f middleware/mw_log/CMakeFiles/mw_log.dir/build.make middleware/mw_log/CMakeFiles/mw_log.dir/build
+.PHONY : mw_log/fast
 
 #=============================================================================
 # Target rules for targets named svc_mot_ctrl
@@ -333,6 +359,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... flash"
+	@echo "... mw-test"
 	@echo "... app_ctrl"
 	@echo "... app_hmi"
 	@echo "... bsp"
@@ -341,6 +368,7 @@ help:
 	@echo "... freertos_kernel"
 	@echo "... mw_common"
 	@echo "... mw_filter"
+	@echo "... mw_log"
 	@echo "... mw_pid"
 	@echo "... stm32f103_test.elf"
 	@echo "... stm32f1_hal"

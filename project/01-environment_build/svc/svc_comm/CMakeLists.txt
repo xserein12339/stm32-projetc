@@ -15,4 +15,5 @@ target_link_libraries(svc_comm
         freertos_kernel
     PRIVATE
         dal
+        mw_log
 )

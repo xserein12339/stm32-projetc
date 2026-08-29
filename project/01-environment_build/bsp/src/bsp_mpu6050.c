@@ -243,17 +243,27 @@ static dal_err_t bsp_mpu_ops_init(dal_imu_dev_t *dev)
     bsp_mpu6050_priv_t *priv = &s_mpu_priv;
     dal_err_t ret;
 
-    priv->dev_addr = _mpu_probe_addr();
-    if (priv->dev_addr == 0) return DAL_ERR_DEPENDENCY;
+    /* 分步标记（临时诊断，与 Error_Handler 输出共同定位） */
+    #define MPU_TRACE(t) (void)bsp_dbg_write("M:" t "\n", (uint32_t)sizeof(t))
 
+    MPU_TRACE("probe");
+    priv->dev_addr = _mpu_probe_addr();
+    if (priv->dev_addr == 0) {
+        MPU_TRACE("probe-fail");
+        return DAL_ERR_DEPENDENCY;
+    }
+
+    MPU_TRACE("who");
     if (!_mpu_verify()) return DAL_ERR_NOT_FOUND;
 
     /* Step A: 设备复位 */
+    MPU_TRACE("rst");
     ret = _mpu_write_reg(MPU6050_REG_PWR_MGMT_1, MPU6050_PWR_DEVICE_RESET);
     if (ret != DAL_OK) return ret;
     bsp_timer_delay_ms(100);
 
     /* Step B: 唤醒 + X-Gyro PLL */
+    MPU_TRACE("wake");
     ret = _mpu_write_reg(MPU6050_REG_PWR_MGMT_1, MPU6050_PWR_CLK_SEL_XGYRO);
     if (ret != DAL_OK) return ret;
     bsp_timer_delay_ms(10);
@@ -265,6 +275,7 @@ static dal_err_t bsp_mpu_ops_init(dal_imu_dev_t *dev)
     priv->dlpf_cfg    = MPU6050_DEFAULT_DLPF;
 
     /* Step D: [v1.2] 统一使用配置重载函数 */
+    MPU_TRACE("cfg");
     ret = _mpu_apply_all_config(priv);
     if (ret != DAL_OK) return ret;
 
@@ -272,6 +283,7 @@ static dal_err_t bsp_mpu_ops_init(dal_imu_dev_t *dev)
     _update_gyro_scale(priv);
 
     priv->is_initialized = true;
+    MPU_TRACE("ok");
     return DAL_OK;
 }
 
@@ -536,6 +548,18 @@ bsp_err_t bsp_mpu6050_init(void)
     s_imu_dev.drv_priv = &s_mpu_priv;
 
     dal_err_t ret = dal_imu_register(&s_imu_dev);
+    if (ret != DAL_OK) {
+        (void)dal_imu_unregister(&s_imu_dev);
+        return BSP_ERR_IO;
+    }
+
+    /* 设备级 init（复位序列 + WHO_AM_I 校验 + DLPF/量程配置）。
+     * WHY v1.4 回归：早期版本在 bsp_init 做硬件初始化，重构改为
+     * 仅注册后全工程无人调 dal_imu_init -> dal_imu_read 静默
+     * NOT_READY，姿态链路整体死亡。SRS 2.1 要求上电 WHO_AM_I
+     * 自检（失败进 Error_Handler），故在 BSP 完成。
+     * I2C 轮询 + 忙等延时在调度器启动前可用 */
+    ret = dal_imu_init(&s_imu_dev);
     if (ret != DAL_OK) {
         (void)dal_imu_unregister(&s_imu_dev);
         return BSP_ERR_IO;

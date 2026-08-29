@@ -28,8 +28,7 @@ typedef struct {
 
 static const led_hw_desc_t s_led_table[] = {
     { "led1", BSP_LED1_PORT, BSP_LED1_PIN, GPIO_PIN_RESET },
-    { "led2", BSP_LED2_PORT, BSP_LED2_PIN, GPIO_PIN_SET   },
-    { "led3", BSP_LED3_PORT, BSP_LED3_PIN, GPIO_PIN_RESET },
+    { "led2", BSP_LED2_PORT, BSP_LED2_PIN, GPIO_PIN_RESET },
 };
 
 #define LED_COUNT  (sizeof(s_led_table) / sizeof(s_led_table[0]))
@@ -208,6 +207,14 @@ bsp_err_t bsp_led_init(void)
             for (uint32_t j = 0; j < i; j++) {
                 (void)dal_led_unregister(&s_dev_pool[j]);
             }
+            return BSP_ERR_FAIL;
+        }
+
+        /* 设备级 init（GPIO 输出 + 置 initialized=true）。
+         * WHY：同 bsp_key v2.3 修复--不调用则 dal_led_set_state 因
+         * !initialized 静默失败，LED 无输出 */
+        ret = dal_led_init(dev);
+        if (ret != DAL_OK) {
             return BSP_ERR_FAIL;
         }
     }

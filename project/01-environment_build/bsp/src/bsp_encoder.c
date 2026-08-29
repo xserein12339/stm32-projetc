@@ -435,6 +435,14 @@ bsp_err_t bsp_encoder_init(void)
             }
             return BSP_ERR_FAIL;
         }
+
+        /* 设备级 init（TIM 编码器模式 + 32 位溢出中断 + 置 initialized）。
+         * WHY：不调用则 dal_encoder_read 因 !initialized 静默 NOT_READY
+         * （v1.3 修复，同 bsp_key v2.3） */
+        ret = dal_encoder_init(dev);
+        if (ret != DAL_OK) {
+            return BSP_ERR_FAIL;
+        }
     }
 
     return BSP_OK;

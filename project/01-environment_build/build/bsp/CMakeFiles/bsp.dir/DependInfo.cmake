@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/board_v1.c" "bsp/CMakeFiles/bsp.dir/src/board_v1.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/board_v1.c.obj.d"
+  "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_dbg.c" "bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj.d"
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_encoder.c" "bsp/CMakeFiles/bsp.dir/src/bsp_encoder.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_encoder.c.obj.d"
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_esp8266.c" "bsp/CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_esp8266.c.obj.d"
   "/home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_i2c.c" "bsp/CMakeFiles/bsp.dir/src/bsp_i2c.c.obj" "gcc" "bsp/CMakeFiles/bsp.dir/src/bsp_i2c.c.obj.d"

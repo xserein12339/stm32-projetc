@@ -240,6 +240,14 @@ bsp_err_t bsp_i2c_lock(uint32_t timeout_ms)
 {
     if (!s_initialized || s_i2c_mutex == NULL) return BSP_ERR_NOT_INIT;
 
+    /* WHY pre-scheduler 放行：调度器未启动时 xSemaphoreTake 不允许阻塞
+     * （FreeRTOS 红线，返回 pdFAIL），且该阶段单线程、无并发争用。
+     * bsp_init 里的 MPU 探测/复位序列因此能在调度器启动前执行。
+     * 调度器启动后（含挂起态恢复）走正常互斥路径 */
+    if (xTaskGetSchedulerState() != taskSCHEDULER_RUNNING) {
+        return BSP_OK;
+    }
+
     TickType_t ticks = (timeout_ms == 0) ? portMAX_DELAY : pdMS_TO_TICKS(timeout_ms);
     return (xSemaphoreTake(s_i2c_mutex, ticks) == pdTRUE) ? BSP_OK : BSP_ERR_BUSY;
 }
@@ -247,6 +255,13 @@ bsp_err_t bsp_i2c_lock(uint32_t timeout_ms)
 bsp_err_t bsp_i2c_unlock(void)
 {
     if (!s_initialized || s_i2c_mutex == NULL) return BSP_ERR_NOT_INIT;
+
+    /* 与 lock 配对：pre-scheduler 阶段 lock 为空操作，unlock 同样跳过
+     * （否则对未创建即 give 的互斥量操作有未定义行为风险） */
+    if (xTaskGetSchedulerState() != taskSCHEDULER_RUNNING) {
+        return BSP_OK;
+    }
+
     return (xSemaphoreGive(s_i2c_mutex) == pdTRUE) ? BSP_OK : BSP_ERR_FAIL;
 }
 

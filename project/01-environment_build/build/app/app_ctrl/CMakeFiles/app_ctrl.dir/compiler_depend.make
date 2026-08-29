@@ -3,12 +3,16 @@
 
 app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/app/app_ctrl/src/app_ctrl.c \
   /home/xiamu/git/stm32_project/project/01-environment_build/app/app_ctrl/inc/app_ctrl.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/app/app_ctrl/inc/fw_version.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/app/app_hmi/inc/app_hmi.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_dbg.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_wdg.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_err.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_key.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_led.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_common/inc/q15_math.h \
+  /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_log/inc/mw_log.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_pid/inc/mw_pid.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/svc/inc/svc_err.h \
   /home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_att_algo/inc/svc_att_algo.h \
@@ -33,6 +37,7 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
   /opt/xpack-gcc/arm-none-eabi/include/machine/ieeefp.h \
   /opt/xpack-gcc/arm-none-eabi/include/newlib.h \
   /opt/xpack-gcc/arm-none-eabi/include/stdint.h \
+  /opt/xpack-gcc/arm-none-eabi/include/stdio.h \
   /opt/xpack-gcc/arm-none-eabi/include/string.h \
   /opt/xpack-gcc/arm-none-eabi/include/strings.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h \
@@ -44,9 +49,11 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
   /opt/xpack-gcc/arm-none-eabi/include/sys/features.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/lock.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/reent.h \
+  /opt/xpack-gcc/arm-none-eabi/include/sys/stdio.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/string.h \
   /opt/xpack-gcc/arm-none-eabi/include/sys/syslimits.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/limits.h \
+  /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdbool.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stddef.h \
   /opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h \
@@ -57,17 +64,19 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
 
 /opt/xpack-gcc/arm-none-eabi/include/sys/string.h:
 
+/opt/xpack-gcc/arm-none-eabi/include/sys/stdio.h:
+
 /opt/xpack-gcc/arm-none-eabi/include/sys/reent.h:
-
-/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/limits.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/sys/lock.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/sys/features.h:
 
 /opt/xpack-gcc/arm-none-eabi/include/sys/_stdint.h:
 
+/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/stdarg.h:
+
 /opt/xpack-gcc/arm-none-eabi/include/sys/_intsup.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/features.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/stdio.h:
 
 /opt/xpack-gcc/arm-none-eabi/include/sys/_types.h:
 
@@ -77,7 +86,17 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
 
 /opt/xpack-gcc/arm-none-eabi/include/machine/ieeefp.h:
 
-/home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_monitor/inc/svc_monitor.h:
+/opt/xpack-gcc/arm-none-eabi/include/sys/cdefs.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/machine/_types.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/limits.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_log/inc/mw_log.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_led.h:
 
@@ -85,9 +104,19 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
 
 /home/xiamu/git/stm32_project/project/01-environment_build/dal/inc/dal_key.h:
 
-/home/xiamu/git/stm32_project/project/01-environment_build/svc/inc/svc_err.h:
+/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h:
 
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h:
+/home/xiamu/git/stm32_project/project/01-environment_build/app/app_hmi/inc/app_hmi.h:
+
+/opt/xpack-gcc/lib/gcc/arm-none-eabi/14.2.1/include/limits.h:
+
+/opt/xpack-gcc/arm-none-eabi/include/sys/lock.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_dbg.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_pid/inc/mw_pid.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/queue.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_common/inc/q15_math.h:
 
@@ -100,8 +129,6 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
 /home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_wdg.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/portable/GCC/ARM_CM3/portmacro.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/bsp/inc/bsp_err.h:
 
 /opt/xpack-gcc/arm-none-eabi/include/sys/config.h:
 
@@ -123,7 +150,11 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
 
 /home/xiamu/git/stm32_project/project/01-environment_build/app/app_ctrl/src/app_ctrl.c:
 
-/opt/xpack-gcc/arm-none-eabi/include/machine/_default_types.h:
+/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/list.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/svc/inc/svc_err.h:
+
+/home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_monitor/inc/svc_monitor.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/svc/svc_mot_ctrl/inc/svc_mot_ctrl.h:
 
@@ -133,22 +164,12 @@ app/app_ctrl/CMakeFiles/app_ctrl.dir/src/app_ctrl.c.obj: /home/xiamu/git/stm32_p
 
 /opt/xpack-gcc/arm-none-eabi/include/sys/_locale.h:
 
+/home/xiamu/git/stm32_project/project/01-environment_build/app/app_ctrl/inc/fw_version.h:
+
 /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/deprecated_definitions.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/task.h:
 
 /home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/mpu_wrappers.h:
 
-/home/xiamu/git/stm32_project/project/01-environment_build/middleware/mw_pid/inc/mw_pid.h:
-
-/home/xiamu/git/stm32_project/project/01-environment_build/third_party/FreeRTOS/include/queue.h:
-
 /opt/xpack-gcc/arm-none-eabi/include/_ansi.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/sys/cdefs.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/machine/_types.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/_newlib_version.h:
-
-/opt/xpack-gcc/arm-none-eabi/include/limits.h:

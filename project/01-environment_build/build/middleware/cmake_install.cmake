@@ -52,6 +52,11 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_filter/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_log/cmake_install.cmake")
+endif()
+
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)

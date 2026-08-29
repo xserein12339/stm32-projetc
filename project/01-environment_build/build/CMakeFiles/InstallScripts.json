@@ -10,6 +10,7 @@
 		"/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_common/cmake_install.cmake",
 		"/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_pid/cmake_install.cmake",
 		"/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_filter/cmake_install.cmake",
+		"/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_log/cmake_install.cmake",
 		"/home/xiamu/git/stm32_project/project/01-environment_build/build/svc/cmake_install.cmake",
 		"/home/xiamu/git/stm32_project/project/01-environment_build/build/svc/svc_mot_ctrl/cmake_install.cmake",
 		"/home/xiamu/git/stm32_project/project/01-environment_build/build/svc/svc_att_algo/cmake_install.cmake",

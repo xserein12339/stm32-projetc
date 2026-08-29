@@ -15,6 +15,7 @@
  */
 #include "svc_comm.h"
 #include "dal_wifi.h"
+#include "mw_log.h"
 #include "FreeRTOS.h"
 #include "task.h"
 #include <string.h>
@@ -54,6 +55,8 @@ typedef enum {
     PARSER_CRC,         /**< 读 crc8 */
 } parser_state_t;
 
+#define SVC_COMM_MAX_CMD_SLOTS  12      /**< 指令分发表容量（含余量） */
+
 /**
  * @brief 服务内部运行时状态
  */
@@ -67,6 +70,7 @@ typedef struct {
 
     /* --- 设备 --- */
     dal_wifi_dev_t *dev;
+    bool           dev_dead;   /**< 设备 init 失败降级标志（发送丢弃） */
 
     /* --- RX 路径 --- */
     spsc_ring_t   ring;
@@ -78,7 +82,7 @@ typedef struct {
     uint8_t        frame_crc;
 
     /* --- 指令分发 --- */
-    cmd_slot_t cmd_table[8];
+    cmd_slot_t cmd_table[SVC_COMM_MAX_CMD_SLOTS];
 
     /* --- 遥测 --- */
     svc_comm_telem_fn_t telem_fn;
@@ -170,7 +174,7 @@ static void frame_dispatch(void)
 {
     s_ctx.stats.rx_frames++;
 
-    for (uint32_t i = 0; i < 8U; i++) {
+    for (uint32_t i = 0; i < SVC_COMM_MAX_CMD_SLOTS; i++) {
         cmd_slot_t *slot = &s_ctx.cmd_table[i];
         if (slot->used && slot->cmd == s_ctx.frame_cmd) {
             slot->fn(s_ctx.frame_cmd, s_ctx.frame_payload,
@@ -274,6 +278,15 @@ static void comm_task(void *arg)
     uint8_t byte;
     uint8_t telem_buf[SVC_COMM_MAX_PAYLOAD];
 
+    /* --- 0. WiFi 设备初始化（必须在此处：AT 引擎依赖运行中的调度器，
+     *      pre-scheduler 调用会死锁在指令应答信号量上） ---
+     * 失败降级：置 dev_dead，任务继续跑（遥测/发送在 dead 态丢弃，
+     * 不阻塞其他服务；SRS：ESP8266 属非关键设备） */
+    if (dal_wifi_init(s_ctx.dev) != DAL_OK) {
+        s_ctx.dev_dead = true;
+        LOG_E("comm", "wifi dev init failed, comm degraded");
+    }
+
     for (;;) {
         vTaskDelayUntil(&wake, telem_period);
 
@@ -329,6 +342,7 @@ svc_err_t svc_comm_init(const svc_comm_config_t *cfg)
     if (s_ctx.dev == NULL) {
         return SVC_ERR_DEV;
     }
+    s_ctx.dev_dead = false;   /* 实际 init 在 comm_task（任务上下文） */
 
     /* --- 注册 RX 回调（写入 ring，ISR 安全） --- */
     if (dal_wifi_register_rx_callback(s_ctx.dev, wifi_rx_cb, NULL) != DAL_OK) {
@@ -339,7 +353,7 @@ svc_err_t svc_comm_init(const svc_comm_config_t *cfg)
     s_ctx.ring.head = 0;
     s_ctx.ring.tail = 0;
     s_ctx.parser_state = PARSER_SYNC;
-    for (uint32_t i = 0; i < 8U; i++) {
+    for (uint32_t i = 0; i < SVC_COMM_MAX_CMD_SLOTS; i++) {
         s_ctx.cmd_table[i].used = false;
     }
     s_ctx.telem_fn  = NULL;
@@ -354,7 +368,7 @@ svc_err_t svc_comm_register_cmd(uint8_t cmd, svc_comm_cmd_fn_t fn,
 {
     cmd_slot_t *free_slot = NULL;
 
-    for (uint32_t i = 0; i < 8U; i++) {
+    for (uint32_t i = 0; i < SVC_COMM_MAX_CMD_SLOTS; i++) {
         cmd_slot_t *slot = &s_ctx.cmd_table[i];
         if (slot->used && slot->cmd == cmd) {
             if (fn == NULL) {
@@ -457,6 +471,10 @@ svc_err_t svc_comm_send_frame(uint8_t cmd, const uint8_t *payload,
     }
     frame[3U + len] = crc8(&frame[1], (uint32_t)(2U + len));
 
+    if (s_ctx.dev_dead) {
+        s_ctx.stats.tx_fail++;
+        return SVC_ERR_DEV;
+    }
     if (dal_wifi_transmit(s_ctx.dev, frame, (uint32_t)(4U + len), 100U)
         != DAL_OK) {
         s_ctx.stats.tx_fail++;

@@ -4,9 +4,9 @@
  *
  * 职责（对应《需求分析》FR-CTRL-001 / FR-HMI / FR-FAULT-001~004）：
  *   1. 模式状态机：IDLE -> CALIBRATING -> BALANCE -> FAULT
- *      - KEY1（PA4）按下：启动流程（先陀螺校准，成功后开平衡）
- *      - KEY2（PA5）按下：停止（回 IDLE）
- *      - KEY3（PA3）按下：急停（进 FAULT，仅复位/再按 KEY1 恢复）
+ *      - KEY1（PA3）按下：启动流程（先陀螺校准，成功后开平衡）
+ *      - KEY2（PA4）按下：停止（回 IDLE）
+ *      - KEY3（PA5）按下：急停（进 FAULT，仅复位/再按 KEY1 恢复）
  *   2. LED 状态指示：LED1=平衡运行，LED2=校准中，LED3=故障
  *   3. svc_monitor 装配：watch 槽位（姿态/运动遥测时间戳）+ 喂狗注入
  *   4. svc_comm 装配：下行指令分发（速度/转向/PID）+ 10Hz 遥测上报
@@ -34,7 +34,7 @@ extern "C" {
  * ================================================================ */
 
 #define APP_CTRL_TASK_PRIORITY          (2U)    /**< app 任务优先级 */
-#define APP_CTRL_TASK_STACK_WORDS       (192U)  /**< 768B 栈（事件驱动，调用链浅） */
+#define APP_CTRL_TASK_STACK_WORDS       (256U)  /**< 1KB 栈（snprintf 刷屏调用链 + 事件处理） */
 #define APP_CTRL_EVENT_QUEUE_DEPTH      (8U)    /**< 按键事件队列深度 */
 
 /* ================================================================
@@ -49,6 +49,7 @@ typedef enum {
     APP_CTRL_MODE_CALIBRATING = 1,  ///< 陀螺零偏校准中
     APP_CTRL_MODE_BALANCE     = 2,  ///< 自平衡运行中
     APP_CTRL_MODE_FAULT       = 3,  ///< 故障锁定（需人工干预恢复）
+    APP_CTRL_MODE_TUNING      = 4,  ///< PID 调节模式（平衡运行 + 参数可写 + OLED 参数页）
 } app_ctrl_mode_t;
 
 /**
@@ -61,6 +62,9 @@ typedef enum {
     APP_COMM_CMD_SET_PID     = 0x12,  ///< 设定 PID 参数（下行，调试用） */
     APP_COMM_CMD_STOP        = 0x13,  ///< 停止平衡（下行，无 payload） */
     APP_COMM_CMD_HEARTBEAT   = 0x14,  ///< 心跳（下行，无 payload，仅刷新链路活跃） */
+    APP_COMM_CMD_GET_VERSION = 0x15,  ///< 查询固件版本（下行无 payload，上行回 [major][minor][patch]） */
+    APP_COMM_CMD_PID_TUNE    = 0x16,  ///< 进入/退出 PID 调节模式（payload: 1B，1=进入 0=退出） */
+    APP_COMM_CMD_GET_PID     = 0x17,  ///< 查询当前 PID 参数（上行回 12B：up Kp/Ki/Kd + sp Kp/Ki/Kd 小端 Q15） */
 } app_comm_cmd_t;
 
 /* ================================================================

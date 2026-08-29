@@ -118,10 +118,12 @@ app/stm32f103_test.elf: svc/svc_mot_ctrl/libsvc_mot_ctrl.a
 app/stm32f103_test.elf: svc/svc_monitor/libsvc_monitor.a
 app/stm32f103_test.elf: svc/svc_comm/libsvc_comm.a
 app/stm32f103_test.elf: bsp/libbsp.a
+app/stm32f103_test.elf: third_party/libstm32f1_hal.a
+app/stm32f103_test.elf: middleware/mw_log/libmw_log.a
+app/stm32f103_test.elf: app/app_hmi/libapp_hmi.a
 app/stm32f103_test.elf: svc/svc_att_algo/libsvc_att_algo.a
 app/stm32f103_test.elf: middleware/mw_filter/libmw_filter.a
 app/stm32f103_test.elf: target/stm32_f103c8t6/libchip_runtime.a
-app/stm32f103_test.elf: third_party/libstm32f1_hal.a
 app/stm32f103_test.elf: dal/libdal.a
 app/stm32f103_test.elf: third_party/libfreertos_kernel.a
 app/stm32f103_test.elf: middleware/mw_pid/libmw_pid.a

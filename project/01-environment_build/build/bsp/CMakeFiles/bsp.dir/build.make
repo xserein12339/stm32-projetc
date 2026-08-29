@@ -240,6 +240,20 @@ bsp/CMakeFiles/bsp.dir/src/bsp_wdg.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bsp.dir/src/bsp_wdg.c.s"
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_wdg.c -o CMakeFiles/bsp.dir/src/bsp_wdg.c.s
 
+bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj: bsp/CMakeFiles/bsp.dir/flags.make
+bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj: /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_dbg.c
+bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj: bsp/CMakeFiles/bsp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj -MF CMakeFiles/bsp.dir/src/bsp_dbg.c.obj.d -o CMakeFiles/bsp.dir/src/bsp_dbg.c.obj -c /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_dbg.c
+
+bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bsp.dir/src/bsp_dbg.c.i"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_dbg.c > CMakeFiles/bsp.dir/src/bsp_dbg.c.i
+
+bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bsp.dir/src/bsp_dbg.c.s"
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && /opt/xpack-gcc/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiamu/git/stm32_project/project/01-environment_build/bsp/src/bsp_dbg.c -o CMakeFiles/bsp.dir/src/bsp_dbg.c.s
+
 # Object files for target bsp
 bsp_OBJECTS = \
 "CMakeFiles/bsp.dir/src/board_v1.c.obj" \
@@ -253,7 +267,8 @@ bsp_OBJECTS = \
 "CMakeFiles/bsp.dir/src/bsp_encoder.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_key.c.obj" \
 "CMakeFiles/bsp.dir/src/bsp_led.c.obj" \
-"CMakeFiles/bsp.dir/src/bsp_wdg.c.obj"
+"CMakeFiles/bsp.dir/src/bsp_wdg.c.obj" \
+"CMakeFiles/bsp.dir/src/bsp_dbg.c.obj"
 
 # External object files for target bsp
 bsp_EXTERNAL_OBJECTS =
@@ -270,9 +285,10 @@ bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_encoder.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_key.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_led.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_wdg.c.obj
+bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/build.make
 bsp/libbsp.a: bsp/CMakeFiles/bsp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C static library libbsp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C static library libbsp.a"
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && $(CMAKE_COMMAND) -P CMakeFiles/bsp.dir/cmake_clean_target.cmake
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build/bsp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bsp.dir/link.txt --verbose=$(VERBOSE)
 

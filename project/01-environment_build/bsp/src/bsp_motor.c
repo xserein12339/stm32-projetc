@@ -425,6 +425,15 @@ bsp_err_t bsp_motor_init(void)
             }
             return BSP_ERR_FAIL;
         }
+
+        /* 设备级 init（TIM PWM 启停控制 + 置 initialized=true）。
+         * WHY：不调用则 dal_motor_enable/set_speed 因 !initialized
+         * 静默返回 NOT_READY（v1.3 修复，同 bsp_key v2.3）。
+         * 上电默认 DISABLED 安全态由 ops_init 保证 */
+        ret = dal_motor_init(dev);
+        if (ret != DAL_OK) {
+            return BSP_ERR_FAIL;
+        }
     }
 
     return BSP_OK;

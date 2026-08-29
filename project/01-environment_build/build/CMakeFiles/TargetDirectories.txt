@@ -1,3 +1,4 @@
+/home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles/mw-test.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles/edit_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/CMakeFiles/rebuild_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/target/stm32_f103c8t6/CMakeFiles/chip_runtime.dir
@@ -24,6 +25,9 @@
 /home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_filter/CMakeFiles/mw_filter.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_filter/CMakeFiles/edit_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_filter/CMakeFiles/rebuild_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_log/CMakeFiles/mw_log.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_log/CMakeFiles/edit_cache.dir
+/home/xiamu/git/stm32_project/project/01-environment_build/build/middleware/mw_log/CMakeFiles/rebuild_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/svc/CMakeFiles/edit_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/svc/CMakeFiles/rebuild_cache.dir
 /home/xiamu/git/stm32_project/project/01-environment_build/build/svc/svc_mot_ctrl/CMakeFiles/svc_mot_ctrl.dir

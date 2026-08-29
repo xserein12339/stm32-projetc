@@ -19,4 +19,6 @@ target_link_libraries(app_ctrl
         freertos_kernel
         dal
         mw_pid
+        mw_log
+        app_hmi
 )

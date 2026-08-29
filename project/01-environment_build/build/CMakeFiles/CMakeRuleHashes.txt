@@ -1,2 +1,3 @@
 # Hashes of file build rules.
+4317dab5065c4b1b19dcae7d17ae5d33 CMakeFiles/mw-test
 b33b786e9a0897344d73b655adf2bb3e app/CMakeFiles/flash

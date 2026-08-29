@@ -154,6 +154,30 @@ src/board_v1.c.s:
 	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/board_v1.c.s
 .PHONY : src/board_v1.c.s
 
+src/bsp_dbg.obj: src/bsp_dbg.c.obj
+.PHONY : src/bsp_dbg.obj
+
+# target to build an object file
+src/bsp_dbg.c.obj:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.obj
+.PHONY : src/bsp_dbg.c.obj
+
+src/bsp_dbg.i: src/bsp_dbg.c.i
+.PHONY : src/bsp_dbg.i
+
+# target to preprocess a source file
+src/bsp_dbg.c.i:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.i
+.PHONY : src/bsp_dbg.c.i
+
+src/bsp_dbg.s: src/bsp_dbg.c.s
+.PHONY : src/bsp_dbg.s
+
+# target to generate assembly for a file
+src/bsp_dbg.c.s:
+	cd /home/xiamu/git/stm32_project/project/01-environment_build/build && $(MAKE) $(MAKESILENT) -f bsp/CMakeFiles/bsp.dir/build.make bsp/CMakeFiles/bsp.dir/src/bsp_dbg.c.s
+.PHONY : src/bsp_dbg.c.s
+
 src/bsp_encoder.obj: src/bsp_encoder.c.obj
 .PHONY : src/bsp_encoder.obj
 
@@ -430,6 +454,9 @@ help:
 	@echo "... src/board_v1.obj"
 	@echo "... src/board_v1.i"
 	@echo "... src/board_v1.s"
+	@echo "... src/bsp_dbg.obj"
+	@echo "... src/bsp_dbg.i"
+	@echo "... src/bsp_dbg.s"
 	@echo "... src/bsp_encoder.obj"
 	@echo "... src/bsp_encoder.i"
 	@echo "... src/bsp_encoder.s"

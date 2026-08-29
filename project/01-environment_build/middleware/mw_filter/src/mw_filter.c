@@ -15,7 +15,7 @@
 
 void mw_filter_lpf1_init(mw_filter_lpf1_t *f, q15_t alpha)
 {
-    if (alpha > Q15_ONE)  alpha = Q15_ONE;
+    /* q15_t 上限即 Q15_ONE，仅下界需要钳位 */
     if (alpha < Q15_ZERO) alpha = Q15_ZERO;
     f->alpha    = alpha;
     f->prev_out = Q15_ZERO;
@@ -100,9 +100,9 @@ q15_t mw_filter_mavg_update(mw_filter_mavg_t *f, q15_t in)
 
 void mw_filter_kalman1d_init(mw_filter_kalman1d_t *f, q15_t q, q15_t r, q15_t init_x)
 {
-    /* 钳位参数到合法范围 [0, 1] */
-    f->q = (q > Q15_ONE) ? Q15_ONE : (q < Q15_ZERO ? Q15_ZERO : q);
-    f->r = (r > Q15_ONE) ? Q15_ONE : (r < Q15_ZERO ? Q15_ZERO : r);
+    /* 钳位参数到合法范围 [0, 1]；q15_t 上限即 Q15_ONE，无上界比较必要 */
+    f->q = (q < Q15_ZERO) ? Q15_ZERO : q;
+    f->r = (r < Q15_ZERO) ? Q15_ZERO : r;
     mw_filter_kalman1d_reset(f, init_x);
 }
 
@@ -126,12 +126,15 @@ q15_t mw_filter_kalman1d_update(mw_filter_kalman1d_t *f, q15_t z)
     /* K = p_est / denom，两者同为 Q30，商为纯比值 → Q15 */
     /* 为避免 Q30/Q30 直接除丢失精度，将被除数左移 15 位后再除 */
     q15_t k_gain;
-    if (denom_q30 == 0) {
+    if (denom_q30 <= 0) {
         k_gain = Q15_ONE;  ///< 分母为零时完全信任测量值
     } else {
-        q30_t num_shifted = p_est << Q15_SHIFT;
-        q30_t k_raw = num_shifted / denom_q30;
-        k_gain = q15_sat(k_raw);
+        /* WHY 64 位中间量：p_est 初值可达 1.0（Q30≈2^30），左移 15 位
+         * 溢出 32 位有符号数 -> K 恒为 0，滤波器失去跟踪能力
+         * （宿主机单元测试捕获的休眠缺陷）。M3 无 64 位硬件除法，
+         * 依赖 __aeabi_ldivmod 软实现（约 1KB flash）。 */
+        int64_t k_raw = ((int64_t)p_est << Q15_SHIFT) / (int64_t)denom_q30;
+        k_gain = q15_sat((q30_t)k_raw);
     }
 
     /* 状态更新 x = x + K * (z - x)  */
@@ -140,10 +143,13 @@ q15_t mw_filter_kalman1d_update(mw_filter_kalman1d_t *f, q15_t z)
     f->x = q15_add(f->x, correction);
 
     /* 协方差更新 P = (1 - K) * p_est  */
-    /* (1-K) 为 Q15，p_est 为 Q30，乘积为 Q30 (需右移 15 位归一化) */
+    /* (1-K) 为 Q15，p_est 为 Q30，乘积为 Q30 (需右移 15 位归一化)
+     * WHY 64 位中间量：32767 * 2^30 溢出 32 位（同 K 计算问题） */
     q15_t one_minus_k = q15_sub(Q15_ONE, k_gain);
-    /* q15_mul_trunc: (Q15 * Q30) 不能直接用，手动计算 */
-    f->p = ((q30_t)one_minus_k * p_est) >> Q15_SHIFT;
+    int64_t p_raw = ((int64_t)one_minus_k * (int64_t)p_est) >> Q15_SHIFT;
+    f->p = (p_raw > (int64_t)INT32_MAX) ? INT32_MAX
+          : (p_raw < (int64_t)INT32_MIN) ? INT32_MIN
+          : (q30_t)p_raw;
 
     /* 防止 P 因截断累积衰减至 0 (设置最小地板值) */
     if (f->p < 0) f->p = 0;
